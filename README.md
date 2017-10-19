@@ -47,7 +47,8 @@ Goal: get feet wet with python / data science on library data
 
 - [x] initial outline workshop
 - [ ] watch/read different introductions to data-science/machine-learning to see what others usually include in introductory courses
-- [ ] prepare data set - genre-space
+- [x] prepare data set - genre-space
+- [ ] update readme with links to notebooks, such as [this](./notebooks/recommender.ipynb)
 - [ ] make notebooks for demos/exercises etc., such as
     - [ ] bibsci data science experiments / demo
     - [ ] Unsupervised learning - k-means
