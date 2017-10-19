@@ -49,6 +49,7 @@ Goal: get feet wet with python / data science on library data
 - [ ] watch/read different introductions to data-science/machine-learning to see what others usually include in introductory courses
 - [ ] prepare data set - genre-space
 - [ ] make notebooks for demos/exercises etc., such as
+    - [ ] bibsci data science experiments / demo
     - [ ] Unsupervised learning - k-means
     - [ ] Supervised learning - simple statistical distance from keyword cluster, - most similar 
     - [ ] Python graphics 
