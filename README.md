@@ -4,11 +4,14 @@ Notes/preparation for a data science workshop for librarians (in danish).
 
 ## Outline notes
 
+Goal: get feet wet with python / data science on library data
+
+- Intro / overview of workshop
 - What is programming
     - Recipe, instructions for computer
         - computer = forvokset regnemaskine, kan kun gøre hvad den bliver bedt om
         - step by step instruction, computer is stupid, only does excatly what told
-    - Example of programming languages easily availble
+    - Example of programming languages easily available
         - JavaScript
         - Python
         - Shell
@@ -37,21 +40,28 @@ Notes/preparation for a data science workshop for librarians (in danish).
 - Library examples
     - example: recommendation/inspiration engines
     - example: search engines - tf/idf
+    - ...
+- Conclusion / review of workshop
 
 ## Tasks
 
 - [x] initial outline workshop
-- [ ] prepare printable thinking-in-python
-    - proper page format
-    - cover page
-        - printed by solsort.com ApS, about solsort
-        - make it clear that it is a free book, - not for sale. (compliance with nc-license)
-- [ ] watch different introductions to data-science/machine-learning to see what others usually include in introductory courses
+- [ ] watch/read different introductions to data-science/machine-learning to see what others usually include in introductory courses
 - [ ] prepare data set - genre-space
-- [ ] write getting started with jupyter notebooks
-- [ ] write workshop synopsis
 - [ ] make notebooks for demos/exercises etc., such as
     - [ ] Unsupervised learning - k-means
     - [ ] Supervised learning - simple statistical distance from keyword cluster, - most similar 
     - [ ] Python graphics 
-- [ ] script for joining markdown-notes and jupyter notebooks into single, printable pdf-document.
+- [ ] printable thinking-in-python
+    - [ ] page format for printing
+    - [ ] printed by solsort.com ApS, about solsort
+    - [ ] cover page
+        - [ ] make it clear that it is a gratis book, - not for sale. (to make sure it complies with non-free cc by-nc-sa-license)
+- [ ] printable workshop booklet: "Data Science for Bibliotekarer"
+    - [ ] write getting started with jupyter notebooks
+    - [ ] write workshop synopsis
+    - [ ] write about solsort.com ApS
+    - [ ] script for joining markdown-notes and jupyter notebooks into single, printable pdf-document.
+- [ ] print workshop material
+
+
