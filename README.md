@@ -63,7 +63,7 @@ Goal: get feet wet with python / data science on library data
     - [ ] write getting started with jupyter notebooks
     - [ ] write workshop synopsis
     - [ ] write about solsort.com ApS
-    - [ ] script for joining markdown-notes and jupyter notebooks into single, printable pdf-document.
+    - [x] script for joining markdown-notes and jupyter notebooks into single, printable pdf-document.
 - [ ] print workshop material
 
 
