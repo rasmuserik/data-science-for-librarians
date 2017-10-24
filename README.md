@@ -38,6 +38,9 @@ Goal: get feet wet with python / data science on library data
         - supervised
             - example: statistical
 - Library examples
+    - example: search/ranking on term
+    - example: term outliers
+    - example: term extrapolation (some materials with a given term is marked, - find related)
     - example: recommendation/inspiration engines
     - example: search engines - tf/idf
     - ...
