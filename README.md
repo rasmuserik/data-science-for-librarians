@@ -30,13 +30,13 @@ Goal: get feet wet with python / data science on library data
         - Dictionaries
         - Matrices/vectors
         - ... and many morre
-- What is data science
-    - "datalogi" - computer science vs. data science
-    - statistics and machine learning
-        - unsupervised
-            - example: k-means
-        - supervised
-            - example: statistical
+    - What is data science
+        - "datalogi" - computer science vs. data science
+        - statistics and machine learning
+            - unsupervised
+                - example: k-means
+            - supervised
+                - example: statistical
 - Library examples
     - example: search/ranking on term
     - example: term outliers
