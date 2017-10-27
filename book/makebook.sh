@@ -9,6 +9,7 @@ rm ../notebooks/*.tex
 pandoc about-solsort.md --chapters -t latex >> book.tex
 cat footer.tex >> book.tex
 perl -pi -e 's/ꜳ/aa/' book.tex
+perl -pi -e 's/Ꜳ/AA/' book.tex
 
 pdflatex book.tex
 pdflatex book.tex
