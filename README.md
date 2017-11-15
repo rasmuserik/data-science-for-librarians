@@ -2,6 +2,36 @@
 
 Notes/preparation for a data science workshop for librarians (in danish).
 
+In progress, nothing to see here yet...
+
+# Tasks
+
+- [ ] "Data Science for bibliotekarer" booklet
+    - [ ] Hvad er data science
+        - [ ] Draft
+    - [ ] Hvad er programmering
+        - [ ] Draft
+    - [ ] I gang med Python og Jupyter
+        - [ ] Draft
+    - [ ] Genre-rum
+        - [x] Draft
+        - [ ] plys/smilla/strikkemagasin/... i stedet for tal
+        - [ ] tilføj øvelser
+    - [ ] Sandsynlighedsfordleling af emnerord - outliers, og bedre "søge"-rankering
+        - [ ] Draft
+    - [ ] Klyngeanalyse - søgeresultater og genre
+        - [ ] Draft
+    - [ ] Berigelse af data - content-first
+        - [ ] Draft
+- misc
+    - [ ] move outline notes into book
+    - [ ] watch/read different introductions to data-science/machine-learning to see what others usually include in introductory courses
+    - [ ] update readme with links to notebooks, such as [this](./notebooks/genre-rum.ipynb)
+    - [x] create pdf-file from python notebooks
+    - [x] prepare data set - genre-space
+    - [x] initial outline workshop
+
+
 ## Outline notes
 
 Goal: get feet wet with python / data science on library data
@@ -45,28 +75,3 @@ Goal: get feet wet with python / data science on library data
     - example: search engines - tf/idf
     - ...
 - Conclusion / review of workshop
-
-## Tasks
-
-- [x] initial outline workshop
-- [ ] watch/read different introductions to data-science/machine-learning to see what others usually include in introductory courses
-- [x] prepare data set - genre-space
-- [ ] update readme with links to notebooks, such as [this](./notebooks/recommender.ipynb)
-- [ ] make notebooks for demos/exercises etc., such as
-    - [ ] bibsci data science experiments / demo
-    - [ ] Unsupervised learning - k-means
-    - [ ] Supervised learning - simple statistical distance from keyword cluster, - most similar 
-    - [ ] Python graphics 
-- [ ] printable thinking-in-python
-    - [ ] page format for printing
-    - [ ] printed by solsort.com ApS, about solsort
-    - [ ] cover page
-        - [ ] make it clear that it is a gratis book, - not for sale. (to make sure it complies with non-free cc by-nc-sa-license)
-- [ ] printable workshop booklet: "Data Science for Bibliotekarer"
-    - [ ] write getting started with jupyter notebooks
-    - [ ] write workshop synopsis
-    - [ ] write about solsort.com ApS
-    - [x] script for joining markdown-notes and jupyter notebooks into single, printable pdf-document.
-- [ ] print workshop material
-
-
