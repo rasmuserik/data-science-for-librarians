@@ -11,4 +11,4 @@ genres = numpy.load(data_dir + 'genre-space.npy')
 
 def title_creator(i):
     bib = meta[i]
-    return bib.get('title', '') + ' - ' + bib.get('creator', '')
+    return bib.get('title', '') + ' - ' + bib.get('creator', '') + ' (' + bib.get('type', '') + ')'

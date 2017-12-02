@@ -8,16 +8,15 @@ In progress, nothing to see here yet...
 
 - [ ] "Data Science for bibliotekarer" booklet
     - [ ] Hvad er data science
+        - [ ] Hvad er data
         - [ ] Draft
-    - [ ] Hvad er programmering
-        - [ ] Draft
-    - [ ] I gang med Python og Jupyter
+    - [ ] I gang med Jupyter
         - [ ] Draft
     - [ ] Genre-rum
         - [x] Draft
         - [ ] plys/smilla/strikkemagasin/... i stedet for tal
         - [ ] tilføj øvelser
-    - [ ] Sandsynlighedsfordleling af emnerord - outliers, og bedre "søge"-rankering
+    - [ ] Sandsynlighedsfordleling af emneord - outliers, og bedre "søge"-rankering
         - [ ] Draft
     - [ ] Klyngeanalyse - søgeresultater og genre
         - [ ] Draft
