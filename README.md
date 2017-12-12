@@ -4,26 +4,40 @@ Notes/preparation for a data science workshop for librarians (in danish).
 
 In progress, nothing to see here yet...
 
-# Tasks
+# Outline
 
-- [ ] "Data Science for bibliotekarer" booklet
-    - [ ] Hvad er data science
-        - [ ] Hvad er data
-        - [ ] Draft
-    - [ ] I gang med Jupyter
-        - [ ] Draft
-    - [ ] Genre-rum
-        - [x] Draft
-        - [ ] plys/smilla/strikkemagasin/... i stedet for tal
-        - [ ] tilføj øvelser
-    - [ ] Sandsynlighedsfordleling af emneord - outliers, og bedre "søge"-rankering
-        - [ ] Draft
-    - [ ] Klyngeanalyse - søgeresultater og genre
-        - [ ] Draft
-    - [ ] Berigelse af data - content-first
-        - [ ] Draft
+- [ ] Indledning
+    - [ ] Hvad er det
+        - [ ] Smagsprøve på Data Science
+        - [ ] Læringsmål
+        - [ ] Case studies  / eksempler på data science inl metode.
+    - [ ] Om dette skrift
+        - [ ] Workshop
+        - [ ] solsort.com
+- [ ] Hvad er Data Science
+    - [ ] Data Science
+    - [ ] Videnskabelig tilgang
+    - ...
+- [ ] I gang med Jupyter
+    - [ ] Installation lokalt (inkl. install af eksempler)
+    - [ ] Kørsel i skyen (inkl. install af eksempler)
+    - [ ] Introduktion til Python
+- [ ] Eksperiment: Genrerum
+    - [x] Første udkast
+    - [x] plys/smilla/strikkemagasin/... i stedet for tal
+    - [x] tilføj øvelser
+    - [ ] Feature-vektor
+    - [ ] Note om at dette rum bruges i de følgende eksperimenter
+- [ ] Eksperiment: Sandsynlighedsfordeling af emneord
+    - [ ] Første udkast
+- [ ] Eksperiment: Genre klynger
+    - [x] Første udkast
+    - [x] tilføj øvelser
+- [ ] Konklusion
+    - [ ] links til videre studier
+
+# Misc Tasks
 - misc
-    - [ ] move outline notes into book
     - [ ] watch/read different introductions to data-science/machine-learning to see what others usually include in introductory courses
     - [ ] update readme with links to notebooks, such as [this](./notebooks/genre-rum.ipynb)
     - [x] create pdf-file from python notebooks
