@@ -17,12 +17,18 @@ In progress, nothing to see here yet...
 - [ ] Hvad er Data Science
     - [ ] Data Science
     - [ ] Videnskabelig tilgang
+    - [ ] Programering
+    - [ ] Informationsvidenskab
+    - [ ] Statistik og matematik.
     - ...
 - [ ] I gang med Jupyter
-    - [ ] Installation lokalt (inkl. install af eksempler)
-    - [ ] Kørsel i skyen (inkl. install af eksempler)
-    - [ ] Introduktion til Python
+    - [ ] Første udkast
+        - [ ] Installation lokalt (inkl. install af eksempler)
+        - [ ] Kørsel i skyen (inkl. install af eksempler)
+- [ ] Introduktion til programmering og Python
+    - [ ] JSON her
 - [ ] Eksperiment: Genrerum
+    - [ ] Indledning: Første eksempel,
     - [x] Første udkast
     - [x] plys/smilla/strikkemagasin/... i stedet for tal
     - [x] tilføj øvelser
