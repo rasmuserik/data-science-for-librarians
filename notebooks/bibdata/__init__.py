@@ -14,7 +14,6 @@ def title_creator(i):
     bib = meta[i]
     return bib.get('title', '') + ' - ' + bib.get('creator', '') + ' (' + bib.get('type', '') + ')'
 
-"""
 queries = {}
 def add_term(kind, term, i):
     k = (term + ' (' + kind[0:4] + ')').lower()
@@ -32,4 +31,3 @@ queries.sort()
 
 def search(query):
     return queries[bisect_right(queries, query.lower()):][:10]
-"""
