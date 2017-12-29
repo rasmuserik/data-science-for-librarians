@@ -6,6 +6,8 @@ In progress, nothing to see here yet...
 
 # Outline
 
+NB: move notebooks to root, and prefix with number, for easier navigation.
+
 - [ ] Indledning
     - [ ] Hvad er det
         - [ ] Smagsprøve på Data Science
@@ -22,23 +24,32 @@ In progress, nothing to see here yet...
     - [ ] Statistik og matematik.
     - ...
 - [ ] I gang med Jupyter
-    - [ ] Første udkast
-        - [ ] Installation lokalt (inkl. install af eksempler)
-        - [ ] Kørsel i skyen (inkl. install af eksempler)
+    - [ ] Installation
+- [ ] I gang med Jupyter
+    - [ ] Installation lokalt på Linux (inkl. install af eksempler)
+    - [ ] Installation lokalt på Windows (inkl. install af eksempler)
+    - [ ] Installation lokalt på Mac ()
+    - [ ] Kørsel i skyen (inkl. install af eksempler)
 - [ ] Introduktion til programmering og Python
-    - [ ] JSON her
+    - [ ] Hvad er programmering
+- [ ] Hvad er data (JSON her)
+- [ ] Smagsprøver på Python (forklaring af konstruktioner brugt i eksemplerne)
 - [ ] Eksperiment: Genrerum
-    - [ ] Indledning: Første eksempel,
-    - [x] Første udkast
-    - [x] plys/smilla/strikkemagasin/... i stedet for tal
-    - [x] tilføj øvelser
-    - [ ] Feature-vektor
-    - [ ] Note om at dette rum bruges i de følgende eksperimenter
+    - [x] Kode
+    - [x] Tekst
+    - [ ] Øvelser
+- [ ] Eksperiment: Anbefalinger
+    - [ ] Kode
+    - [ ] Tekst
+    - [ ] Øvelser
 - [ ] Eksperiment: Sandsynlighedsfordeling af emneord
-    - [ ] Første udkast
-- [ ] Eksperiment: Genre klynger
-    - [x] Første udkast
-    - [x] tilføj øvelser
+    - [x] Kode
+    - [ ] Tekst
+    - [ ] Øvelser
+- [x] Eksperiment: Genre klynger
+    - [x] Kode
+    - [x] Tekst
+    - [x] Øvelser
 - [ ] Konklusion
     - [ ] links til videre studier
 
