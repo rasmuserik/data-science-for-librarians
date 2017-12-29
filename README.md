@@ -1,14 +1,24 @@
 # Data Science for Librarians
 
+
 Notes/preparation for a data science workshop for librarians (in danish).
 
 In progress, nothing to see here yet...
 
-# Outline
+1. [Indledning](./1-indledning.ipynb)
+2. [I gang med Jupyter](./2-i-gang-med-jupyter.ipynb)
+3. [Hvad er data science](./3-hvad-er-data-science.ipynb)
+4. [Python programmering](./4-python-programmering.ipynb)
+5. [Case: Genre-rum](./5-case-genrerum.ipynb)
+6. [Case: Anbefalinger](./6-case-anbefalinger.ipynb)
+7. [Case: Emneord](./7-case-emneord.ipynb)
+8. [Case: Genre-klynger](./8-case-genreklynger.ipynb)
+9. [Efterskrift](./9-efterskrift.ipynb)
 
-NB: move notebooks to root, and prefix with number, for easier navigation.
 
-- [ ] Indledning
+# Outline / tasks
+
+1. [ ] Indledning
     - [ ] Hvad er det
         - [ ] Smagsprøve på Data Science
         - [ ] Læringsmål
@@ -16,41 +26,36 @@ NB: move notebooks to root, and prefix with number, for easier navigation.
     - [ ] Om dette skrift
         - [ ] Workshop
         - [ ] solsort.com
-- [ ] Hvad er Data Science
+2. [ ] I gang med Jupyter
+    - [ ] Installation
+3. [ ] Hvad er Data Science
     - [ ] Data Science
     - [ ] Videnskabelig tilgang
     - [ ] Programering
     - [ ] Informationsvidenskab
     - [ ] Statistik og matematik.
     - ...
-- [ ] I gang med Jupyter
-    - [ ] Installation
-- [ ] I gang med Jupyter
-    - [ ] Installation lokalt på Linux (inkl. install af eksempler)
-    - [ ] Installation lokalt på Windows (inkl. install af eksempler)
-    - [ ] Installation lokalt på Mac ()
-    - [ ] Kørsel i skyen (inkl. install af eksempler)
-- [ ] Introduktion til programmering og Python
+4. [ ] Python programmering
     - [ ] Hvad er programmering
-- [ ] Hvad er data (JSON her)
-- [ ] Smagsprøver på Python (forklaring af konstruktioner brugt i eksemplerne)
-- [ ] Eksperiment: Genrerum
+    - [ ] Smagsprøver på Python (forklaring af konstruktioner brugt i eksemplerne)
+5. [ ] Case: Genre-rum
     - [x] Kode
     - [x] Tekst
     - [ ] Øvelser
-- [ ] Eksperiment: Anbefalinger
+6. [ ] Case: Anbefalinger
     - [ ] Kode
     - [ ] Tekst
     - [ ] Øvelser
-- [ ] Eksperiment: Sandsynlighedsfordeling af emneord
+7. [ ] Case: Emneord
     - [x] Kode
     - [ ] Tekst
     - [ ] Øvelser
-- [x] Eksperiment: Genre klynger
+8. [x] Case: Genre-klynger
     - [x] Kode
     - [x] Tekst
     - [x] Øvelser
-- [ ] Konklusion
+9. [ ] Efterskrift
+    - [ ] Konklusion
     - [ ] links til videre studier
 
 # Misc Tasks
