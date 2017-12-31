@@ -1,3 +1,7 @@
+jupyter nbconvert [1-9]*.ipynb --template basic --to html 
+cat header.html [1-9]*.html footer.html > index.html
+rm [1-9]*.html
+
 jupyter nbconvert [1-9]*.ipynb --template report.tplx --to latex
 
 cat header.tex > book.tex
@@ -14,3 +18,4 @@ perl -pi -e 's/Ꜳ/AA/' book.tex
 pdflatex book.tex
 pdflatex book.tex
 rm book.aux book.log book.out book.tex book.toc
+
