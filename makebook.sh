@@ -11,6 +11,7 @@ do
 done
 rm [1-9]*.tex
 cat footer.tex >> book.tex
+perl -pi -e 's/‐/-/' book.tex
 perl -pi -e 's/č/c/' book.tex
 perl -pi -e 's/ꜳ/aa/' book.tex
 perl -pi -e 's/Ꜳ/AA/' book.tex
