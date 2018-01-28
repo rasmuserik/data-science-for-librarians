@@ -12094,43 +12094,10 @@ Det er en blanding af forskellige faglige felter, her iblandt:</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Struturerede-data">Struturerede data<a class="anchor-link" href="#Struturerede-data">&#182;</a></h2><p>Data er alt hvad vi kan skrive ned.
-Eksempler på data er: 1) observationer, såsom en note hver gang en bog bliver udlånt, 2) tekst, såsom de fleste felter i metadata.
-Kvalitative data er data der kræver menneskelig fortolkning, - det kan være interviews, beskrivelse af bøger, etc.
-Kvantitaive data er data som en computer direkte kan arbejde med, - det kan være statistiske data, lister af hændelser med tidspunkt, etc.</p>
-<p>Vi vil arbejde med forskellige <em>typer</em> af data:</p>
-<ul>
-<li>Tal, som både kan være heltal (... <code>-2</code>, <code>-1</code>, <code>0</code>, <code>1</code>, <code>2</code>, ...), eller kommatal (i.e. <code>-17.42</code>, <code>0.12345</code>, <code>1001.37</code>).</li>
-<li>Tekststrenge eller strenge, som er kortere eller længere stykke tekst. Ordet streng kommer af at tekst er en række/sekvens/tråd/streng af enkelte bogstaver. Vi vil ofte skrive eksempler på tekststreng i anførselstegne, i.e. <code>"dette er en streng"</code>.</li>
-<li>Sandhedsværdier eller logiske værdier, som har blot to mulige værdier: <em>sandt</em> (<code>true</code>) eller <em>falskt</em> (<code>false</code>).</li>
-<li>Lister af data, som kan indeholder strenge, tal, sandhedsværdier, og også selv indeholde lister og ordbøger. Vi vil ofte skrive lister med firkantede paranteser, eksempel: <code>["Høeg", "Murakami", "Blixen"]</code>.</li>
-<li>Opslagsværker eller ordbøger/dictionaries, som giver mulighed for at slå en tekststreng op og få data tilbage. Et eksempel på en ordbog kan være metadata for en bøger, hvor man eksempelvis kan slå "forfatter" og "titel" op, og måske får "A. A. Milne" og "Peter Plys" tilbage. Ordet/strengen, som man slår op i ordbogen kaldes ofte nøglen, og de data man får tilbage kaldes værdien. Ordbøger skrives ofte med krøllede paranteser, så ordbogen med metadata kunne skrives som: <code>{"titel": "Peter Plys", "forfatter": "A. A. Milne"}</code>.</li>
-</ul>
-<p>Ud fra disse datatyper, kan vi nu strukturere data, eller lave <em>datastrukturer</em>. Her er et eksempel på metadata for nogle bøger:</p>
-<div class="highlight"><pre><span></span><span class="p">[{</span><span class="nt">&quot;titel&quot;</span><span class="p">:</span> <span class="s2">&quot;Peter Plys&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;forfatter&quot;</span><span class="p">:</span> <span class="s2">&quot;A. A. Milne&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;nøgleord&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;børnebog&quot;</span><span class="p">],</span>
-  <span class="nt">&quot;tilgængelige&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="nt">&quot;udlån&quot;</span><span class="p">:</span> <span class="mi">4312</span><span class="p">},</span>
- <span class="p">{</span><span class="nt">&quot;titel&quot;</span><span class="p">:</span> <span class="s2">&quot;Turen går til Berlin&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;forfatter&quot;</span><span class="p">:</span> <span class="s2">&quot;Kirstine Therkelsen&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;nøgleord&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Berlin&quot;</span><span class="p">,</span> <span class="s2">&quot;rejsefører&quot;</span><span class="p">],</span>
-  <span class="nt">&quot;tilgængelige&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-  <span class="nt">&quot;udlån&quot;</span><span class="p">:</span> <span class="mi">329</span><span class="p">}]</span>
-</pre></div>
-<p>Denne måde at skrive data kaldes <em>JSON</em>, og er en af de mest almindelige måde at skrive strukturerede data. Eksemplet indeholder en liste af ordbøger, som igen kan indeholde andre datatyper. Bemærk også data, skrevet herover som JSON, faktisk er tekst, hvilket igen kunne repræsenteres som en tekststreng.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Regnemaskiner-og-tal">Regnemaskiner og tal<a class="anchor-link" href="#Regnemaskiner-og-tal">&#182;</a></h2><p>Computere er kun regnemaskiner. Data er kun tal. Dette lyder måske svært at tro, men det er sandt.</p>
-<p>Bogstaver i computeren er tal: <code>A</code> er <code>65</code>, <code>B</code> er <code>66</code>, <code>C</code> er <code>67</code>, <code>D</code> er <code>68</code>, <code>E</code> er <code>69</code>, <code>F</code> er <code>70</code>, <code>G</code> er <code>71</code>, <code>H</code> er <code>72</code>, <code>I</code> er <code>73</code>, <code>J</code> er <code>74</code>, <code>K</code> er <code>75</code>, <code>L</code> er <code>76</code>, <code>M</code> er <code>77</code>,
-og så videre, og mellemrum, " " er <code>32</code>. Hvad tror du, at disse tal betyder: <code>72 69 74 32 77 69 68 32 68 73 71</code>.</p>
-<p>Husk fra foregående afsnit, at data og datastrukturer kan skrive som en tekststreng. Vi har nu set at bogstaver, og derved tekst, kan skrives som tal. Alle data kan derfor skrives som tal.</p>
+<p>Data er alt hvad vi kan skrive ned.
+Eksempler på data er: 1) observationer, såsom en note hver gang en bog bliver udlånt, 2) tekst, såsom de fleste felter i metadata.</p>
+<p>Kvalitative data er data der kræver menneskelig fortolkning, - det kan være interviews, beskrivelse af bøger, etc.</p>
+<p>Kvantitative data er data som en computer direkte kan arbejde med, - det kan være statistiske data, lister af hændelser med tidspunkt, etc.</p>
 
 </div>
 </div>
@@ -12210,6 +12177,265 @@ og så videre, og mellemrum, " " er <code>32</code>. Hvad tror du, at disse tal 
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Data,-typer-og-strukturer">Data, typer og strukturer<a class="anchor-link" href="#Data,-typer-og-strukturer">&#182;</a></h2><p>Computere er kun regnemaskiner, og for computeren er alle data tal. Så når vi arbejder med tekst, billeder, store datastrukturer, etc., er det alt sammen tal.</p>
+<p>Eksempelvis er bogstaver i computeren oftest følgende tal: <code>A</code> er <code>65</code>, <code>B</code> er <code>66</code>, <code>C</code> er <code>67</code>, <code>D</code> er <code>68</code>, <code>E</code> er <code>69</code>, <code>F</code> er <code>70</code>, <code>G</code> er <code>71</code>, <code>H</code> er <code>72</code>, <code>I</code> er <code>73</code>, <code>J</code> er <code>74</code>, <code>K</code> er <code>75</code>, <code>L</code> er <code>76</code>, <code>M</code> er <code>77</code>,
+og så videre, og mellemrum, " " er <code>32</code>. Du kan nu læse hvad der står her: <code>72 69 74 32 77 69 68 32 68 73 71</code>.</p>
+<p>Vi vil gerne arbejde med forskellige <em>typer</em> af data. Nogle typiske datatyper er:</p>
+<ul>
+<li>Tal, som både kan være heltal (... <code>-2</code>, <code>-1</code>, <code>0</code>, <code>1</code>, <code>2</code>, ...), eller kommatal (i.e. <code>-17.42</code>, <code>0.12345</code>, <code>1001.37</code>).</li>
+<li>Tekststrenge eller strenge, som er kortere eller længere stykke tekst. Ordet streng kommer af at tekst er en række/sekvens/tråd/streng af enkelte bogstaver. Vi vil ofte skrive eksempler på tekststreng i anførselstegne, i.e. <code>"dette er en streng"</code>.</li>
+<li>Lister af data, som kan indeholder strenge, tal, sandhedsværdier, og også selv indeholde lister og ordbøger. Vi vil ofte skrive lister med firkantede paranteser, eksempel: <code>["Høeg", "Murakami", "Blixen"]</code>.</li>
+<li>Opslagsværker eller ordbøger/dictionaries, som giver mulighed for at slå en tekststreng op og få data tilbage. Et eksempel på en ordbog kan være metadata for en bøger, hvor man eksempelvis kan slå "forfatter" og "titel" op, og måske får "A. A. Milne" og "Peter Plys" tilbage. Ordet/strengen, som man slår op i ordbogen kaldes ofte nøglen, og de data man får tilbage kaldes værdien. Ordbøger skrives ofte med krøllede paranteser, så ordbogen med metadata kunne skrives som: <code>{"titel": "Peter Plys", "forfatter": "A. A. Milne"}</code>.</li>
+</ul>
+<p>Ud fra disse datatyper, kan vi nu strukturere data, eller lave <em>datastrukturer</em>. Her er et eksempel på en liste af metadata for et par bøger:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">books</span> <span class="o">=</span> <span class="p">[</span> 
+  <span class="p">{</span> <span class="s2">&quot;titel&quot;</span><span class="p">:</span> <span class="s2">&quot;Peter Plys&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;forfatter&quot;</span><span class="p">:</span> <span class="s2">&quot;A. A. Milne&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;nøgleord&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;børnebog&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;udlån&quot;</span><span class="p">:</span> <span class="mi">4312</span>
+  <span class="p">},</span>
+  <span class="p">{</span> <span class="s2">&quot;titel&quot;</span><span class="p">:</span> <span class="s2">&quot;Turen går til Berlin&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;forfatter&quot;</span><span class="p">:</span> <span class="s2">&quot;Kirstine Therkelsen&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;nøgleord&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Berlin&quot;</span><span class="p">,</span> <span class="s2">&quot;rejsefører&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;udlån&quot;</span><span class="p">:</span> <span class="mi">329</span>
+  <span class="p">},</span>
+  <span class="p">{</span> <span class="s2">&quot;titel&quot;</span><span class="p">:</span> <span class="s2">&quot;Mimbo Jimbo og den lange vinter&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;forfatter&quot;</span><span class="p">:</span> <span class="s2">&quot;Jakob Martin Strid&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;udlån&quot;</span><span class="p">:</span> <span class="mi">1234</span> 
+  <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Her gemmer vi datastrukturen i en variabel der hedder <code>books</code>.
+Den måde som vi har skrevet data på kaldes <em>JSON</em>, og er en af de mest almindelige måde at skrive strukturerede data. Eksemplet indeholder en liste af ordbøger, som igen kan indeholde andre datatyper.</p>
+<p>I modsætning til JSON, er Python ligeglad med om vi bruger <code>"</code> eller <code>'</code>, så hvis vi finder datastrukturen igen, skrives den ud således:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">books</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[2]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[{&#39;forfatter&#39;: &#39;A. A. Milne&#39;,
+  &#39;nøgleord&#39;: [&#39;børnebog&#39;],
+  &#39;titel&#39;: &#39;Peter Plys&#39;,
+  &#39;udlån&#39;: 4312},
+ {&#39;forfatter&#39;: &#39;Kirstine Therkelsen&#39;,
+  &#39;nøgleord&#39;: [&#39;Berlin&#39;, &#39;rejsefører&#39;],
+  &#39;titel&#39;: &#39;Turen går til Berlin&#39;,
+  &#39;udlån&#39;: 329},
+ {&#39;forfatter&#39;: &#39;Jakob Martin Strid&#39;,
+  &#39;titel&#39;: &#39;Mimbo Jimbo og den lange vinter&#39;,
+  &#39;udlån&#39;: 1234}]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Når man har en liste eller en dictionary, kan man bruge <code>[]</code> til at hente de enkelte elementer. Bemærk: pladserne i listen er navngivet <code>0, 1, 2, ...</code> og ikke <code>1, 2, 3, ...</code>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">books</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[3]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{&#39;forfatter&#39;: &#39;A. A. Milne&#39;,
+ &#39;nøgleord&#39;: [&#39;børnebog&#39;],
+ &#39;titel&#39;: &#39;Peter Plys&#39;,
+ &#39;udlån&#39;: 4312}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">books</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s2">&quot;nøgleord&quot;</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[4]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[&#39;Berlin&#39;, &#39;rejsefører&#39;]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Hvis man prøver at finde noget der mangler, får man en fejl:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">books</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="s2">&quot;nøgleord&quot;</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">-------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">KeyError</span>                                Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-5-a6602ef92512&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>books<span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">2</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">&#34;nøgleord&#34;</span><span class="ansi-blue-fg">]</span>
+
+<span class="ansi-red-fg">KeyError</span>: &#39;nøgleord&#39;</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Her kan det være praktisk at bruge <code>.get</code>-metoden til at tilgå data, man kan fortælle hvad man ønsker per default, hvis data mangler:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">books</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;nøgleord&quot;</span><span class="p">,</span> <span class="p">[])</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">books</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;nøgleord&quot;</span><span class="p">,</span> <span class="p">[])</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
 </div>
  
 
@@ -13501,9 +13727,12 @@ I tre dimensioner er det afstanden mellem to punkter i rummet, i.e. $\sqrt{(x_a 
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;alice i eventyrland(film)&#39;</span><span class="p">,</span> <span class="n">numpy</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">((</span><span class="n">bibdata</span><span class="o">.</span><span class="n">genres</span><span class="p">[</span><span class="mi">810</span><span class="p">]</span> <span class="o">-</span> <span class="n">mean</span><span class="p">)</span> <span class="o">/</span> <span class="n">std</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;cirkeline&#39;</span><span class="p">,</span> <span class="n">numpy</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">((</span><span class="n">bibdata</span><span class="o">.</span><span class="n">genres</span><span class="p">[</span><span class="mi">616</span><span class="p">]</span> <span class="o">-</span> <span class="n">mean</span><span class="p">)</span> <span class="o">/</span> <span class="n">std</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;berlin&#39;</span><span class="p">,</span> <span class="n">numpy</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">((</span><span class="n">bibdata</span><span class="o">.</span><span class="n">genres</span><span class="p">[</span><span class="mi">149</span><span class="p">]</span> <span class="o">-</span> <span class="n">mean</span><span class="p">)</span> <span class="o">/</span> <span class="n">std</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;alice i eventyrland(film)&#39;</span><span class="p">,</span> 
+      <span class="n">numpy</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">((</span><span class="n">bibdata</span><span class="o">.</span><span class="n">genres</span><span class="p">[</span><span class="mi">810</span><span class="p">]</span> <span class="o">-</span> <span class="n">mean</span><span class="p">)</span> <span class="o">/</span> <span class="n">std</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;cirkeline&#39;</span><span class="p">,</span> 
+      <span class="n">numpy</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">((</span><span class="n">bibdata</span><span class="o">.</span><span class="n">genres</span><span class="p">[</span><span class="mi">616</span><span class="p">]</span> <span class="o">-</span> <span class="n">mean</span><span class="p">)</span> <span class="o">/</span> <span class="n">std</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;berlin&#39;</span><span class="p">,</span> 
+      <span class="n">numpy</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">((</span><span class="n">bibdata</span><span class="o">.</span><span class="n">genres</span><span class="p">[</span><span class="mi">149</span><span class="p">]</span> <span class="o">-</span> <span class="n">mean</span><span class="p">)</span> <span class="o">/</span> <span class="n">std</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -13545,8 +13774,10 @@ berlin 38.8215720144
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">weighted_books</span> <span class="o">=</span> <span class="p">[(</span><span class="n">numpy</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">((</span><span class="n">bibdata</span><span class="o">.</span><span class="n">genres</span><span class="p">[</span><span class="n">book_id</span><span class="p">]</span><span class="o">-</span><span class="n">mean</span><span class="p">)</span><span class="o">/</span><span class="n">std</span><span class="p">),</span> <span class="n">book_id</span><span class="p">)</span>
-       <span class="k">for</span> <span class="n">book_id</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">bibdata</span><span class="o">.</span><span class="n">meta</span><span class="p">))]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">weighted_books</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">((</span><span class="n">bibdata</span><span class="o">.</span><span class="n">genres</span><span class="p">[</span><span class="n">book_id</span><span class="p">]</span><span class="o">-</span><span class="n">mean</span><span class="p">)</span><span class="o">/</span><span class="n">std</span><span class="p">),</span> <span class="n">book_id</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">book_id</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">bibdata</span><span class="o">.</span><span class="n">meta</span><span class="p">))</span>
+<span class="p">]</span>
 <span class="n">weighted_books</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">weighted_books</span><span class="p">[:</span><span class="mi">10</span><span class="p">])</span>
 </pre></div>
@@ -13640,12 +13871,17 @@ berlin 38.8215720144
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">books_by_subject</span><span class="p">(</span><span class="n">subject</span><span class="p">):</span>
-    <span class="n">books</span> <span class="o">=</span> <span class="p">[</span><span class="n">book_id</span> <span class="k">for</span> <span class="n">book_id</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">bibdata</span><span class="o">.</span><span class="n">meta</span><span class="p">))</span> <span class="k">if</span> <span class="n">subject</span> <span class="ow">in</span> <span class="n">bibdata</span><span class="o">.</span><span class="n">meta</span><span class="p">[</span><span class="n">book_id</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;subject-term&#39;</span><span class="p">,</span> <span class="p">[])]</span>
+    <span class="n">books</span> <span class="o">=</span> <span class="p">[</span><span class="n">book_id</span> 
+        <span class="k">for</span> <span class="n">book_id</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">bibdata</span><span class="o">.</span><span class="n">meta</span><span class="p">))</span> 
+        <span class="k">if</span> <span class="n">subject</span> <span class="ow">in</span> <span class="n">bibdata</span><span class="o">.</span><span class="n">meta</span><span class="p">[</span><span class="n">book_id</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;subject-term&#39;</span><span class="p">,</span> <span class="p">[])]</span>
     <span class="n">vectors</span> <span class="o">=</span> <span class="p">[</span><span class="n">bibdata</span><span class="o">.</span><span class="n">genres</span><span class="p">[</span><span class="n">book</span><span class="p">]</span> <span class="k">for</span> <span class="n">book</span> <span class="ow">in</span> <span class="n">books</span><span class="p">]</span>
     <span class="n">mean</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">vectors</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
     <span class="n">std</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">vectors</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-    <span class="n">weighted_books</span> <span class="o">=</span> <span class="p">[(</span><span class="n">numpy</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">((</span><span class="n">bibdata</span><span class="o">.</span><span class="n">genres</span><span class="p">[</span><span class="n">book_id</span><span class="p">]</span><span class="o">-</span><span class="n">mean</span><span class="p">)</span><span class="o">/</span><span class="n">std</span><span class="p">),</span> <span class="n">book_id</span><span class="p">)</span> <span class="k">for</span> <span class="n">book_id</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">)]</span>
-    <span class="n">sorted_books</span> <span class="o">=</span> <span class="p">[</span><span class="n">book_id</span> <span class="k">for</span> <span class="p">(</span><span class="n">weight</span><span class="p">,</span> <span class="n">book_id</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">weighted_books</span><span class="p">)]</span>
+    <span class="n">weighted_books</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">((</span><span class="n">bibdata</span><span class="o">.</span><span class="n">genres</span><span class="p">[</span><span class="n">book_id</span><span class="p">]</span><span class="o">-</span><span class="n">mean</span><span class="p">)</span><span class="o">/</span><span class="n">std</span><span class="p">),</span> <span class="n">book_id</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">book_id</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">)]</span>
+    <span class="n">sorted_books</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">book_id</span> <span class="k">for</span> <span class="p">(</span><span class="n">weight</span><span class="p">,</span> <span class="n">book_id</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">weighted_books</span><span class="p">)]</span>
     <span class="k">return</span> <span class="n">sorted_books</span>
 </pre></div>
 
@@ -13773,11 +14009,17 @@ berlin 38.8215720144
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">subject_outliers</span><span class="p">(</span><span class="n">subject</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Without subject &quot;&#39;</span> <span class="o">+</span> <span class="n">subject</span> <span class="o">+</span> <span class="s1">&#39;&quot;:&#39;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">&#39;  &#39;</span> <span class="o">+</span> <span class="n">bibdata</span><span class="o">.</span><span class="n">title_creator</span><span class="p">(</span><span class="n">book_id</span><span class="p">)</span> <span class="k">for</span> <span class="n">book_id</span> <span class="ow">in</span> <span class="n">books_by_subject</span><span class="p">(</span><span class="n">subject</span><span class="p">)</span> 
-                   <span class="k">if</span> <span class="ow">not</span> <span class="n">subject</span> <span class="ow">in</span> <span class="n">bibdata</span><span class="o">.</span><span class="n">meta</span><span class="p">[</span><span class="n">book_id</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;subject-term&#39;</span><span class="p">,</span> <span class="p">[])][:</span><span class="mi">5</span><span class="p">]))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+        <span class="p">[</span><span class="s1">&#39;  &#39;</span> <span class="o">+</span> <span class="n">bibdata</span><span class="o">.</span><span class="n">title_creator</span><span class="p">(</span><span class="n">book_id</span><span class="p">)</span>
+         <span class="k">for</span> <span class="n">book_id</span> <span class="ow">in</span> <span class="n">books_by_subject</span><span class="p">(</span><span class="n">subject</span><span class="p">)</span> 
+         <span class="k">if</span> <span class="ow">not</span> <span class="n">subject</span> <span class="ow">in</span> <span class="n">bibdata</span><span class="o">.</span><span class="n">meta</span><span class="p">[</span><span class="n">book_id</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;subject-term&#39;</span><span class="p">,</span> <span class="p">[])</span>
+        <span class="p">][:</span><span class="mi">5</span><span class="p">]))</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;With subject &quot;&#39;</span> <span class="o">+</span> <span class="n">subject</span> <span class="o">+</span> <span class="s1">&#39;&quot;:&#39;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">&#39;  &#39;</span> <span class="o">+</span> <span class="n">bibdata</span><span class="o">.</span><span class="n">title_creator</span><span class="p">(</span><span class="n">book_id</span><span class="p">)</span> <span class="k">for</span> <span class="n">book_id</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">books_by_subject</span><span class="p">(</span><span class="n">subject</span><span class="p">))</span>
-                   <span class="k">if</span> <span class="n">subject</span> <span class="ow">in</span> <span class="n">bibdata</span><span class="o">.</span><span class="n">meta</span><span class="p">[</span><span class="n">book_id</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;subject-term&#39;</span><span class="p">,</span> <span class="p">[])][:</span><span class="mi">5</span><span class="p">]))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+        <span class="p">[</span><span class="s1">&#39;  &#39;</span> <span class="o">+</span> <span class="n">bibdata</span><span class="o">.</span><span class="n">title_creator</span><span class="p">(</span><span class="n">book_id</span><span class="p">)</span> 
+         <span class="k">for</span> <span class="n">book_id</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">books_by_subject</span><span class="p">(</span><span class="n">subject</span><span class="p">))</span>
+         <span class="k">if</span> <span class="n">subject</span> <span class="ow">in</span> <span class="n">bibdata</span><span class="o">.</span><span class="n">meta</span><span class="p">[</span><span class="n">book_id</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;subject-term&#39;</span><span class="p">,</span> <span class="p">[])</span>
+        <span class="p">][:</span><span class="mi">5</span><span class="p">]))</span>
 
 <span class="n">subject_outliers</span><span class="p">(</span><span class="s1">&#39;eventyr&#39;</span><span class="p">)</span>
 </pre></div>
@@ -13887,7 +14129,11 @@ With subject &#34;eventyr&#34;:
     <span class="k">for</span> <span class="n">subject</span> <span class="ow">in</span> <span class="n">book</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;subject-term&#39;</span><span class="p">,</span> <span class="p">[]):</span>
         <span class="n">subject_dict</span><span class="p">[</span><span class="n">subject</span><span class="p">]</span> <span class="o">=</span> <span class="n">subject_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">subject</span><span class="p">,</span> <span class="p">[])</span> <span class="o">+</span> <span class="p">[</span><span class="n">book</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;idx&#39;</span><span class="p">)]</span>
 
-<span class="n">subject_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">subject</span><span class="p">:</span> <span class="n">book_ids</span> <span class="k">for</span> <span class="n">subject</span><span class="p">,</span> <span class="n">book_ids</span> <span class="ow">in</span> <span class="n">subject_dict</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">book_ids</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">}</span>
+<span class="n">subject_dict</span> <span class="o">=</span> <span class="p">{</span> 
+    <span class="n">subject</span><span class="p">:</span> <span class="n">book_ids</span> 
+    <span class="k">for</span> <span class="n">subject</span><span class="p">,</span> <span class="n">book_ids</span> <span class="ow">in</span> <span class="n">subject_dict</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> 
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">book_ids</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">10</span>
+<span class="p">}</span>
 </pre></div>
 
 </div>
@@ -13942,7 +14188,9 @@ With subject &#34;eventyr&#34;:
 
 <span class="k">for</span> <span class="n">book_id</span> <span class="ow">in</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10000</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]:</span>
     <span class="n">sorted_subjects</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">([(</span>
-        <span class="n">numpy</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">((</span><span class="n">bibdata</span><span class="o">.</span><span class="n">genres</span><span class="p">[</span><span class="n">book_id</span><span class="p">]</span><span class="o">-</span><span class="n">subject</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;mean&#39;</span><span class="p">))</span><span class="o">/</span><span class="n">subject</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;std&#39;</span><span class="p">)),</span> 
+        <span class="n">numpy</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span>
+            <span class="p">(</span><span class="n">bibdata</span><span class="o">.</span><span class="n">genres</span><span class="p">[</span><span class="n">book_id</span><span class="p">]</span> <span class="o">-</span> <span class="n">subject</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;mean&#39;</span><span class="p">))</span> <span class="o">/</span> 
+                <span class="n">subject</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;std&#39;</span><span class="p">)),</span> 
         <span class="n">subject</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">))</span> <span class="k">for</span> <span class="n">subject</span> <span class="ow">in</span> <span class="n">subjects</span><span class="p">])</span>
     
     <span class="nb">print</span><span class="p">(</span><span class="n">book_id</span><span class="p">,</span> <span class="n">bibdata</span><span class="o">.</span><span class="n">title_creator</span><span class="p">(</span><span class="n">book_id</span><span class="p">))</span>
@@ -14043,11 +14291,15 @@ genrerum: [&#39;sange&#39;, &#39;Legetek&#39;, &#39;for 2-5 år&#39;, &#39;begre
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">subject_name</span> <span class="o">=</span> <span class="s1">&#39;fantastiske fortællinger&#39;</span>
-<span class="n">subject1</span> <span class="o">=</span> <span class="p">[</span><span class="n">subject</span> <span class="k">for</span> <span class="n">subject</span> <span class="ow">in</span> <span class="n">subjects</span> <span class="k">if</span> <span class="n">subject</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="n">subject_name</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">subject1</span> <span class="o">=</span> <span class="p">[</span><span class="n">subject</span> 
+    <span class="k">for</span> <span class="n">subject</span> <span class="ow">in</span> <span class="n">subjects</span> 
+    <span class="k">if</span> <span class="n">subject</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="n">subject_name</span>
+<span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+
 <span class="n">sorted_subjects</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">([(</span>
-        <span class="n">numpy</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">((</span><span class="n">subject1</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;mean&#39;</span><span class="p">)</span> <span class="o">-</span> <span class="n">subject2</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;mean&#39;</span><span class="p">))</span>
-                          <span class="o">/</span> <span class="p">(</span><span class="n">subject1</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;std&#39;</span><span class="p">)</span> <span class="o">/</span> <span class="n">subject2</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;std&#39;</span><span class="p">))</span>
-                         <span class="p">),</span> 
+        <span class="n">numpy</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span>
+            <span class="p">(</span><span class="n">subject1</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;mean&#39;</span><span class="p">)</span> <span class="o">-</span> <span class="n">subject2</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;mean&#39;</span><span class="p">))</span> <span class="o">/</span>
+             <span class="p">(</span><span class="n">subject1</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;std&#39;</span><span class="p">)</span> <span class="o">*</span> <span class="n">subject2</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;std&#39;</span><span class="p">))),</span> 
         <span class="n">subject2</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">))</span> <span class="k">for</span> <span class="n">subject2</span> <span class="ow">in</span> <span class="n">subjects</span><span class="p">])</span>
 <span class="n">sorted_subjects</span><span class="p">[:</span><span class="mi">20</span><span class="p">]</span>
 </pre></div>
@@ -14069,25 +14321,25 @@ genrerum: [&#39;sange&#39;, &#39;Legetek&#39;, &#39;for 2-5 år&#39;, &#39;begre
 
 <div class="output_text output_subarea output_execute_result">
 <pre>[(0.0, &#39;fantastiske fortællinger&#39;),
- (0.21470806644596802, &#39;Fantastisk fortælling&#39;),
- (0.23239969311156525, &#39;Fantastisk fortæl.&#39;),
- (0.25459516388851389, &#39;Oplæsning 3.- 5. kl.&#39;),
- (0.30572068889035597, &#39;Oplæsning 6.- 7. kl.&#39;),
- (0.33748602850109216, &#39;Fantastiske fortæll.&#39;),
- (0.34742996438457907, &#39;Fantastiske fortællinger&#39;),
- (0.38532761683371447, &#39;Oplæsning 3.-5. kl.&#39;),
- (0.3872408465208988, &#39;Seriebøger&#39;),
- (0.38991802857842311, &#39;Oplæsning 3.- 5. kl&#39;),
- (0.39393714563427235, &#39;Mellemskoling&#39;),
- (0.40394883331337555, &#39;parallelle verdener&#39;),
- (0.4077176021685438, &#39;Mellemskolingen&#39;),
- (0.43056790566084047, &#39;Magi&#39;),
- (0.45655598215088733, &#39;6.-7. klasse&#39;),
- (0.46311855902428201, &#39;Læs højt&#39;),
- (0.46547550631549539, &#39;Lydbånd&#39;),
- (0.46857549532470033, &#39;Fantasy&#39;),
- (0.47136447797838282, &#39;Lydbog&#39;),
- (0.49900325035367676, &#39;Eventyr&#39;)]</pre>
+ (32.589011241465435, &#39;Fantastisk fortæl.&#39;),
+ (37.335710868923528, &#39;Oplæsning 3.- 5. kl.&#39;),
+ (39.926106704591696, &#39;Oplæsning 6.- 7. kl.&#39;),
+ (40.539648464301365, &#39;Fantastiske fortællinger&#39;),
+ (45.438862253162597, &#39;Fantastisk fortælling&#39;),
+ (47.40923136227692, &#39;Fantastiske fortæll.&#39;),
+ (49.158284916890935, &#39;Eventyr&#39;),
+ (51.20541490301153, &#39;parallelle verdener&#39;),
+ (51.598369067958373, &#39;Mellemskolingen&#39;),
+ (51.703630185244045, &#39;Mellemskoling&#39;),
+ (51.875821482898822, &#39;6.-7. klasse&#39;),
+ (52.337659955147281, &#39;Seriebøger&#39;),
+ (54.247970145997982, &#39;Oplæsning 3.-5. kl.&#39;),
+ (56.363399583178662, &#39;Spænding&#39;),
+ (56.655407858672753, &#39;eventyrlige fortællinger&#39;),
+ (58.706610226001743, &#39;Ungdomsbog&#39;),
+ (58.729694544002122, &#39;tro&#39;),
+ (58.85151876502978, &#39;Læs højt&#39;),
+ (60.029052682330089, &#39;Oplæsning 3.- 5. kl&#39;)]</pre>
 </div>
 
 </div>

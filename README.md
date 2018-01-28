@@ -16,7 +16,6 @@ In progress, nothing to see here yet...
 
 Tasks:
 
-- go through document and reformat code to fit in
 - 4 write programming section
     - programming as recipies, different programming languages
     - data, types and structures
