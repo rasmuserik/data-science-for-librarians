@@ -13,3 +13,20 @@ In progress, nothing to see here yet...
 7. [Case: Emneord](./7-case-emneord.ipynb)
 8. [Case: Genre-klynger](./8-case-genreklynger.ipynb)
 9. [Efterskrift](./9-efterskrift.ipynb)
+
+Tasks:
+
+- go through document and reformat code to fit in
+- 4 write programming section
+    - programming as recipies, different programming languages
+    - data, types and structures
+        - json
+    - python code
+- 3 restructure/rewrite about-data-science section
+- 1 finish writing intro
+- 0 TOC one page
+- 5-genrerum add øvelser
+- 6-genrerum write intro
+- 9 write conclusion
+- go through document and reformulate/rewrite
+

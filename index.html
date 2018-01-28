@@ -11794,18 +11794,6 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>TODO</strong></p>
-<ul>
-<li>expand</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <p>Formålet med denne bog er, at give dig en smagsprøve på hvad data science er, og en fornemmelse af hvordan man leger med data. Dette gør vi, ved at starte med en introduktion til værktøj, og hvad data science er, - og derefter dykker vi ned i nogle real-world case studies.</p>
 <p>Første trin er at komme <em>i gang med Jupyter</em>, som er er et værktøj til at lave data science i Python. Denne bog er skrevet som en række af Jupyter notesbøger, og dette kapitel sætter dig i stand til at køre, og eksperimentere med eksemplerne.</p>
 <p>Derefter undersøger vi: <em>Hvad er data science</em>, hvilket giver det teoretiske fundament for at forstå tilgangen i eksemplerne.</p>
@@ -11853,8 +11841,127 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>TODO</strong></p>
-<p>Guide to jupyter after install</p>
+<p>Jupyter Notebook er det værktøj, som vi vil bruge til at eksperimentere med data science.</p>
+<p>En Notebook er et dokument, som kan indeholde tekst, som kan indeholde kode, og som også kan indeholde resultatet af kørslen af koden. Eksempelvis er det dokument som du er i gang med at læse nu skrevet som Jupyter Notebooks.</p>
+<p>Hvis man eksempelvis skriver et beregningsudtryk, vil den vise koden og resultatet således:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[1]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>4</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Når man starter Jupyter, kører der en beregningskerne, <em>"kernel"</em>, som udfører den Python-kode som man skriver. Så udover simple beregninger kan man også skrive mere generel kode såsom:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">bibdata</span><span class="p">;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">bibdata</span><span class="o">.</span><span class="n">title_creator</span><span class="p">(</span><span class="mi">123</span><span class="p">))</span>
+
+<span class="n">bibdata</span><span class="o">.</span><span class="n">meta</span><span class="p">[</span><span class="mi">123</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Min broders vogter : roman - Leif Davidsen (book)
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[2]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{&#39;_id&#39;: &#39;870970-basis:28188625&#39;,
+ &#39;creator&#39;: &#39;Leif Davidsen&#39;,
+ &#39;idx&#39;: 123,
+ &#39;language&#39;: &#39;Dansk&#39;,
+ &#39;subject-term&#39;: [&#39;Sovjetunionen&#39;,
+  &#39;spænding&#39;,
+  &#39;læsekreds&#39;,
+  &#39;÷&#39;,
+  &#39;1930-1939&#39;,
+  &#39;fascisme&#39;,
+  &#39;sk&#39;,
+  &#39;Spanien&#39;,
+  &#39;Skønlitteratur&#39;,
+  &#39;den spanske borgerkrig&#39;,
+  &#39;som Da Vinci&#39;,
+  &#39;kommunisme&#39;,
+  &#39;ideologier&#39;,
+  &#39;spændende bøger&#39;],
+ &#39;title&#39;: &#39;Min broders vogter : roman&#39;,
+ &#39;type&#39;: &#39;book&#39;}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Herunder beskrives først: hvordan man installerer/kører Jupyter. Og dernæst: en introduktion til hvordan man bruger Jupyter.</p>
 
 </div>
 </div>
@@ -11863,8 +11970,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Ops&#230;tning">Ops&#230;tning<a class="anchor-link" href="#Ops&#230;tning">&#182;</a></h2><p>Jupyter Notebook er det værktøj, som vi vil bruge til at eksperimentere me data science.
-Dette kan enten installeres lokalt på din egen computer, eller du kan køre det i skyen. Begge dele beskrives herunder.</p>
+<h2 id="Ops&#230;tning-/-Installation">Ops&#230;tning / Installation<a class="anchor-link" href="#Ops&#230;tning-/-Installation">&#182;</a></h2><p>Jupyter kan enten installeres lokalt på din egen computer, eller du kan køre det i skyen. Begge dele beskrives herunder.</p>
 
 </div>
 </div>
@@ -11911,6 +12017,52 @@ Dette kan enten installeres lokalt på din egen computer, eller du kan køre det
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Guide-til-Jupyter">Guide til Jupyter<a class="anchor-link" href="#Guide-til-Jupyter">&#182;</a></h2><p>Jupyter Notebook er et udviklingsmiljø. Det vil sige at man både kan bruge det til at skrive programmer, og bruge det til at køre dem.</p>
+<p>Et dokument i en en Notebook, består af <em>celler</em>, hvor hver celle kan indeholde tekst eller kode. Koden kan udføres via den beregningskerne / <em>kernel</em> som Jupyter også kører.</p>
+<p>En vigtig ting at være opmærksom på, når man arbejder med celler i Jupyter Notebook, er at man kan man være i to tilstande / <em>modes</em>:</p>
+<ul>
+<li><code>edit mode</code> er når man har en celle åben, kan skrive kode / tekst.</li>
+<li><code>command mode</code> er når man bevæger sig rundt mellem cellerne, og udfører kommandoer.</li>
+</ul>
+<p>Hvis du vælger "User Interface Tour" fra "Help"-menu'en i Jupyter Notebook, får du et overblik over grænsefladen.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Prøv derefter at eksperimentere lidt med grænsefladen:</p>
+<ol>
+<li>du kan lave en ny notebook ved at vælge "File", "New Notebook", "Python 3" i menuen.</li>
+<li>I den nye notebook starter du i <code>edit mode</code>, skriv eksempelvis <code>1+2+3</code>, og tryk <code>Alt+Enter</code> - herved vil den udregne resultatet af koden i cellen, oprette en ny celle, hvor du kan skrive videre.</li>
+<li>Hvis du trykke <code>Ctrl+Enter</code> udfører den cellen, og går derefter i command-mode. Brug pil-op/<code>K</code> og pil-ned/<code>J</code> til at vælge celle, og tryk herefter <code>Enter</code> for at vende tilbage tilbage til edit-mode.</li>
+<li>Hvis du trykker <code>H</code> mens du er i command mode får du en liste over keybindings.</li>
+<li>Hvis du trykker <code>P</code> mens du er i command mode, kan du søge efter kommandoer i Jupiter. </li>
+<li>Du kan også åbne en eksisterende notebook ved at vælge "File", "Open" i menuen.</li>
+<li>Vælg "Kernel", "Restart &amp; Run All" fra menu'en, for at få udført alle celler i det åbne dokument. Hvis du arbejder videre med en celle i eksisterende kode, er det ofte vigtigt at du har kørt de foregående celler. </li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Celler kan være af forskellige typer, og udføres så forskelligt: 
+<em>Kode-celler</em> indeholder Python-kode, som man kan udfører, og derved se resultatet af.
+<em>Markdown-celler</em> indeholder tekst skrevet i <a href="http://commonmark.org/help/">markdown-format</a>, og hvis man "udfører" cellen betyder det blot at teksten bliver vist med formattering. Når man er i command-mode, kan man trykke <code>M</code> for at fortælle at en celle er markdown og <code>Y</code> for at fortælle at en celle indeholder kode (eller vælge det via toolbaren).</p>
+<p>Jupyter indeholder også selv dokumentation. <code>P</code> og <code>H</code> i command-mode, er godt til at finde ud af hvordan man bruger Jupyter, - og under "<code>Help</code>" i menuen, er der også links til dokumentationen for Python etc.</p>
+
+</div>
+</div>
+</div>
  
 
 
@@ -11919,18 +12071,6 @@ Dette kan enten installeres lokalt på din egen computer, eller du kan køre det
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Hvad-er-data-science">Hvad er data science<a class="anchor-link" href="#Hvad-er-data-science">&#182;</a></h1>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>TODO</strong></p>
-<ul>
-<li>restructure/rewrite</li>
-</ul>
-
 </div>
 </div>
 </div>
@@ -12079,18 +12219,6 @@ og så videre, og mellemrum, " " er <code>32</code>. Hvad tror du, at disse tal 
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Case:-Genre-rum">Case: Genre-rum<a class="anchor-link" href="#Case:-Genre-rum">&#182;</a></h1>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>TODO</strong></p>
-<ul>
-<li>øvelser</li>
-</ul>
-
 </div>
 </div>
 </div>
@@ -12258,7 +12386,7 @@ I tre dimensioner er det afstanden mellem to punkter i rummet, i.e. $\sqrt{(x_a 
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">peter_plys</span> <span class="o">=</span> <span class="mi">8944</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">peter_plys</span> <span class="o">=</span> <span class="mi">8955</span>
 <span class="n">smilla</span> <span class="o">=</span> <span class="mi">8214</span>
 <span class="n">cirkeline</span> <span class="o">=</span> <span class="mi">616</span>
 <span class="n">cykelmyggen</span> <span class="o">=</span> <span class="mi">580</span>
@@ -12307,26 +12435,26 @@ I tre dimensioner er det afstanden mellem to punkter i rummet, i.e. $\sqrt{(x_a 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>array([ 0.00908454, -0.04033043, -0.01284507,  0.00788709,  0.01718174,
-        0.00128158, -0.07500522, -0.01639324,  0.06427721, -0.0099812 ,
-        0.00083797,  0.01363433, -0.00866813,  0.01482092,  0.10160233,
-        0.08134543, -0.04255533, -0.00833438,  0.02536649,  0.02128514,
-        0.00554724, -0.00080702,  0.01274936, -0.03601923,  0.01916139,
-        0.02077907, -0.04609259, -0.08917641,  0.07050021,  0.01678492,
-        0.01278447,  0.00108154,  0.01457724,  0.04591186, -0.01287235,
-        0.0202236 ,  0.00102133,  0.14692573,  0.18963774,  0.08172592,
-       -0.01773496,  0.11990478, -0.12269035, -0.33739865,  0.23169368,
-        0.01569639, -0.06665396,  0.00139089,  0.07659317,  0.00650507,
-       -0.01185874,  0.01587052,  0.07172235,  0.00525925,  0.11984863,
-        0.10747883,  0.25288281,  0.07708268, -0.2325371 , -0.10132218,
-        0.07604308,  0.05801751,  0.02945208, -0.03336021, -0.08060202,
-        0.03639616,  0.02639744, -0.02000082, -0.02184357,  0.02158996,
-        0.04069334,  0.00409769, -0.15620241, -0.14288074, -0.04555338,
-       -0.0875617 , -0.50226035,  0.18508342,  0.19686877,  0.11195053,
-       -0.18041552,  0.09638708,  0.02675614,  0.04779613,  0.06875322,
-       -0.08385483, -0.03366541, -0.01312519,  0.14200541, -0.06419092,
-       -0.03430816,  0.07344945, -0.01200862,  0.01030531,  0.01404084,
-        0.01365915,  0.04134672,  0.03988478, -0.03000684,  0.01141376])</pre>
+<pre>array([-0.00555056,  0.02921515,  0.02892058, -0.00930832,  0.0100181 ,
+        0.02586022,  0.07639047,  0.0186474 , -0.00086742,  0.06219033,
+        0.00679732,  0.11657441,  0.10813324, -0.02801489,  0.09085855,
+        0.17314938,  0.01396204,  0.00813998,  0.02280807, -0.070943  ,
+        0.10048762,  0.19593475,  0.07772335, -0.02303249, -0.02877597,
+        0.0482331 ,  0.2106633 ,  0.10839563, -0.06060356,  0.04430847,
+        0.00402697,  0.08289498,  0.13924087, -0.27573585,  0.2362854 ,
+       -0.06875856,  0.16701048, -0.12419402, -0.092553  , -0.2432362 ,
+       -0.04190033,  0.0515306 , -0.13153618,  0.02286854,  0.17851359,
+        0.04017429, -0.11496432, -0.19422885, -0.29368186, -0.23722212,
+       -0.05779668,  0.11127474, -0.00292388,  0.11682518, -0.04726336,
+        0.24068264,  0.11335513, -0.00626563, -0.06929475, -0.06640247,
+       -0.02567991, -0.0427829 ,  0.04892466, -0.00911773, -0.04064843,
+        0.04555216,  0.02176529,  0.01931233,  0.05836495, -0.05277547,
+        0.06144368, -0.05780331, -0.09876966, -0.01271217, -0.03567164,
+       -0.01191766,  0.07763795,  0.06327907,  0.05489877,  0.0089579 ,
+        0.18206413,  0.07300671,  0.00060291, -0.0095353 , -0.00836633,
+       -0.04015189,  0.02045897, -0.05925296, -0.02297055, -0.03071   ,
+        0.0417429 ,  0.00575653, -0.08316413, -0.01834758,  0.04315409,
+       -0.13101666, -0.01981491, -0.02141316, -0.18829995,  0.07193003])</pre>
 </div>
 
 </div>
@@ -12433,7 +12561,7 @@ I tre dimensioner er det afstanden mellem to punkter i rummet, i.e. $\sqrt{(x_a 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>1.3939129763199098</pre>
+<pre>1.3247944045025537</pre>
 </div>
 
 </div>
@@ -12453,7 +12581,7 @@ I tre dimensioner er det afstanden mellem to punkter i rummet, i.e. $\sqrt{(x_a 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">distance</span><span class="p">(</span><span class="n">bibdata</span><span class="o">.</span><span class="n">genres</span><span class="p">[</span><span class="n">cirkeline</span><span class="p">],</span> <span class="n">bibdata</span><span class="o">.</span><span class="n">genres</span><span class="p">[</span><span class="n">cykelmyggen</span><span class="p">])</span>
@@ -12469,7 +12597,7 @@ I tre dimensioner er det afstanden mellem to punkter i rummet, i.e. $\sqrt{(x_a 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[22]:</div>
+<div class="prompt output_prompt">Out[9]:</div>
 
 
 
@@ -12495,7 +12623,7 @@ I tre dimensioner er det afstanden mellem to punkter i rummet, i.e. $\sqrt{(x_a 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">distance</span><span class="p">(</span><span class="n">bibdata</span><span class="o">.</span><span class="n">genres</span><span class="p">[</span><span class="n">berlin</span><span class="p">],</span> <span class="n">bibdata</span><span class="o">.</span><span class="n">genres</span><span class="p">[</span><span class="n">paris</span><span class="p">])</span>
@@ -12511,7 +12639,7 @@ I tre dimensioner er det afstanden mellem to punkter i rummet, i.e. $\sqrt{(x_a 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[23]:</div>
+<div class="prompt output_prompt">Out[10]:</div>
 
 
 
@@ -12537,7 +12665,7 @@ I tre dimensioner er det afstanden mellem to punkter i rummet, i.e. $\sqrt{(x_a 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">distance</span><span class="p">(</span><span class="n">bibdata</span><span class="o">.</span><span class="n">genres</span><span class="p">[</span><span class="n">berlin</span><span class="p">],</span> <span class="n">bibdata</span><span class="o">.</span><span class="n">genres</span><span class="p">[</span><span class="n">strikning</span><span class="p">])</span>
@@ -12553,7 +12681,7 @@ I tre dimensioner er det afstanden mellem to punkter i rummet, i.e. $\sqrt{(x_a 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[24]:</div>
+<div class="prompt output_prompt">Out[11]:</div>
 
 
 
@@ -12579,7 +12707,7 @@ I tre dimensioner er det afstanden mellem to punkter i rummet, i.e. $\sqrt{(x_a 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">distance</span><span class="p">(</span><span class="n">bibdata</span><span class="o">.</span><span class="n">genres</span><span class="p">[</span><span class="n">q84</span><span class="p">],</span> <span class="n">bibdata</span><span class="o">.</span><span class="n">genres</span><span class="p">[</span><span class="n">kafka</span><span class="p">])</span>
@@ -12595,7 +12723,7 @@ I tre dimensioner er det afstanden mellem to punkter i rummet, i.e. $\sqrt{(x_a 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[25]:</div>
+<div class="prompt output_prompt">Out[12]:</div>
 
 
 
@@ -12631,18 +12759,6 @@ I tre dimensioner er det afstanden mellem to punkter i rummet, i.e. $\sqrt{(x_a 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>TODO</strong></p>
-<ul>
-<li>Work through text</li>
-</ul>
-
-</div>
-</div>
-</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
@@ -12659,11 +12775,11 @@ I tre dimensioner er det afstanden mellem to punkter i rummet, i.e. $\sqrt{(x_a 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="p">[</span><span class="n">peter_plys</span><span class="p">,</span> <span class="n">smilla</span><span class="p">,</span> <span class="n">cirkeline</span><span class="p">,</span> <span class="n">cykelmyggen</span><span class="p">,</span> <span class="n">berlin</span><span class="p">,</span> <span class="n">paris</span><span class="p">,</span> <span class="n">strikning</span><span class="p">,</span> 
-   <span class="n">q84</span><span class="p">,</span> <span class="n">kafka</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">8944</span><span class="p">,</span> <span class="mi">8214</span><span class="p">,</span> <span class="mi">616</span><span class="p">,</span> <span class="mi">580</span><span class="p">,</span> <span class="mi">149</span><span class="p">,</span> <span class="mi">278</span><span class="p">,</span> <span class="mi">126</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">688</span><span class="p">]</span>
+   <span class="n">q84</span><span class="p">,</span> <span class="n">kafka</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">8955</span><span class="p">,</span> <span class="mi">8214</span><span class="p">,</span> <span class="mi">616</span><span class="p">,</span> <span class="mi">580</span><span class="p">,</span> <span class="mi">149</span><span class="p">,</span> <span class="mi">278</span><span class="p">,</span> <span class="mi">126</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">688</span><span class="p">]</span>
 </pre></div>
 
 </div>
@@ -12724,18 +12840,18 @@ I tre dimensioner er det afstanden mellem to punkter i rummet, i.e. $\sqrt{(x_a 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[(1.418060160516152, &#39;Fifty shades - E. L. James (book)&#39;),
- (1.4149314310461802, &#39;Journal 64 : krimithriller - Jussi Adler-Olsen (book)&#39;),
- (1.4123153810862557,
+<pre>[(1.4011684494447065, &#39;Fifty shades - E. L. James (book)&#39;),
+ (1.4332511957653991, &#39;Journal 64 : krimithriller - Jussi Adler-Olsen (book)&#39;),
+ (1.4319693083341756,
   &#39;Marco effekten : krimithriller - Jussi Adler-Olsen (book)&#39;),
- (1.4101266227823486, &#39;Taynikma - Jan Kjær (f. 1971) (book)&#39;),
- (1.4100973534281041, &#39;De glemte piger : krimi - Sara Blædel (book)&#39;),
- (1.4094550396442684,
+ (1.4377953467714748, &#39;Taynikma - Jan Kjær (f. 1971) (book)&#39;),
+ (1.4561631856697466, &#39;De glemte piger : krimi - Sara Blædel (book)&#39;),
+ (1.4390826249649267,
   &#39;Den grænseløse : krimithriller - Jussi Adler-Olsen (book)&#39;),
- (1.4196622881449064, &#39;Vildheks - Lene Kꜳberbøl (book)&#39;),
- (1.4090062090707516, &#39;Dødesporet : krimi - Sara Blædel (audiobook)&#39;),
- (1.4105623099966649, &#39;Dødsenglen : krimi - Sara Blædel (book)&#39;),
- (1.4142121345574907,
+ (1.2877310264792368, &#39;Vildheks - Lene Kꜳberbøl (book)&#39;),
+ (1.4363966653595654, &#39;Dødesporet : krimi - Sara Blædel (audiobook)&#39;),
+ (1.4501109638315552, &#39;Dødsenglen : krimi - Sara Blædel (book)&#39;),
+ (1.4287816916279745,
   &#39;Flaskepost fra P : krimithriller - Jussi Adler-Olsen (book)&#39;)]</pre>
 </div>
 
@@ -12778,17 +12894,25 @@ I tre dimensioner er det afstanden mellem to punkter i rummet, i.e. $\sqrt{(x_a 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[(0.0, &#39;Batman - Arkham origins - WB Games Montréal (game)&#39;),
- (0.10101559296838118, &#34;Assassin&#39;s creed IV - black flag - Ubisoft (game)&#34;),
- (0.10104348267424638, &#39;Diablo III -  (game)&#39;),
- (0.11745171011979552, &#39;Grand theft Auto 5 - Rockstar North (game)&#39;),
- (0.12725059983181469, &#39;Call of duty - Ghosts -  (game)&#39;),
- (0.13485244625302031, &#39;The walking dead - Kirkman Robert (game)&#39;),
- (0.13888979693702266, &#39;Far cry 3 - Crytek (game)&#39;),
- (0.13991238369133902, &#39;Battlefield 4 - EA Digital Illusions (game)&#39;),
- (0.14070083903851371,
-  &#39;Injustice - gods among us - Netherrealm Studios (game)&#39;),
- (0.14073733392685148, &#39;The last of us - Naughty Dog (firma) (game)&#39;)]</pre>
+<pre>[(0.0,
+  &#39;Peter Plys : komplet samling fortællinger og digte - A. A. Milne (book)&#39;),
+ (0.53454719612995338,
+  &#39;Bogen om Emil fra Lønneberg : samlet udgave med alle historierne om Emil fra Lønneberg - Astrid Lindgren (book)&#39;),
+ (0.53718166508329679,
+  &#39;Astrid Lindgrens allerbedste historier - Ingrid Vang Nyman (book)&#39;),
+ (0.54053996866025411,
+  &#39;Mumitrolden : de samlede striber - Tove Jansson (book)&#39;),
+ (0.5654914190345337,
+  &#39;Klatremus og de andre dyr i Hakkebakkeskoven - Thorbjørn Egner (book)&#39;),
+ (0.57263271765819757,
+  &#39;Pippi Langstrømpe går om bord - Astrid Lindgren (audiobook)&#39;),
+ (0.57288576301783933, &#39;Bogen om Pippi Langstrømpe - Astrid Lindgren (book)&#39;),
+ (0.58822503022521333,
+  &#39;Anne Marie Helger læser Vinden i piletræerne - Anne Marie Helger (audiobook)&#39;),
+ (0.60406738110296454,
+  &#39;Pippi Langstrømpe i Sydhavet - Astrid Lindgren (audiobook)&#39;),
+ (0.61582753873808027,
+  &#39;Han er her endnu - Emil fra Lønneberg - Astrid Lindgren (book)&#39;)]</pre>
 </div>
 
 </div>
@@ -13124,18 +13248,6 @@ I tre dimensioner er det afstanden mellem to punkter i rummet, i.e. $\sqrt{(x_a 
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Case:-Emneord">Case: Emneord<a class="anchor-link" href="#Case:-Emneord">&#182;</a></h1>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>TODO</strong></p>
-<ul>
-<li>text</li>
-</ul>
-
 </div>
 </div>
 </div>
@@ -13927,7 +14039,7 @@ genrerum: [&#39;sange&#39;, &#39;Legetek&#39;, &#39;for 2-5 år&#39;, &#39;begre
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[70]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">subject_name</span> <span class="o">=</span> <span class="s1">&#39;fantastiske fortællinger&#39;</span>
@@ -13950,7 +14062,7 @@ genrerum: [&#39;sange&#39;, &#39;Legetek&#39;, &#39;for 2-5 år&#39;, &#39;begre
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[70]:</div>
+<div class="prompt output_prompt">Out[18]:</div>
 
 
 
@@ -14013,18 +14125,6 @@ genrerum: [&#39;sange&#39;, &#39;Legetek&#39;, &#39;for 2-5 år&#39;, &#39;begre
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Case:-Genre-klynger">Case: Genre-klynger<a class="anchor-link" href="#Case:-Genre-klynger">&#182;</a></h1>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>TODO</strong></p>
-<ul>
-<li>rewrite/read through</li>
-</ul>
-
 </div>
 </div>
 </div>
