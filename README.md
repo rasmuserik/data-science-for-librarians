@@ -1,31 +1,15 @@
-# Data Science for Librarians
+- Install/getting started doc
+- Slide show
+    - http://echorand.me/presentation-slides-with-jupyter-notebook.html
+    - https://medium.com/@mjspeck/presenting-code-using-jupyter-notebook-slides-a8a3c3b59d67
 
-Notes/preparation for a data science workshop for librarians (in danish).
+Examples:
 
-In progress, nothing to see here yet...
+- graph visualisation: http://igraph.org/python/doc/tutorial/tutorial.html
 
-1. [Indledning](./1-indledning.ipynb)
-2. [I gang med Jupyter](./2-i-gang-med-jupyter.ipynb)
-3. [Hvad er data science](./3-hvad-er-data-science.ipynb)
-4. [Python programmering](./4-python-programmering.ipynb)
-5. [Case: Genre-rum](./5-case-genrerum.ipynb)
-6. [Case: Anbefalinger](./6-case-anbefalinger.ipynb)
-7. [Case: Emneord](./7-case-emneord.ipynb)
-8. [Case: Genre-klynger](./8-case-genreklynger.ipynb)
-9. [Efterskrift](./9-efterskrift.ipynb)
 
-Tasks:
+Learning goals:
 
-- 4 write programming section
-    - programming as recipies, different programming languages
-    - data, types and structures
-        - json
-    - python code
-- 3 restructure/rewrite about-data-science section
-- 1 finish writing intro
-- 0 TOC one page
-- 5-genrerum add øvelser
-- 6-genrerum write intro
-- 9 write conclusion
-- go through document and reformulate/rewrite
-
+- Playing / having fun with data
+- JSON data structures
+- Python
