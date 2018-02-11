@@ -1,3 +1,7 @@
+Nothing to see here yet, just preparations for workshop...
+
+# Tasks/notes
+
 - Install/getting started doc
 - Slide show
     - http://echorand.me/presentation-slides-with-jupyter-notebook.html
