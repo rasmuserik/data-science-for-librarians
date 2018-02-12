@@ -1,0 +1,8 @@
+body {
+  font-family: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif;
+  color: #222;
+  margin: 4ex;
+}
+p,li {
+  max-width: 60ex;
+}
