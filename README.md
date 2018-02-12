@@ -1,12 +1,13 @@
-# Data Science Workshop
+# Data Workshop
 
-Workshop for INF-studerende på 6.semester – bliv klædt på til at ’lege professionelt med data’
+**Workshop for INF-studerende på 6.semester – bliv klædt på til at ’lege professionelt med data’**
 
 D. 23/2 og 16/3 (begge dage fra 9-16) afholdes en dataworkshop henvendt til alle studerende på 6.semester. Den gennemgående underviser begge dage er Rasmus Erik Voel Jensen (solsort.com), og der vil undervejs være gæsteundervisere (se mere om program nedenfor).
 Af hensyn til den praktiske planlægning skal tilmelding ske til Johanne Maibohm (jom@hum.ku.dk) senest d. 20/2.
 
 Deltagelse kræver ingen forudsætninger ud over interesse i at:
 
+- Lære hvordan man kan bruge data til indsigt, inspiration og formidling
 - Finde ud af hvad der menes med datahøstning og hvordan man gør
 - Vide mere om hvilke værktøjer man kan benytte og afprøve dem
 - Forstå og få ideer til hvordan man kan arbejde med større datamængder
@@ -17,18 +18,20 @@ Workshoppen har til formål at gøre dig fortrolig med at arbejde med data vha. 
 
 Stikord til workshops
 
-Workshop I. (23/2)
-- Introduktion til "Jupyter Notebook" (Python) som dataværktøj.
-- Introduktion til strukturerede data(JSON), og hvordan man bruge dem.
+Workshop del 1 (23/2)
+
+- Introduktion til Jupyter Notebook(Python) som dataværktøj
+- Hvad er data(JSON), og hvordan man bruge det
 - Udtræk/høstning af data fra forskellige kilder (Wikipedia, bibliotekerne, YouTube(OGP), WordPress, ...)
-- Introduktion til databehandling og visualisering
+- Introduktion til databehandling og visualisering med hands-on øvelser med Jupyter/Python
 - Introduktion til visualiseringsværktøjet Tableau Software og hands-on
 
-Workshop II. (16/3)
-- Arbejde med udvalgte cases og emner baseret på workshop I
+Workshop del 2 (16/3)
 
-Programmet for workshoppen er under udvikling, og vil løbende blive opdateret på data-science-workshop.solsort.com
+- Databehandling og visualisering med Jupyter/Python, gennem eksempler og cases.
 
-                             Vel mødt!
+Program og materiale til workshoppen bliver løbende blive opdateret på [data-science-workshop.solsort.com](http://data-science-workshop.solsort.com)
+
+Vel mødt!
 
 
