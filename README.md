@@ -21,7 +21,7 @@ Stikord til workshops
 Workshop del 1 (23/2)
 
 - Introduktion til Jupyter Notebook(Python) som dataværktøj
-- Hvad er data(JSON), og hvordan man bruge det
+- Hvad er strukturerede data(JSON), og hvordan man bruge dem
 - Udtræk/høstning af data fra forskellige kilder (Wikipedia, bibliotekerne, YouTube(OGP), WordPress, ...)
 - Introduktion til databehandling og visualisering med hands-on øvelser med Jupyter/Python
 - Introduktion til visualiseringsværktøjet Tableau Software og hands-on

@@ -1,5 +1,16 @@
 Nothing to see here yet, just preparations for workshop...
 
+
+
+- jupyter getting started
+- json data
+- getting data
+    - facebook https://developers.facebook.com/tools/explorer/
+    - youtube / wordpress
+    - wikipedia
+    - libraries
+- visualisering
+
 # Tasks/notes
 
 - Install/getting started doc
