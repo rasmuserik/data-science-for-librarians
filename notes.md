@@ -4,17 +4,35 @@ Nothing to see here yet, just preparations for workshop...
 
 - jupyter getting started
 - json data
-- getting data
-    - facebook https://developers.facebook.com/tools/explorer/
-    - youtube / wordpress
-    - wikipedia
-    - libraries
+    - hvad er data og data typer
+    - case gennemløb af lister
+    - hvad er JSON
+    - case facebook https://developers.facebook.com/tools/explorer/
+        - hej ..dit navn
+        - likes
+- Udtræk / høst af data
+    - hvordan virker www / http
+    - case wikipedia python-api
+    - case youtube / wordpress OGP
+    - API - http-api, python-api, scraping
+    - case openplatform
+    - case wordpress rest-api (absalon event?)
+    - case wikipedia rest-api
+    - åbne data vs. proprietære data
+- Databehandling
+    - gentagelse - løkker
+    - case wikipedia citationsanalyse
+    - data fra flere kilder
+    - case bibdata + openplatform (+ evt. wikipedia lookup)
+    - definition - funktioner
 - visualisering
+    - force-directed-graph
+    - wordcloud
+    - circle-links...
+    - data tree exploration
+    - cover - wordpress - openplatform
 
 # Tasks/notes
-
-- Install/getting started doc
-- Slide show
 
 Examples:
 
