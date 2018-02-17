@@ -18,7 +18,9 @@ Nothing to see here yet, just preparations for workshop...
     - case openplatform
     - case wordpress rest-api (absalon event?)
     - case wikipedia rest-api
+    - ccsearch
     - åbne data vs. proprietære data
+    - robots.txt
 - Databehandling
     - gentagelse - løkker
     - case wikipedia citationsanalyse
