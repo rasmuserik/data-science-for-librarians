@@ -12,6 +12,13 @@ Data source examples:
 - kurser.ku.dk `http://kurser.ku.dk/#q=&education=&programme=&volume=2017/2018&departments=DEPARTMENT_0074&faculty=&studyBlockId=&teachingLanguage=&period=&schedules=&studyId=&openUniversity=0&searched=1`
 - events fra tinkuy+absalon+studenterhuset+tango.dk
 
+Futher studies:
+
+- http://greenteapress.com/wp/think-python-2e/
+- https://codecombat.com/play
+- https://www.datacamp.com/courses/intro-to-python-for-data-science
+- https://www.codecademy.com/learn/learn-python 
+- NB: python 2 vs python 3
 
 - jupyter getting started
 - json data
