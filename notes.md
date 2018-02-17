@@ -1,6 +1,13 @@
 Nothing to see here yet, just preparations for workshop...
 
 
+Data source examples:
+
+- ccsearch - flickr, europeana, ...
+- wikipedia rest-api
+- wordpress rest-api 
+- kurser.ku.dk `http://kurser.ku.dk/#q=&education=&programme=&volume=2017/2018&departments=DEPARTMENT_0074&faculty=&studyBlockId=&teachingLanguage=&period=&schedules=&studyId=&openUniversity=0&searched=1`
+- events fra tinkuy+absalon+studenterhuset+tango.dk
 
 - jupyter getting started
 - json data
