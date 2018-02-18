@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>wikipedia</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>image-composition</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -11773,334 +11773,53 @@ div#notebook {
 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[46]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">import</span> <span class="nn">json</span>
-<span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Blues dancing&quot;</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://en.wikipedia.org/w/api.php&#39;</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
-            <span class="s2">&quot;action&quot;</span><span class="p">:</span> <span class="s2">&quot;query&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;titles&quot;</span><span class="p">:</span> <span class="n">title</span><span class="p">,</span>
-            <span class="s2">&quot;prop&quot;</span><span class="p">:</span> <span class="s2">&quot;links&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;format&quot;</span><span class="p">:</span> <span class="s2">&quot;json&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;pllimit&quot;</span><span class="p">:</span> <span class="mi">10</span>
-<span class="p">})</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
-<span class="n">result</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">PIL</span> <span class="k">import</span> <span class="n">Image</span>
+<span class="kn">from</span> <span class="nn">io</span> <span class="k">import</span> <span class="n">BytesIO</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://upload.wikimedia.org/wikipedia/commons/f/fb/Buffalo_nickles.jpg&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[46]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>{&#39;continue&#39;: {&#39;continue&#39;: &#39;||&#39;, &#39;plcontinue&#39;: &#39;6479315|0|ARIA_Charts&#39;},
- &#39;query&#39;: {&#39;pages&#39;: {&#39;6479315&#39;: {&#39;links&#39;: [{&#39;ns&#39;: 0,
-      &#39;title&#39;: &#39;2010 FIFA World Cup&#39;},
-     {&#39;ns&#39;: 0, &#39;title&#39;: &#39;2014 FIFA World Cup&#39;},
-     {&#39;ns&#39;: 0, &#39;title&#39;: &#39;2014 FIFA World Cup closing ceremony&#39;},
-     {&#39;ns&#39;: 0, &#39;title&#39;: &#39;2014 Radio Disney Music Awards&#39;},
-     {&#39;ns&#39;: 0, &#39;title&#39;: &#39;2016 in film&#39;},
-     {&#39;ns&#39;: 0, &#39;title&#39;: &#39;49th Grammy Awards&#39;},
-     {&#39;ns&#39;: 0, &#39;title&#39;: &#39;65th Golden Globe Awards&#39;},
-     {&#39;ns&#39;: 0, &#39;title&#39;: &#39;7 vidas&#39;},
-     {&#39;ns&#39;: 0, &#39;title&#39;: &#39;A&amp;E Networks&#39;},
-     {&#39;ns&#39;: 0, &#39;title&#39;: &#39;ABC News&#39;}],
-    &#39;ns&#39;: 0,
-    &#39;pageid&#39;: 6479315,
-    &#39;title&#39;: &#39;Shakira&#39;}}}}</pre>
-</div>
-
-</div>
-
 </div>
 </div>
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[45]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s2">&quot;query&quot;</span><span class="p">][</span><span class="s2">&quot;pages&quot;</span><span class="p">];</span>
-<span class="n">result</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">values</span><span class="p">())[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">result</span> <span class="o">=</span> <span class="p">[</span><span class="n">link</span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">result</span><span class="p">[</span><span class="s2">&quot;links&quot;</span><span class="p">]]</span>
-<span class="n">result</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">src</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">))</span>
+<span class="n">src</span>
 </pre></div>
 
 </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[45]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>[&#39;2010 FIFA World Cup&#39;,
- &#39;2014 FIFA World Cup&#39;,
- &#39;2014 FIFA World Cup closing ceremony&#39;,
- &#39;2014 Radio Disney Music Awards&#39;,
- &#39;2016 in film&#39;,
- &#39;49th Grammy Awards&#39;,
- &#39;65th Golden Globe Awards&#39;,
- &#39;7 vidas&#39;,
- &#39;A&amp;E Networks&#39;,
- &#39;ABC News&#39;]</pre>
-</div>
-
-</div>
-
 </div>
 </div>
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[84]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
-<span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Philosophy&quot;</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">):</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://en.wikipedia.org/w/api.php&#39;</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
-            <span class="s2">&quot;action&quot;</span><span class="p">:</span> <span class="s2">&quot;query&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;titles&quot;</span><span class="p">:</span> <span class="n">title</span><span class="p">,</span>
-            <span class="s2">&quot;prop&quot;</span><span class="p">:</span> <span class="s2">&quot;links&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;format&quot;</span><span class="p">:</span> <span class="s2">&quot;json&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;plnamespace&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span>
-            <span class="s2">&quot;pllimit&quot;</span><span class="p">:</span> <span class="mi">500</span>
-        
-    <span class="p">})</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s2">&quot;query&quot;</span><span class="p">][</span><span class="s2">&quot;pages&quot;</span><span class="p">];</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">values</span><span class="p">())[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;links&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">);</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">result</span><span class="p">:</span>
-        <span class="k">break</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="p">[</span><span class="n">link</span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">result</span><span class="p">]</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
-    <span class="n">title</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span><span class="p">;</span>
+<span class="n">width</span> <span class="o">=</span> <span class="mi">800</span>
+<span class="n">height</span> <span class="o">=</span> <span class="mi">600</span>
+
+<span class="n">image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s1">&#39;RGBA&#39;</span><span class="p">,</span> <span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+    <span class="n">size</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="n">size</span><span class="p">,</span> <span class="n">width</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="n">size</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>    
+    <span class="n">image</span><span class="o">.</span><span class="n">paste</span><span class="p">(</span><span class="n">src</span><span class="o">.</span><span class="n">resize</span><span class="p">((</span><span class="n">size</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">size</span><span class="o">/</span><span class="n">src</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">src</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="mi">1</span><span class="p">])),</span> <span class="n">Image</span><span class="o">.</span><span class="n">ANTIALIAS</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">))</span>
+<span class="n">image</span>
 </pre></div>
 
 </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Philosophy
-Meta-analysis
-Multivariate statistics
-Parametric statistics
-Statistical dispersion
-Divergence (statistics)
-Spearman&#39;s rank correlation coefficient
-Proportional hazards model
-Central limit theorem
-Mathematische Zeitschrift
-German language
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">urllib</span>
-<span class="kn">import</span> <span class="nn">json</span>
-<span class="n">subject</span> <span class="o">=</span> <span class="s2">&quot;Data Science&quot;</span>
-<span class="n">parents</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span>
-<span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span>
-    <span class="s2">&quot;https://en.wikipedia.org/w/api.php?&quot;</span> <span class="o">+</span>
-    <span class="n">urllib</span><span class="o">.</span><span class="n">parse</span><span class="o">.</span><span class="n">urlencode</span><span class="p">({</span>
-        <span class="s2">&quot;action&quot;</span><span class="p">:</span> <span class="s2">&quot;query&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;lhlimit&quot;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
-        <span class="s2">&quot;titles&quot;</span><span class="p">:</span> <span class="s2">&quot;Blues dance&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;prop&quot;</span><span class="p">:</span> <span class="s2">&quot;linkshere&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;format&quot;</span><span class="p">:</span> <span class="s2">&quot;json&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;lhnamespace&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-        <span class="s2">&quot;lhshow&quot;</span><span class="p">:</span> <span class="s2">&quot;!redirect&quot;</span>
-    <span class="p">})</span>
-<span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
-
-<span class="n">parents</span> <span class="o">=</span> <span class="n">parents</span><span class="p">[</span><span class="s2">&quot;query&quot;</span><span class="p">][</span><span class="s2">&quot;pages&quot;</span><span class="p">]</span>
-<span class="p">[</span><span class="n">_</span><span class="p">,</span> <span class="n">parents</span><span class="p">]</span> <span class="o">=</span> <span class="n">parents</span><span class="o">.</span><span class="n">popitem</span><span class="p">()</span>
-<span class="n">parents</span> <span class="o">=</span> <span class="p">[</span><span class="n">o</span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="n">parents</span><span class="p">[</span><span class="s2">&quot;linkshere&quot;</span><span class="p">]]</span>
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">for o in parents:</span>
-<span class="sd">    print(o[&quot;title&quot;])</span>
-<span class="sd">    pages += wikipedia.page(o[&quot;title&quot;]).links</span>
-<span class="sd">    </span>
-<span class="sd">print(pages)</span>
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="n">title</span> <span class="o">=</span> <span class="n">parents</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">peers</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">title</span> <span class="ow">in</span> <span class="n">parents</span><span class="p">:</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span>
-        <span class="s2">&quot;https://en.wikipedia.org/w/api.php?&quot;</span> <span class="o">+</span>
-        <span class="n">urllib</span><span class="o">.</span><span class="n">parse</span><span class="o">.</span><span class="n">urlencode</span><span class="p">({</span>
-            <span class="s2">&quot;action&quot;</span><span class="p">:</span> <span class="s2">&quot;query&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;titles&quot;</span><span class="p">:</span> <span class="n">title</span><span class="p">,</span>
-            <span class="s2">&quot;prop&quot;</span><span class="p">:</span> <span class="s2">&quot;links&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;format&quot;</span><span class="p">:</span> <span class="s2">&quot;json&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;plnamespace&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-            <span class="s2">&quot;pllimit&quot;</span><span class="p">:</span> <span class="mi">500</span>
-        <span class="p">})</span>
-    <span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
-    <span class="n">peers</span> <span class="o">=</span> <span class="n">peers</span> <span class="o">+</span> <span class="p">[</span><span class="n">o</span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="n">result</span><span class="p">[</span><span class="s2">&quot;query&quot;</span><span class="p">][</span><span class="s2">&quot;pages&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">popitem</span><span class="p">()[</span><span class="mi">1</span><span class="p">][</span><span class="s2">&quot;links&quot;</span><span class="p">]]</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">peers</span><span class="p">))</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>St. Xavier&#39;s College, Mumbai 289
-Hertz Foundation 378
-Lin Hsin Hsin 533
-Tobias Preis 602
-Foster Provost 613
-Nehru Memorial College, Puthanampatti 719
-Usama Fayyad 760
-Georgios B. Giannakis 795
-Daryna Kyrychenko 810
-DataMeet 819
-Hokky Situngkir 834
-Yuichi Motai 872
-Edgar Acuna 893
-Sergio Barbarossa 907
-ACM SIGHPC 1023
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="k">import</span> <span class="n">Counter</span>
-<span class="n">Counter</span><span class="p">(</span><span class="n">peers</span><span class="p">)</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[2]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>[(&#39;Blues dance&#39;, 14),
- (&#39;Charleston (dance)&#39;, 7),
- (&#39;Balboa (dance)&#39;, 6),
- (&#39;Lindy Hop&#39;, 6),
- (&#39;International Standard Book Number&#39;, 4),
- (&#39;Salsa (dance)&#39;, 4),
- (&#39;Tap dance&#39;, 4),
- (&#39;West Coast Swing&#39;, 4),
- (&#39;Lindy hop&#39;, 4),
- (&#39;Blues&#39;, 4),
- (&#39;Double bass&#39;, 3),
- (&#39;Funk&#39;, 3),
- (&#39;Capoeira&#39;, 3),
- (&#39;Collegiate Shag&#39;, 3),
- (&#39;East Coast Swing&#39;, 3),
- (&#39;Locking (dance)&#39;, 3),
- (&#39;Partner dance&#39;, 3),
- (&#39;Popping&#39;, 3),
- (&#39;Social dance&#39;, 3),
- (&#39;Swing (dance)&#39;, 3),
- (&#39;Vernacular dance&#39;, 3),
- (&#39;Frankie Manning&#39;, 3),
- (&#39;Swing dance&#39;, 3),
- (&#39;New Orleans&#39;, 3),
- (&#39;Piano&#39;, 3),
- (&#39;Big Apple (dance)&#39;, 3),
- (&#39;African-American&#39;, 2),
- (&#39;African-American culture&#39;, 2),
- (&#39;African American music&#39;, 2),
- (&#39;Alan Lomax&#39;, 2),
- (&#39;American folk music&#39;, 2),
- (&#39;Argentina&#39;, 2),
- (&#39;Banjo&#39;, 2),
- (&#39;Bass guitar&#39;, 2),
- (&#39;Bebop&#39;, 2),
- (&#39;Big band&#39;, 2),
- (&#39;Blue note&#39;, 2),
- (&#39;Bluegrass music&#39;, 2),
- (&#39;Brass band&#39;, 2),
- (&#39;Cajun music&#39;, 2),
- (&#39;Call and response (music)&#39;, 2),
- (&#39;Camp meeting&#39;, 2),
- (&#39;Country music&#39;, 2),
- (&#39;Dance in the United States&#39;, 2),
- (&#39;Delta blues&#39;, 2),
- (&#39;Depression (mood)&#39;, 2),
- (&#39;Diddley bow&#39;, 2),
- (&#39;Dixieland&#39;, 2),
- (&#39;Duke Ellington&#39;, 2),
- (&#39;English language&#39;, 2)]</pre>
-</div>
-
-</div>
-
 </div>
 </div>
 
