@@ -33,3 +33,11 @@ Agenda
     - https://www.datacamp.com/courses/intro-to-python-for-data-science
     - https://www.codecademy.com/learn/learn-python 
     - NB: python 2 vs python 3
+
+Examples/exercises:
+
+- wordcloud of wikipedia article graph (wikipedia + count frequency + word cloud)
+- reddit world new titles + links + images (reddit + ogp)
+- reddit title+images
+- news collage (dr + image processing)
+
