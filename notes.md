@@ -1,66 +1,35 @@
-Nothing to see here yet, just preparations for workshop...
+Agenda
 
-
-1. Jupyter getting started
-
-Data source examples:
-
-- ccsearch - flickr, europeana, ...
-- wikipedia rest-api
-- reddit worldnews + open graph protocol
-- wordpress rest-api - http://kbhff.dk/wp-json/wp/v2/
-- kurser.ku.dk `http://kurser.ku.dk/#q=&education=&programme=&volume=2017/2018&departments=DEPARTMENT_0074&faculty=&studyBlockId=&teachingLanguage=&period=&schedules=&studyId=&openUniversity=0&searched=1`
-- events fra tinkuy+absalon+studenterhuset+tango.dk
-
-Futher studies:
-
-- http://greenteapress.com/wp/think-python-2e/
-- https://codecombat.com/play
-- https://www.datacamp.com/courses/intro-to-python-for-data-science
-- https://www.codecademy.com/learn/learn-python 
-- NB: python 2 vs python 3
-
-- jupyter getting started
-- json data
-    - hvad er data og data typer
-    - case gennemløb af lister
-    - hvad er JSON
-    - case facebook https://developers.facebook.com/tools/explorer/
-        - hej ..dit navn
-        - likes
-- Udtræk / høst af data
-    - hvordan virker www / http
-    - case wikipedia python-api
-    - case youtube / wordpress OGP
-    - API - http-api, python-api, scraping
-    - case openplatform
-    - case wordpress rest-api (absalon event?)
-    - case wikipedia rest-api
-    - ccsearch
-    - åbne data vs. proprietære data
-    - robots.txt
-- Databehandling
-    - gentagelse - løkker
-    - case wikipedia citationsanalyse
-    - data fra flere kilder
-    - case bibdata + openplatform (+ evt. wikipedia lookup)
-    - definition - funktioner
-- visualisering
-    - force-directed-graph
-    - wordcloud
-    - circle-links...
-    - data tree exploration
-    - cover - wordpress - openplatform
-
-# Tasks/notes
-
-Examples:
-
-- graph visualisation: http://igraph.org/python/doc/tutorial/tutorial.html
-
-
-Learning goals:
-
-- Playing / having fun with data
-- JSON data structures
-- Python
+- install / run jupyter
+    - a taste of python python
+- getting data: HTTP-requests
+    - how web works
+    - text files / word occurrences - gutenberg shakespeare
+    - word frequency
+    - robots.txt, humans.txt
+    - json: reddit, openplatform, world bank
+    - fortunes: http://fortunes.cat-v.org/, https://github.com/JKirchartz/fortune/
+    - fortune cookie program
+- break
+- what is data - data types - json
+    - navigating json, writing json
+    - show images
+    - more data sources: reddit, wikipedia, youtube, dr.dk, ccsearch
+    - wikipedia cocitation
+- data analysis
+    - wikipedia cocitation
+    - bibdata/bibsci
+- visualisation
+    - word-cloud
+- images
+    - showing
+    - composing
+    - _graph_
+- experiments
+    - world news collage
+- Futher studies:
+    - http://greenteapress.com/wp/think-python-2e/
+    - https://codecombat.com/play
+    - https://www.datacamp.com/courses/intro-to-python-for-data-science
+    - https://www.codecademy.com/learn/learn-python 
+    - NB: python 2 vs python 3
