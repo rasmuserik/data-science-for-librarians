@@ -1,10 +1,24 @@
+# Agenda / motivation
+
+- TOC
+- Læringsmål
+- anvendelighed
+- håndsoprækning: have problems danish? har anaconda kørende? har skrevet kode før?
+- struktur: skift mellem forklaring og fælles øvelser
+
 # I gang med Jupyter
 
-- Anekdote et fremmed land - peg og fagter _versus_ ord og tale
 - Installation / kørsel af jupyter
-- smagsprøver på Python
-    - regnemaskine
-    - sammensatte ord
+- eksempel regnemaskine
+- Programmering Anekdote et fremmed land - peg og fagter _versus_ ord og tale
+    - lære et par fraser vs. lære sproget
+- eksempel sammensatte ord
+
+# Velkomst - hvem er I, hvem er jeg - tre nøgleord
+
+Hurtig runde, tre nøgleord om hvem I er.
+
+Min baggrund: informationsvidenskab
 
 # Datahøstning 1 - simple requests, rå tekst og JSON
 
@@ -37,6 +51,7 @@
 - skalering - ratio
 - visning
 - eksempel: reddit/pics
+
 
 # Datahøstning 2 - HTTP queries, useragent
 
@@ -78,13 +93,31 @@
 - klynger
 - emneord
 
-# Næste trin
+# Fælles Frokost
+
+# Opsummering og videre inspiration
 
 - Diskussion - hvad er det vigtigste I har lært / taget med fra denne del af workshop'en
-- Lær at programmere...
+
+- Gennemgang af det vi har gennemgået.
+
+- Hvis I vil lære at programmere...
     - http://greenteapress.com/wp/think-python-2e/
     - https://codecombat.com/play
     - https://www.datacamp.com/courses/intro-to-python-for-data-science
     - https://www.codecademy.com/learn/learn-python 
     - NB: python 2 vs python 3
+- Ønsker til næste gang...?
+    - Sportsresultater, madopskrifter, aktiekurser, billeder af nuttede katte,... ?
 
+# Emner i detaljer
+
+- spørgsmål, emne I vil mere i dybden med
+    - wordcloud
+    - billeder
+    - grafer
+    - om programmering
+    - noget tredje?
+    - om datascience
+    - fri kodning
+- fri kodning med support indtil næste workshop

@@ -3,7 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
-  <title></title>
+  <meta name="author" content="Rasmus Erik @solsort.com">
+  <title>Data Workshop</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -26,9 +27,195 @@
   <div class="reveal">
     <div class="slides">
 
+<section>
+  <h1 class="title">Data Workshop</h1>
+  <p class="author">Rasmus Erik <span class="citation" data-cites="solsort.com">@solsort.com</span></p>
+  <p class="date">Februar 2018</p>
+</section>
 
-<section><section id="welcome" class="titleslide slide level1"><h1>Welcome</h1></section><section><section id="foo" class="titleslide slide level2"><h2>Foo</h2></section></section><section><section id="bar" class="titleslide slide level2"><h2>Bar</h2></section></section></section>
-<section><section id="baz" class="titleslide slide level1"><h1>Baz</h1></section></section>
+<section><section id="plan-og-motivation" class="titleslide slide level1"><h1>Plan og motivation</h1></section><section id="plan" class="slide level2">
+<h2>Plan</h2>
+<ul>
+<li>I gang med Jupyter • Velkomst / hvem er vi?</li>
+<li>Datahøstning 1 • Strukturerede data</li>
+<li>Visualisering 1 • Datahøstning 2</li>
+<li>Visualisering 2 • Datahøstning 3</li>
+<li>Visualisering 3 • Eksempler</li>
+<li>Frokost • Opsummering • Eksempler</li>
+</ul>
+</section><section id="motivation" class="slide level2">
+<h2>Motivation</h2>
+</section><section id="læringsmål" class="slide level2">
+<h2>Læringsmål</h2>
+<ul>
+<li>TOC</li>
+<li>Læringsmål</li>
+<li>anvendelighed</li>
+<li>håndsoprækning: have problems danish? har anaconda kørende? har skrevet kode før?</li>
+<li>struktur: skift mellem forklaring og fælles øvelser</li>
+</ul>
+</section></section>
+<section><section id="i-gang-med-jupyter" class="titleslide slide level1"><h1>I gang med Jupyter</h1></section><section id="installation" class="slide level2">
+<h2>Installation</h2>
+<ul>
+<li>Installation / kørsel af jupyter</li>
+<li>eksempel regnemaskine</li>
+<li>Programmering Anekdote et fremmed land - peg og fagter <em>versus</em> ord og tale
+<ul>
+<li>lære et par fraser vs. lære sproget</li>
+</ul></li>
+<li>eksempel sammensatte ord</li>
+</ul>
+</section></section>
+<section><section id="velkomst---hvem-er-i-hvem-er-jeg---tre-nøgleord" class="titleslide slide level1"><h1>Velkomst - hvem er I, hvem er jeg - tre nøgleord</h1></section><section id="section" class="slide level2">
+<h2></h2>
+<p>Hurtig runde, tre nøgleord om hvem I er.</p>
+<p>Min baggrund: informationsvidenskab</p>
+</section></section>
+<section><section id="datahøstning-1---simple-requests-rå-tekst-og-json" class="titleslide slide level1"><h1>Datahøstning 1 - simple requests, rå tekst og JSON</h1></section><section id="section-1" class="slide level2">
+<h2></h2>
+<ul>
+<li>Hvad er HTTP / hvordan henter man data</li>
+<li>Tekst
+<ul>
+<li>eksempel: fortune files - fortune cookies - http://fortunes.cat-v.org/, https://github.com/JKirchartz/fortune/</li>
+<li>eksempel: shakespeare word frequency</li>
+<li>eksempel: robots.txt (humans.txt)</li>
+</ul></li>
+<li>JSON
+<ul>
+<li>reddit/worldnews</li>
+</ul></li>
+</ul>
+</section></section>
+<section><section id="strukturerede-data-og-json" class="titleslide slide level1"><h1>Strukturerede data og JSON</h1></section><section id="section-2" class="slide level2">
+<h2></h2>
+<ul>
+<li>Hvad er data?
+<ul>
+<li>Tekst</li>
+<li>Opslagsværker - ordbøger - dictionaries</li>
+<li>Lister</li>
+<li>Hierakiske lister</li>
+<li>Tal</li>
+</ul></li>
+<li>Data typer og strukturer
+<ul>
+<li>Datatyper</li>
+</ul></li>
+<li>navigation i json
+<ul>
+<li>dictionary values/keys, til lister</li>
+</ul></li>
+<li>eksempel: udtræk overskrifter fra reddit/worldnews</li>
+</ul>
+</section></section>
+<section><section id="visualisering-1-hentning-og-visning-af-billeder" class="titleslide slide level1"><h1>Visualisering 1: hentning og visning af billeder</h1></section><section id="section-3" class="slide level2">
+<h2></h2>
+<ul>
+<li>billeder i computeren</li>
+<li>hentning</li>
+<li>skalering - ratio</li>
+<li>visning</li>
+<li>eksempel: reddit/pics</li>
+</ul>
+</section></section>
+<section><section id="datahøstning-2---http-queries-useragent" class="titleslide slide level1"><h1>Datahøstning 2 - HTTP queries, useragent</h1></section><section id="section-4" class="slide level2">
+<h2></h2>
+<ul>
+<li>Mere om HTTP
+<ul>
+<li>query parametre</li>
+<li>headers/useragent</li>
+</ul></li>
+<li>JSON
+<ul>
+<li>openplatform</li>
+<li>wikipedia</li>
+<li>wikipedia</li>
+<li>worldbank</li>
+</ul></li>
+</ul>
+</section></section>
+<section><section id="visualisering-2-wordcloud-søjlediagram" class="titleslide slide level1"><h1>Visualisering 2: Wordcloud, søjlediagram</h1></section><section id="section-5" class="slide level2">
+<h2></h2>
+<ul>
+<li>wikipedia: tekst word cloud</li>
+<li>opensearch: subject cloud</li>
+<li>wikipedia: cocitationsanalyse</li>
+</ul>
+</section></section>
+<section><section id="datahøstning-3---behandlede-data" class="titleslide slide level1"><h1>Datahøstning 3 - behandlede data</h1></section><section id="section-6" class="slide level2">
+<h2></h2>
+<ul>
+<li>RSS-feeds - dr.dk, ...
+<ul>
+<li>udtræk og vis nyheder fra dr</li>
+</ul></li>
+<li>Open Graph Protocol - youtube, dr.dk, ...
+<ul>
+<li>udtræk og vis nyheder fra reddit-world-news m. ogp-data</li>
+</ul></li>
+<li>data i HTML - ccsearch
+<ul>
+<li>eksempel: vis billeder fra søgning</li>
+</ul></li>
+<li>reddit next page</li>
+</ul>
+</section></section>
+<section><section id="visualisering-3-billedbehandling-sammensætning" class="titleslide slide level1"><h1>Visualisering 3: billedbehandling / sammensætning</h1></section><section id="section-7" class="slide level2">
+<h2></h2>
+<ul>
+<li>nyheds-billed-collage DR, reddit</li>
+<li>3d scatter billed farver</li>
+<li>reddit lang liste af billeder + titel</li>
+</ul>
+</section></section>
+<section><section id="eksempel-biblioteksdata" class="titleslide slide level1"><h1>Eksempel: Biblioteksdata</h1></section><section id="section-8" class="slide level2">
+<h2></h2>
+<ul>
+<li>idé: genre-rum</li>
+<li>recommender</li>
+<li>klynger</li>
+<li>emneord</li>
+</ul>
+</section></section>
+<section><section id="fælles-frokost-fri-leg-indtil-1257" class="titleslide slide level1"><h1>Fælles Frokost <br><small>Fri leg indtil 12:57</small></h1></section></section>
+<section><section id="opsummering-og-videre-inspiration" class="titleslide slide level1"><h1>Opsummering og videre inspiration</h1></section><section id="section-9" class="slide level2">
+<h2></h2>
+<ul>
+<li><p>Diskussion - hvad er det vigtigste I har lært / taget med fra denne del af workshop'en</p></li>
+<li><p>Gennemgang af det vi har gennemgået.</p></li>
+<li>Hvis I vil lære at programmere...
+<ul>
+<li>http://greenteapress.com/wp/think-python-2e/</li>
+<li>https://codecombat.com/play</li>
+<li>https://www.datacamp.com/courses/intro-to-python-for-data-science</li>
+<li>https://www.codecademy.com/learn/learn-python</li>
+<li>NB: python 2 vs python 3</li>
+</ul></li>
+<li>Ønsker til næste gang...?
+<ul>
+<li>Sportsresultater, madopskrifter, aktiekurser, billeder af nuttede katte,... ?</li>
+</ul></li>
+</ul>
+</section></section>
+<section><section id="emner-i-detaljer" class="titleslide slide level1"><h1>Emner i detaljer</h1></section><section id="section-10" class="slide level2">
+<h2></h2>
+<ul>
+<li>spørgsmål, emne I vil mere i dybden med
+<ul>
+<li>wordcloud</li>
+<li>billeder</li>
+<li>grafer</li>
+<li>om programmering</li>
+<li>noget tredje?</li>
+<li>om datascience</li>
+<li>fri kodning</li>
+</ul></li>
+<li>fri kodning med support indtil næste workshop</li>
+</ul>
+</section></section>
     </div>
   </div>
 
