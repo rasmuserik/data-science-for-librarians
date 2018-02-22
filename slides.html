@@ -139,10 +139,9 @@
 
 <p><img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/H96566k.jpg"></img></p>
 </section></section>
-<section><section id="datahøstning-1---http-requests-tekst-og-json" class="titleslide slide level1"><h1>Datahøstning 1 - HTTP-requests, tekst og JSON</h1></section><section id="hvordan-henter-vi-data" class="slide level2">
+<section><section id="datahøstning-1-http-requests-tekst-og-json" class="titleslide slide level1"><h1>Datahøstning 1 <br><small> HTTP-requests, tekst og JSON</small></h1></section><section id="hvordan-henter-vi-data" class="slide level2">
 <h2>Hvordan henter vi data</h2>
 <ul>
-<li>Hvad er en url: protokol, server, sti</li>
 <li>Python import af funktionalitet: <code>import requests</code></li>
 <li><code>requests('http://google.com/humans.txt').text</code></li>
 <li>variable, print</li>
@@ -160,17 +159,20 @@
 <li>eksempel: udskriv tilfældigt element fra liste</li>
 <li>øvelse: udvælg fortune file, og udskriv tilfældige fortunes.</li>
 </ul>
-</section><section id="hvordan-virker-en-www" class="slide level2">
-<h2>Hvordan virker en www</h2>
+</section><section id="hvordan-virker-www" class="slide level2">
+<h2>Hvordan virker WWW</h2>
 <ul>
-<li>HTTP
+<li>URL: protokol, server, sti</li>
+<li>HTTP: Forspørgsel med URL, Headers
 <ul>
-<li>Forespørgsel, m. url, headers etc.</li>
-<li>Svar</li>
-<li>user-agent</li>
+<li>Header-eksempel: <code>user-agent</code></li>
+<li>Svar, header-eksempler</li>
 </ul></li>
 <li>Content-types: text/html, image/..., application/json</li>
-<li>Eksempel/øvelse: hent JSON-data fra api.reddit.com/r/...</li>
+<li>Eksempel/øvelse: hent JSON-data fra api.reddit.com/r/...
+<ul>
+<li>Indlæsning af JSON</li>
+</ul></li>
 </ul>
 </section><section id="databehandling" class="slide level2">
 <h2>Databehandling</h2>
@@ -201,7 +203,7 @@
 <li>sandhedsværdier <code>True</code> / <code>False</code></li>
 </ul>
 </section></section>
-<section><section id="visualisering-1-hentning-og-visning-af-billeder" class="titleslide slide level1"><h1>Visualisering 1: hentning og visning af billeder</h1></section><section id="visning-af-billeder" class="slide level2">
+<section><section id="visualisering-1-hentning-og-visning-af-billeder" class="titleslide slide level1"><h1>Visualisering 1 <br><small> hentning og visning af billeder</small></h1></section><section id="visning-af-billeder" class="slide level2">
 <h2>Visning af billeder</h2>
 <ul>
 <li>hentning af data - visning af billeder</li>
@@ -220,70 +222,120 @@
 <li>Øvelse: vis billeder, og print titler for billeder fra api</li>
 </ul>
 </section></section>
-<section><section id="datahøstning-2---http-queries-useragent" class="titleslide slide level1"><h1>Datahøstning 2 - HTTP queries, useragent</h1></section><section id="section" class="slide level2">
-<h2></h2>
+<section><section id="datahøstning-2-query-parametre-apier" class="titleslide slide level1"><h1>Datahøstning 2 <br><small>Query-parametre, api'er</small></h1></section><section id="query-parametre-og-request-metoder" class="slide level2">
+<h2>Query-parametre og request-metoder</h2>
 <ul>
-<li>Mere om HTTP
+<li>URL eksempel: <a href="https://duckduckgo.com/?q=data+science&amp;df=w&amp;iax=images&amp;ia=images" class="uri">https://duckduckgo.com/?q=data+science&amp;df=w&amp;iax=images&amp;ia=images</a></li>
+<li>Query parametre, i url, og som JSON</li>
+<li>Mere om headers, user-agent</li>
+<li>Request-metoder: get, put, post</li>
+</ul>
+</section><section id="flere-eksempler-på-datakilder" class="slide level2">
+<h2>Flere eksempler på datakilder</h2>
 <ul>
-<li>query parametre</li>
-<li>headers/useragent</li>
+<li>openplatform: danske biblioteksdata
+<ul>
+<li>søgning, anbefalinger, biblioteker, facetter, ...</li>
 </ul></li>
-<li>JSON
+<li>Wikipedia
 <ul>
-<li>openplatform</li>
-<li>wikipedia</li>
-<li>wikipedia</li>
-<li>worldbank</li>
+<li>extract, links, linkshere</li>
+<li>eksempel/øvelse: co-citationsanalyse.</li>
+</ul></li>
+<li>WorldBank, DST, ...
+<ul>
+<li>befolkningsstatistik etc.</li>
 </ul></li>
 </ul>
 </section></section>
-<section><section id="visualisering-2-wordcloud-søjlediagram" class="titleslide slide level1"><h1>Visualisering 2: Wordcloud, søjlediagram</h1></section><section id="section-1" class="slide level2">
-<h2></h2>
+<section><section id="visualisering-2-wordcloud-søjlediagram" class="titleslide slide level1"><h1>Visualisering 2 <br><small> Wordcloud, søjlediagram</small></h1></section><section id="eksempel-wordcloud---frekvenser" class="slide level2">
+<h2>Eksempel: WordCloud - frekvenser</h2>
 <ul>
-<li>wikipedia: tekst word cloud</li>
-<li>opensearch: subject cloud</li>
-<li>wikipedia: cocitationsanalyse</li>
+<li>eksempel: wordcloud på statistik</li>
+<li>øvelse: hent tekstfil</li>
+<li>eksempel: ordfrekvenser i tekst</li>
+<li>øvelese ordfrekvens fra tekstfil</li>
+<li>eksempel: fjernelse af ord i ordbog</li>
+<li>øvelse: wordcloud med frekvenser fra tekst</li>
+<li>øvelse: wordcloud med facetter for søgning</li>
 </ul>
-</section><section id="eksempel-ordfrekvens" class="slide level2">
-<h2>Eksempel ordfrekvens:</h2>
+</section><section id="eksempel-population-søjlediagram" class="slide level2">
+<h2>Eksempel: Population søjlediagram</h2>
 <ul>
-<li>Eksempel: ordfrekvens: humpty dumpty</li>
-<li>øvelse: hent tekstfile og udskriv ordfrekvens</li>
+<li>øvelse: hent statistikdata fra worldbank</li>
+<li>eksempel: hent statistik-data ud som lister</li>
+<li>eksempel: populationsgraf danmark</li>
+<li>øvelse: populationsgraf, andre lande</li>
+</ul>
+</section><section id="eksempel-wordcloud-co-citations-analyse" class="slide level2">
+<h2>Eksempel: WordCloud <br>co-citations analyse</h2>
+<ul>
+<li>øvelse: hent links fra wikipedia</li>
+<li>øvelse hent 2 niveauer af links i wikipedia</li>
+<li>øvelse: wordcloud ud fra link-popularitet</li>
 </ul>
 </section></section>
-<section><section id="datahøstning-3---behandlede-data" class="titleslide slide level1"><h1>Datahøstning 3 - behandlede data</h1></section><section id="section-2" class="slide level2">
-<h2></h2>
+<section><section id="datahøstning-3-rss-html-open-graph" class="titleslide slide level1"><h1>Datahøstning 3 <br><small>RSS, HTML, Open Graph</small></h1></section><section id="forskellige-typer-af-data" class="slide level2">
+<h2>Forskellige typer af data</h2>
 <ul>
-<li>RSS-feeds - dr.dk, ...
+<li>Tekst, JSON, HTML, RSS, ...</li>
+<li>Eksempel: kig på kode i browser</li>
+<li>&quot;API&quot;: Web-APIer, Python APIer</li>
+<li>API'er i Python</li>
+</ul>
+</section><section id="data-eksempler" class="slide level2">
+<h2>Data eksempler</h2>
 <ul>
-<li>udtræk og vis nyheder fra dr</li>
+<li>RSS-feeds - dr.dk, wordpress, ...
+<ul>
+<li>Øvelse: udtræk og vis nyheder fra dr</li>
 </ul></li>
 <li>Open Graph Protocol - youtube, dr.dk, ...
 <ul>
-<li>udtræk og vis nyheder fra reddit-world-news m. ogp-data</li>
+<li>Øvelse: udtræk og vis nyheder fra reddit-world-news m. ogp-data</li>
 </ul></li>
-<li>data i HTML - ccsearch
+<li>Data i HTML - ccsearch
 <ul>
 <li>eksempel: vis billeder fra søgning</li>
 </ul></li>
+</ul>
+</section><section id="bladring-i-data" class="slide level2">
+<h2>Bladring i data</h2>
+<ul>
+<li>openplatform offset, limit</li>
 <li>reddit next page</li>
 </ul>
 </section></section>
-<section><section id="visualisering-3-billedbehandling-sammensætning" class="titleslide slide level1"><h1>Visualisering 3: billedbehandling / sammensætning</h1></section><section id="section-3" class="slide level2">
-<h2></h2>
+<section><section id="visualisering-3-mere-om-billeder" class="titleslide slide level1"><h1>Visualisering 3: <br> <small>Mere om billeder</small></h1></section><section class="slide level2">
+
 <ul>
-<li>nyheds-billed-collage DR, reddit</li>
-<li>3d scatter billed farver</li>
-<li>reddit lang liste af billeder + titel</li>
+<li>Sammensætning af billeder - <code>image.paste</code></li>
+<li>Billedfiltre, <code>effect_spread</code>, ...</li>
+<li>Øvelse - kreative billeder</li>
+<li>Pixels, farvegraf</li>
+<li>Øvelse: automatisk nyheds-kollage</li>
+<li>Eksempel: farve-rum for billede</li>
 </ul>
 </section></section>
-<section><section id="eksempel-biblioteksdata" class="titleslide slide level1"><h1>Eksempel: Biblioteksdata</h1></section><section id="section-4" class="slide level2">
-<h2></h2>
+<section><section id="eksempel-biblioteksdata" class="titleslide slide level1"><h1>Eksempel: Biblioteksdata</h1></section><section id="genre-rum" class="slide level2">
+<h2>Genre-rum</h2>
 <ul>
-<li>idé: genre-rum</li>
-<li>recommender</li>
-<li>klynger</li>
-<li>emneord</li>
+<li>Grundlag: hack4dk data, brugs/låner-mønstre</li>
+<li>Idé: genre-rum</li>
+<li>Data Science; Hypotese, eksperiment, verifikation</li>
+</ul>
+</section><section id="recommender-anbefalinger" class="slide level2">
+<h2>Recommender <br> anbefalinger</h2>
+</section><section id="genre-klynger" class="slide level2">
+<h2>Genre klynger</h2>
+<ul>
+<li>Superviseret vs. usuperviseret læring</li>
+<li>k-means</li>
+</ul>
+</section><section id="emneord" class="slide level2">
+<h2>Emneord</h2>
+<ul>
+<li>Statistik: spredning</li>
 </ul>
 </section></section>
 <section><section id="fælles-frokost-fri-leg-indtil-1257" class="titleslide slide level1"><h1>Fælles Frokost <br><small>Fri leg indtil 12:57</small></h1></section></section>
@@ -291,35 +343,30 @@
 <h2>Hvad har vi lært</h2>
 <p>Hvad er det vigtigste I har lært og<br/> taget med fra denne del af workshop'en? <br> (Diskutér to og to. Og i plenum)</p>
 <p>Ønsker til næste gang...? <br><br />
-<small>...sportsresultater, madopskrifter, aktiekurser, billeder af nuttede katte,...</small></p>
+<small>...sportsresultater, madopskrifter, aktiekurser, heste,...</small></p>
 </section><section class="slide level2">
 
-<p>TODO Gentag agenda med fagtermer her.</p>
-</section><section id="lær-python-programmering" class="slide level2">
-<h2>Lær Python programmering</h2>
+<p>Opsummering:</p>
 <ul>
-<li>http://greenteapress.com/wp/think-python-2e/</li>
-<li>https://codecombat.com/play</li>
-<li>https://www.datacamp.com/courses/intro-to-python-for-data-science</li>
-<li>https://www.codecademy.com/learn/learn-python</li>
+<li>I gang med Jupyter Notebooks: computer sprog</li>
+<li>Datahøstning 1: webbrower-requests, tekst, JSON</li>
+<li>Visualisering 1: visning af billeder</li>
+<li>Datahøstning 2: request-parametre, &quot;user agent&quot;</li>
+<li>Visualisering 2: Wordcloud, søjlediagrammer</li>
+<li>Datahøstning 3: udtræk af data, RSS, Open Graph</li>
+<li>Visualisering 3: mere om digitale billeder</li>
+<li>Data Science Eksempel: fra brugshistorik til viden</li>
+</ul>
+</section><section id="mere-python" class="slide level2">
+<h2>Mere Python</h2>
+<p>Hvis I har lyst til selv at gå på opdagelse<br> og lære mere i mellemtiden.</p>
+<ul>
+<li><a href="http://greenteapress.com/wp/think-python-2e/">Thinking in Python</a></li>
+<li><a href="https://codecombat.com/play">Code Combat</a></li>
+<li><a href="https://www.datacamp.com/courses/intro-to-python-for-data-science">Data Camp</a></li>
+<li><a href="https://www.codecademy.com/learn/learn-python">Code Academy</a></li>
 </ul>
 <p>Bemærk: Vi bruger Python 3, nogle af ovenstående bruger Python 2, og der er små forskelle.</p>
-</section><section id="øvelser-1" class="slide level2">
-<h2>Øvelser</h2>
-<p>Ønsker til næste gang...? <br> <small>...sportsresultater, madopskrifter, aktiekurser, billeder af nuttede katte,...</small> # Emner i detaljer ##</p>
-<ul>
-<li>spørgsmål, emne I vil mere i dybden med
-<ul>
-<li>wordcloud</li>
-<li>billeder</li>
-<li>grafer</li>
-<li>om programmering</li>
-<li>noget tredje?</li>
-<li>om datascience</li>
-<li>fri kodning</li>
-</ul></li>
-<li>fri kodning med support indtil næste workshop</li>
-</ul>
 </section></section>
     </div>
   </div>
