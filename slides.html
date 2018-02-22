@@ -70,8 +70,7 @@
 <p><strong>Forberedt indhold:</strong> <br> <em>Vi ser hvad vi når, og dykker ned i.</em></p>
 <ul>
 <li>I gang med Jupyter Notebooks: computer sprog</li>
-<li>Datahøstning 1: webbrower-requests, tekst</li>
-<li>Hvad er data: type af data, JSON</li>
+<li>Datahøstning 1: webbrower-requests, tekst, JSON</li>
 <li>Visualisering 1: visning af billeder</li>
 <li>Datahøstning 2: request-parametre, &quot;user agent&quot;</li>
 <li>Visualisering 2: Wordcloud, søjlediagrammer</li>
@@ -140,7 +139,7 @@
 
 <p><img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/H96566k.jpg"></img></p>
 </section></section>
-<section><section id="datahøstning-1---simple-requests-rå-tekst-og-json" class="titleslide slide level1"><h1>Datahøstning 1 - simple requests, rå tekst og JSON</h1></section><section id="hvordan-henter-vi-data" class="slide level2">
+<section><section id="datahøstning-1---http-requests-tekst-og-json" class="titleslide slide level1"><h1>Datahøstning 1 - HTTP-requests, tekst og JSON</h1></section><section id="hvordan-henter-vi-data" class="slide level2">
 <h2>Hvordan henter vi data</h2>
 <ul>
 <li>Hvad er en url: protokol, server, sti</li>
@@ -168,44 +167,60 @@
 <ul>
 <li>Forespørgsel, m. url, headers etc.</li>
 <li>Svar</li>
+<li>user-agent</li>
 </ul></li>
 <li>Content-types: text/html, image/..., application/json</li>
-<li>øvelse hent JSON-data fra api.reddit.com/r/...</li>
+<li>Eksempel/øvelse: hent JSON-data fra api.reddit.com/r/...</li>
 </ul>
-</section></section>
-<section><section id="strukturerede-data-og-json" class="titleslide slide level1"><h1>Strukturerede data og JSON</h1></section><section id="section" class="slide level2">
-<h2></h2>
+</section><section id="databehandling" class="slide level2">
+<h2>Databehandling</h2>
 <ul>
-<li>Hvad er data?
+<li>eksempel: opslag i liste</li>
+<li>eksempel: opslag i ordbog</li>
+<li>eksempel: <code>list(x.keys())</code></li>
+<li>øvelse: udtræk titel på den første artikel fra reddit</li>
+<li>eksempel: udtræk alle url'er fra reddit</li>
+<li>øvelse: udtræk alle titler fra reddit</li>
+</ul>
+</section><section id="strukturerede-data" class="slide level2">
+<h2>Strukturerede data</h2>
 <ul>
-<li>Tekst</li>
-<li>Opslagsværker - ordbøger - dictionaries</li>
+<li>Data-type: tal, tekst, lister, ...</li>
 <li>Lister</li>
-<li>Hierakiske lister</li>
-<li>Tal</li>
-</ul></li>
-<li>Data typer og strukturer
+<li>Ordbøger</li>
+<li>Hierakier, mindmaps - strukturer</li>
+</ul>
+</section><section id="json-data" class="slide level2">
+<h2>JSON-data</h2>
+<p>Notation / hvordan det skrives:</p>
 <ul>
-<li>Datatyper</li>
-</ul></li>
-<li>navigation i json
-<ul>
-<li>dictionary values/keys, til lister</li>
-</ul></li>
-<li>eksempel: udtræk overskrifter fra reddit/worldnews</li>
+<li>tekst-strenge: <code>&quot;tekst&quot;</code></li>
+<li>tal: <code>123.456</code></li>
+<li>ordbøger <code>{&quot;ord&quot;: &quot;beskrivelse&quot;, &quot;ord2&quot;: 123}</code></li>
+<li>lister <code>[1, 2, &quot;hej&quot;, {}]</code></li>
+<li>sandhedsværdier <code>True</code> / <code>False</code></li>
 </ul>
 </section></section>
-<section><section id="visualisering-1-hentning-og-visning-af-billeder" class="titleslide slide level1"><h1>Visualisering 1: hentning og visning af billeder</h1></section><section id="section-1" class="slide level2">
-<h2></h2>
+<section><section id="visualisering-1-hentning-og-visning-af-billeder" class="titleslide slide level1"><h1>Visualisering 1: hentning og visning af billeder</h1></section><section id="visning-af-billeder" class="slide level2">
+<h2>Visning af billeder</h2>
 <ul>
-<li>billeder i computeren</li>
-<li>hentning</li>
-<li>skalering - ratio</li>
-<li>visning</li>
-<li>eksempel: reddit/pics</li>
+<li>hentning af data - visning af billeder</li>
+<li>øvelse: hent billede fra wikipedia, reddit, eller lignende, og vis det</li>
+<li>skalering og størrelse</li>
+<li>øvelse: skalér billede</li>
+</ul>
+</section><section id="billeder-i-computer" class="slide level2">
+<h2>Billeder i computer</h2>
+<ul>
+<li>Billedformater: jpg, png, gif, ...</li>
+<li>Billedkoordineter: x/y, bredde, højed</li>
+<li>Hvad er billeder i computeren</li>
+<li>Eksempel: nedskaler/opskaler billede</li>
+<li>Eksempel: print url'er for <code>jpg</code>-billeder fra api(reddit)</li>
+<li>Øvelse: vis billeder, og print titler for billeder fra api</li>
 </ul>
 </section></section>
-<section><section id="datahøstning-2---http-queries-useragent" class="titleslide slide level1"><h1>Datahøstning 2 - HTTP queries, useragent</h1></section><section id="section-2" class="slide level2">
+<section><section id="datahøstning-2---http-queries-useragent" class="titleslide slide level1"><h1>Datahøstning 2 - HTTP queries, useragent</h1></section><section id="section" class="slide level2">
 <h2></h2>
 <ul>
 <li>Mere om HTTP
@@ -222,7 +237,7 @@
 </ul></li>
 </ul>
 </section></section>
-<section><section id="visualisering-2-wordcloud-søjlediagram" class="titleslide slide level1"><h1>Visualisering 2: Wordcloud, søjlediagram</h1></section><section id="section-3" class="slide level2">
+<section><section id="visualisering-2-wordcloud-søjlediagram" class="titleslide slide level1"><h1>Visualisering 2: Wordcloud, søjlediagram</h1></section><section id="section-1" class="slide level2">
 <h2></h2>
 <ul>
 <li>wikipedia: tekst word cloud</li>
@@ -236,7 +251,7 @@
 <li>øvelse: hent tekstfile og udskriv ordfrekvens</li>
 </ul>
 </section></section>
-<section><section id="datahøstning-3---behandlede-data" class="titleslide slide level1"><h1>Datahøstning 3 - behandlede data</h1></section><section id="section-4" class="slide level2">
+<section><section id="datahøstning-3---behandlede-data" class="titleslide slide level1"><h1>Datahøstning 3 - behandlede data</h1></section><section id="section-2" class="slide level2">
 <h2></h2>
 <ul>
 <li>RSS-feeds - dr.dk, ...
@@ -254,7 +269,7 @@
 <li>reddit next page</li>
 </ul>
 </section></section>
-<section><section id="visualisering-3-billedbehandling-sammensætning" class="titleslide slide level1"><h1>Visualisering 3: billedbehandling / sammensætning</h1></section><section id="section-5" class="slide level2">
+<section><section id="visualisering-3-billedbehandling-sammensætning" class="titleslide slide level1"><h1>Visualisering 3: billedbehandling / sammensætning</h1></section><section id="section-3" class="slide level2">
 <h2></h2>
 <ul>
 <li>nyheds-billed-collage DR, reddit</li>
@@ -262,7 +277,7 @@
 <li>reddit lang liste af billeder + titel</li>
 </ul>
 </section></section>
-<section><section id="eksempel-biblioteksdata" class="titleslide slide level1"><h1>Eksempel: Biblioteksdata</h1></section><section id="section-6" class="slide level2">
+<section><section id="eksempel-biblioteksdata" class="titleslide slide level1"><h1>Eksempel: Biblioteksdata</h1></section><section id="section-4" class="slide level2">
 <h2></h2>
 <ul>
 <li>idé: genre-rum</li>

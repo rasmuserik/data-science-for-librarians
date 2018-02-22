@@ -38,8 +38,7 @@
 
 
 - I gang med Jupyter Notebooks: computer sprog
-- Datahøstning 1: webbrower-requests, tekst
-- Hvad er data: type af data, JSON
+- Datahøstning 1: webbrower-requests, tekst, JSON
 - Visualisering 1: visning af billeder
 - Datahøstning 2: request-parametre, "user agent"
 - Visualisering 2: Wordcloud, søjlediagrammer
@@ -104,7 +103,7 @@ Kan også køres i skyen:
 
 
 
-# Datahøstning 1 - simple requests, rå tekst og JSON
+# Datahøstning 1 - HTTP-requests, tekst og JSON
 
 ## Hvordan henter vi data
 
@@ -128,34 +127,53 @@ Kan også køres i skyen:
 - HTTP 
     - Forespørgsel, m. url, headers etc.
     - Svar
+    - user-agent
 - Content-types: text/html, image/..., application/json
-- øvelse hent JSON-data fra api.reddit.com/r/...
+- Eksempel/øvelse: hent JSON-data fra api.reddit.com/r/...
 
+## Databehandling
 
-# Strukturerede data og JSON
-## 
+- eksempel: opslag i liste
+- eksempel: opslag i ordbog
+- eksempel: `list(x.keys())`
+- øvelse: udtræk titel på den første artikel fra reddit
+- eksempel: udtræk alle url'er fra reddit
+- øvelse: udtræk alle titler fra reddit
 
-- Hvad er data?
-    - Tekst
-    - Opslagsværker - ordbøger - dictionaries
-    - Lister
-    - Hierakiske lister
-    - Tal
-- Data typer og strukturer
-    - Datatyper
-- navigation i json
-    - dictionary values/keys, til lister
-- eksempel: udtræk overskrifter fra reddit/worldnews
+## Strukturerede data
+
+- Data-type: tal, tekst, lister, ...
+- Lister
+- Ordbøger
+- Hierakier, mindmaps - strukturer
+
+## JSON-data
+
+Notation / hvordan det skrives:
+
+- tekst-strenge: `"tekst"`
+- tal: `123.456`
+- ordbøger `{"ord": "beskrivelse", "ord2": 123}`
+- lister `[1, 2, "hej", {}]`
+- sandhedsværdier `True` / `False`
 
 # Visualisering 1: hentning og visning af billeder
-## 
 
-- billeder i computeren
-- hentning
-- skalering - ratio
-- visning
-- eksempel: reddit/pics
+## Visning af billeder
 
+- hentning af data - visning af billeder
+- øvelse: hent billede fra wikipedia, reddit, eller lignende, og vis det
+- skalering og størrelse
+- øvelse: skalér billede
+
+## Billeder i computer
+
+- Billedformater: jpg, png, gif, ...
+- Billedkoordineter: x/y, bredde, højed
+- Hvad er billeder i computeren
+- Eksempel: nedskaler/opskaler billede
+- Eksempel: print url'er for `jpg`-billeder fra api(reddit)
+- Øvelse: vis billeder, og print titler for billeder fra api
 
 # Datahøstning 2 - HTTP queries, useragent
 ## 
