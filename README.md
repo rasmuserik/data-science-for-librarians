@@ -1,6 +1,6 @@
 # Data Workshop
 
-- [slides](slides.html)
+- [Slides](slides.html)
 - [I gang med jupyter](jupyter-getting-started.html)
 - Fraser / kogebog
     - [python](cookbook-python.html) ([notebook](cookbook-python.ipynb))
