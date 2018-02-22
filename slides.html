@@ -33,62 +33,147 @@
   <p class="date">Februar 2018</p>
 </section>
 
-<section><section id="plan-og-motivation" class="titleslide slide level1"><h1>Plan og motivation</h1></section><section id="plan" class="slide level2">
-<h2>Plan</h2>
+<section><section id="velkommen-plan" class="titleslide slide level1"><h1>Velkommen / Plan</h1></section><section class="slide level2">
+
 <ul>
-<li>I gang med Jupyter • Velkomst / hvem er vi?</li>
-<li>Datahøstning 1 • Strukturerede data</li>
-<li>Visualisering 1 • Datahøstning 2</li>
-<li>Visualisering 2 • Datahøstning 3</li>
-<li>Visualisering 3 • Eksempler</li>
-<li>Frokost • Opsummering • Eksempler</li>
+<li>Emner for workshoppen</li>
+<li>Min baggrund</li>
+<li>Navnerunde</li>
+<li>Plan for workshoppen</li>
 </ul>
-</section><section id="motivation" class="slide level2">
-<h2>Motivation</h2>
-</section><section id="læringsmål" class="slide level2">
-<h2>Læringsmål</h2>
+</section><section id="emner-for-workshoppen" class="slide level2">
+<h2>Emner for workshoppen</h2>
 <ul>
-<li>TOC</li>
-<li>Læringsmål</li>
-<li>anvendelighed</li>
-<li>håndsoprækning: have problems danish? har anaconda kørende? har skrevet kode før?</li>
-<li>struktur: skift mellem forklaring og fælles øvelser</li>
+<li>Værktøj: Jupyter - Python</li>
+<li>&quot;Datahøstning&quot; - hvordan virker www</li>
+<li>JSON - hvordan er data - typer og strukturer <br><small>(meget brugbar viden, som I nok får gavn af senere)</small></li>
+<li>Visualisering - billeder, wordclouds, grafer</li>
+<li>Tableau-workshop (anden underviser)</li>
+</ul>
+</section><section id="min-baggrund" class="slide level2">
+<h2>Min baggrund</h2>
+<ul>
+<li>Datalog fra KU, herunder studier på INF.</li>
+<li>Underviste dengang, gik derefter ud i erhvervslivet. Driver nu egen virksomhed.</li>
+<li>Er her fordi jeg gerne vil give mine erfaringer videre.</li>
+<li>Det handler om jeres læring, - afbryd gerne, <br>stil spørgsmål!</li>
+</ul>
+</section><section id="navnerunde" class="slide level2">
+<h2>Navnerunde</h2>
+<ul>
+<li>Navn</li>
+<li>Nævn hvis I tidligere har <br> programmering eller lignende?</li>
+<li>Et par hurtige stikord om, <br> hvem I er, og hvad I synes <br> er spændende. <br><small>(måske kan senere eksempler relateres til dette)</small></li>
+</ul>
+</section><section class="slide level2">
+
+<p><strong>Forberedt indhold:</strong> <br> <em>Vi ser hvad vi når, og dykker ned i.</em></p>
+<ul>
+<li>I gang med Jupyter Notebooks: computer sprog</li>
+<li>Datahøstning 1: webbrower-requests, tekst</li>
+<li>Hvad er data: type af data, JSON</li>
+<li>Visualisering 1: visning af billeder</li>
+<li>Datahøstning 2: request-parametre, &quot;user agent&quot;</li>
+<li>Visualisering 2: Wordcloud, søjlediagrammer</li>
+<li>Datahøstning 3: udtræk af data, RSS, Open Graph</li>
+<li>Visualisering 3: mere om digitale billeder</li>
+<li>Data Science Eksempel: fra brugshistorik til viden</li>
+</ul>
+</section><section class="slide level2">
+
+<ul>
+<li>Fælles frokost</li>
+<li>Opsummering og videre inspiration</li>
+<li>Tableau workshop</li>
 </ul>
 </section></section>
-<section><section id="i-gang-med-jupyter" class="titleslide slide level1"><h1>I gang med Jupyter</h1></section><section id="installation" class="slide level2">
+<section><section id="i-gang-med-jupyter" class="titleslide slide level1"><h1>I gang med Jupyter</h1></section><section id="jupyter-notebook" class="slide level2">
+<h2>Jupyter Notebook</h2>
+<p>Det værktøj, som vi vil bruge til at arbejde med data.</p>
+<ol type="1">
+<li>Installation / kørsel</li>
+<li>Computersprog</li>
+<li>Eksempler</li>
+</ol>
+</section><section id="installation" class="slide level2">
 <h2>Installation</h2>
 <ul>
-<li>Installation / kørsel af jupyter</li>
-<li>eksempel regnemaskine</li>
-<li>Programmering Anekdote et fremmed land - peg og fagter <em>versus</em> ord og tale
+<li>Hentes fra <a href="https://www.anaconda.com/download">www.anaconda.com/download</a> (vælg Python 3.6)</li>
+<li>Guide på <a href="http://data-science-workshop.solsort.com">data-science-workshop.solsort.com</a></li>
+<li>Medbragte USB-sticks</li>
+</ul>
+<p>Kan også køres i skyen:</p>
 <ul>
-<li>lære et par fraser vs. lære sproget</li>
+<li><a href="https:/notebooks.azure.com">notebooks.azure.com</a> (samt delvist <a href="https://colab.research.google.com/notebook">colab.research.google.com/notebook</a>)</li>
+</ul>
+</section><section id="tour-jupyter-monty-python" class="slide level2">
+<h2>Tour Jupyter / <small><strike>Monty</strike></small> Python</h2>
+<ul>
+<li>&quot;Par-programmering&quot;, samarbejde parvis
+<ul>
+<li>strategisk vs teknisk</li>
 </ul></li>
-<li>eksempel sammensatte ord</li>
+<li>Gennemgang af grænsefladen: celler, tekst</li>
+<li>Indbygget hjælp (?), beregningskerne, 100.000 x hej</li>
+<li>Eksempel på fejl</li>
+</ul>
+</section><section id="øvelser" class="slide level2">
+<h2>Øvelser</h2>
+<ul>
+<li>gennemgå grænseflade turen</li>
+<li>udregn <code>1+2+3</code></li>
+<li>udregn <code>10 * &quot;spam&quot;</code></li>
+<li>print en hilsen samt jeres navne ud på skærme</li>
+<li>lav simpelt program, der danner sammensatte ord eller sætninger</li>
+</ul>
+</section><section id="computersprog" class="slide level2">
+<h2>Computersprog</h2>
+<ul>
+<li>Pege og fagter <em>versus</em> ord og tale</li>
+<li>Ord: Computer (1613, Ada Byron, DASK, i dag).</li>
+<li>Hvordan virker computere. Trinvise opskrifter</li>
+<li>Sprog-eksempler: shell, JavaScript, Python</li>
+<li>Blot et par fraser, vi skal ikke lære sprog nu</li>
+<li>Ord: Debug (striks/dum maskine, instant feedback).</li>
+</ul>
+</section><section class="slide level2">
+
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/H96566k.jpg"></img></p>
+</section></section>
+<section><section id="datahøstning-1---simple-requests-rå-tekst-og-json" class="titleslide slide level1"><h1>Datahøstning 1 - simple requests, rå tekst og JSON</h1></section><section id="hvordan-henter-vi-data" class="slide level2">
+<h2>Hvordan henter vi data</h2>
+<ul>
+<li>Hvad er en url: protokol, server, sti</li>
+<li>Python import af funktionalitet: <code>import requests</code></li>
+<li><code>requests('http://google.com/humans.txt').text</code></li>
+<li>variable, print</li>
+<li>eksempel robots.txt</li>
+</ul>
+</section><section id="simpel-behandling-af-tekst-data" class="slide level2">
+<h2>Simpel behandling af tekst-data</h2>
+<ul>
+<li>eksempel: hent fortune-file
+<ul>
+<li><a href="https://github.com/JKirchartz/fortune/" class="uri">https://github.com/JKirchartz/fortune/</a></li>
+<li><a href="http://fortunes.cat-v.org/" class="uri">http://fortunes.cat-v.org/</a></li>
+</ul></li>
+<li>eksempel: opsplit fortune file i fortunes</li>
+<li>eksempel: udskriv tilfældigt element fra liste</li>
+<li>øvelse: udvælg fortune file, og udskriv tilfældige fortunes.</li>
+</ul>
+</section><section id="hvordan-virker-en-www" class="slide level2">
+<h2>Hvordan virker en www</h2>
+<ul>
+<li>HTTP
+<ul>
+<li>Forespørgsel, m. url, headers etc.</li>
+<li>Svar</li>
+</ul></li>
+<li>Content-types: text/html, image/..., application/json</li>
+<li>øvelse hent JSON-data fra api.reddit.com/r/...</li>
 </ul>
 </section></section>
-<section><section id="velkomst---hvem-er-i-hvem-er-jeg---tre-nøgleord" class="titleslide slide level1"><h1>Velkomst - hvem er I, hvem er jeg - tre nøgleord</h1></section><section id="section" class="slide level2">
-<h2></h2>
-<p>Hurtig runde, tre nøgleord om hvem I er.</p>
-<p>Min baggrund: informationsvidenskab</p>
-</section></section>
-<section><section id="datahøstning-1---simple-requests-rå-tekst-og-json" class="titleslide slide level1"><h1>Datahøstning 1 - simple requests, rå tekst og JSON</h1></section><section id="section-1" class="slide level2">
-<h2></h2>
-<ul>
-<li>Hvad er HTTP / hvordan henter man data</li>
-<li>Tekst
-<ul>
-<li>eksempel: fortune files - fortune cookies - http://fortunes.cat-v.org/, https://github.com/JKirchartz/fortune/</li>
-<li>eksempel: shakespeare word frequency</li>
-<li>eksempel: robots.txt (humans.txt)</li>
-</ul></li>
-<li>JSON
-<ul>
-<li>reddit/worldnews</li>
-</ul></li>
-</ul>
-</section></section>
-<section><section id="strukturerede-data-og-json" class="titleslide slide level1"><h1>Strukturerede data og JSON</h1></section><section id="section-2" class="slide level2">
+<section><section id="strukturerede-data-og-json" class="titleslide slide level1"><h1>Strukturerede data og JSON</h1></section><section id="section" class="slide level2">
 <h2></h2>
 <ul>
 <li>Hvad er data?
@@ -110,7 +195,7 @@
 <li>eksempel: udtræk overskrifter fra reddit/worldnews</li>
 </ul>
 </section></section>
-<section><section id="visualisering-1-hentning-og-visning-af-billeder" class="titleslide slide level1"><h1>Visualisering 1: hentning og visning af billeder</h1></section><section id="section-3" class="slide level2">
+<section><section id="visualisering-1-hentning-og-visning-af-billeder" class="titleslide slide level1"><h1>Visualisering 1: hentning og visning af billeder</h1></section><section id="section-1" class="slide level2">
 <h2></h2>
 <ul>
 <li>billeder i computeren</li>
@@ -120,7 +205,7 @@
 <li>eksempel: reddit/pics</li>
 </ul>
 </section></section>
-<section><section id="datahøstning-2---http-queries-useragent" class="titleslide slide level1"><h1>Datahøstning 2 - HTTP queries, useragent</h1></section><section id="section-4" class="slide level2">
+<section><section id="datahøstning-2---http-queries-useragent" class="titleslide slide level1"><h1>Datahøstning 2 - HTTP queries, useragent</h1></section><section id="section-2" class="slide level2">
 <h2></h2>
 <ul>
 <li>Mere om HTTP
@@ -137,15 +222,21 @@
 </ul></li>
 </ul>
 </section></section>
-<section><section id="visualisering-2-wordcloud-søjlediagram" class="titleslide slide level1"><h1>Visualisering 2: Wordcloud, søjlediagram</h1></section><section id="section-5" class="slide level2">
+<section><section id="visualisering-2-wordcloud-søjlediagram" class="titleslide slide level1"><h1>Visualisering 2: Wordcloud, søjlediagram</h1></section><section id="section-3" class="slide level2">
 <h2></h2>
 <ul>
 <li>wikipedia: tekst word cloud</li>
 <li>opensearch: subject cloud</li>
 <li>wikipedia: cocitationsanalyse</li>
 </ul>
+</section><section id="eksempel-ordfrekvens" class="slide level2">
+<h2>Eksempel ordfrekvens:</h2>
+<ul>
+<li>Eksempel: ordfrekvens: humpty dumpty</li>
+<li>øvelse: hent tekstfile og udskriv ordfrekvens</li>
+</ul>
 </section></section>
-<section><section id="datahøstning-3---behandlede-data" class="titleslide slide level1"><h1>Datahøstning 3 - behandlede data</h1></section><section id="section-6" class="slide level2">
+<section><section id="datahøstning-3---behandlede-data" class="titleslide slide level1"><h1>Datahøstning 3 - behandlede data</h1></section><section id="section-4" class="slide level2">
 <h2></h2>
 <ul>
 <li>RSS-feeds - dr.dk, ...
@@ -163,7 +254,7 @@
 <li>reddit next page</li>
 </ul>
 </section></section>
-<section><section id="visualisering-3-billedbehandling-sammensætning" class="titleslide slide level1"><h1>Visualisering 3: billedbehandling / sammensætning</h1></section><section id="section-7" class="slide level2">
+<section><section id="visualisering-3-billedbehandling-sammensætning" class="titleslide slide level1"><h1>Visualisering 3: billedbehandling / sammensætning</h1></section><section id="section-5" class="slide level2">
 <h2></h2>
 <ul>
 <li>nyheds-billed-collage DR, reddit</li>
@@ -171,7 +262,7 @@
 <li>reddit lang liste af billeder + titel</li>
 </ul>
 </section></section>
-<section><section id="eksempel-biblioteksdata" class="titleslide slide level1"><h1>Eksempel: Biblioteksdata</h1></section><section id="section-8" class="slide level2">
+<section><section id="eksempel-biblioteksdata" class="titleslide slide level1"><h1>Eksempel: Biblioteksdata</h1></section><section id="section-6" class="slide level2">
 <h2></h2>
 <ul>
 <li>idé: genre-rum</li>
@@ -181,27 +272,26 @@
 </ul>
 </section></section>
 <section><section id="fælles-frokost-fri-leg-indtil-1257" class="titleslide slide level1"><h1>Fælles Frokost <br><small>Fri leg indtil 12:57</small></h1></section></section>
-<section><section id="opsummering-og-videre-inspiration" class="titleslide slide level1"><h1>Opsummering og videre inspiration</h1></section><section id="section-9" class="slide level2">
-<h2></h2>
-<ul>
-<li><p>Diskussion - hvad er det vigtigste I har lært / taget med fra denne del af workshop'en</p></li>
-<li><p>Gennemgang af det vi har gennemgået.</p></li>
-<li>Hvis I vil lære at programmere...
+<section><section id="opsummering-og-videre-inspiration" class="titleslide slide level1"><h1>Opsummering og videre inspiration</h1></section><section id="hvad-har-vi-lært" class="slide level2">
+<h2>Hvad har vi lært</h2>
+<p>Hvad er det vigtigste I har lært og<br/> taget med fra denne del af workshop'en? <br> (Diskutér to og to. Og i plenum)</p>
+<p>Ønsker til næste gang...? <br><br />
+<small>...sportsresultater, madopskrifter, aktiekurser, billeder af nuttede katte,...</small></p>
+</section><section class="slide level2">
+
+<p>TODO Gentag agenda med fagtermer her.</p>
+</section><section id="lær-python-programmering" class="slide level2">
+<h2>Lær Python programmering</h2>
 <ul>
 <li>http://greenteapress.com/wp/think-python-2e/</li>
 <li>https://codecombat.com/play</li>
 <li>https://www.datacamp.com/courses/intro-to-python-for-data-science</li>
 <li>https://www.codecademy.com/learn/learn-python</li>
-<li>NB: python 2 vs python 3</li>
-</ul></li>
-<li>Ønsker til næste gang...?
-<ul>
-<li>Sportsresultater, madopskrifter, aktiekurser, billeder af nuttede katte,... ?</li>
-</ul></li>
 </ul>
-</section></section>
-<section><section id="emner-i-detaljer" class="titleslide slide level1"><h1>Emner i detaljer</h1></section><section id="section-10" class="slide level2">
-<h2></h2>
+<p>Bemærk: Vi bruger Python 3, nogle af ovenstående bruger Python 2, og der er små forskelle.</p>
+</section><section id="øvelser-1" class="slide level2">
+<h2>Øvelser</h2>
+<p>Ønsker til næste gang...? <br> <small>...sportsresultater, madopskrifter, aktiekurser, billeder af nuttede katte,...</small> # Emner i detaljer ##</p>
 <ul>
 <li>spørgsmål, emne I vil mere i dybden med
 <ul>
