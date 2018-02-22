@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>image-composition</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>cookbook-datasources</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -11771,55 +11771,1113 @@ div#notebook {
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Data-sources">Data sources<a class="anchor-link" href="#Data-sources">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="text">text<a class="anchor-link" href="#text">&#182;</a></h2>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">PIL</span> <span class="k">import</span> <span class="n">Image</span>
-<span class="kn">from</span> <span class="nn">io</span> <span class="k">import</span> <span class="n">BytesIO</span>
-<span class="kn">import</span> <span class="nn">requests</span>
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://upload.wikimedia.org/wikipedia/commons/f/fb/Buffalo_nickles.jpg&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">fortunes</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/JKirchartz/fortune/master/jung&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fortunes</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">500</span><span class="p">])</span>
 </pre></div>
 
 </div>
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>The word &#39;happiness&#39; would lose its meaning if it were not balanced by sadness.
+ -- Carl Jung
+%
+One looks back with appreciation to the brilliant teachers, but with gratitude to those who touched our human feelings. The curriculum is so much necessary raw material, but warmth is the vital element for the growing plant and for the soul of the child.
+ -- Carl Jung
+%
+Knowing your own darkness is the best method for dealing with the darknesses of other people.
+ -- Carl Jung
+%
+Everything that irritat
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="reddit">reddit<a class="anchor-link" href="#reddit">&#182;</a></h2>
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">src</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">))</span>
-<span class="n">src</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+<span class="n">reddit_response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+    <span class="s1">&#39;http://api.reddit.com/r/funny&#39;</span><span class="p">,</span> 
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;User-Agent&#39;</span><span class="p">:</span> <span class="s1">&#39;Mozilla/5 Data Science Intro&#39;</span><span class="p">})</span>
+<span class="n">reddit_data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">reddit_response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+
+<span class="n">reddit_page2</span> <span class="o">=</span>  <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+    <span class="s1">&#39;http://api.reddit.com/r/funny&#39;</span><span class="p">,</span> 
+    <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;after&quot;</span><span class="p">:</span> <span class="n">reddit_data</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">][</span><span class="s2">&quot;after&quot;</span><span class="p">]},</span>
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;User-Agent&#39;</span><span class="p">:</span> <span class="s1">&#39;Mozilla/5.0 Data Science Workshop at inf.ku.dk&#39;</span><span class="p">})</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+
+<span class="n">reddit_page2</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">][</span><span class="s2">&quot;children&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
 
 </div>
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[2]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{&#39;data&#39;: {&#39;approved_at_utc&#39;: None,
+  &#39;approved_by&#39;: None,
+  &#39;archived&#39;: False,
+  &#39;author&#39;: &#39;fizfilson&#39;,
+  &#39;author_flair_css_class&#39;: None,
+  &#39;author_flair_text&#39;: None,
+  &#39;banned_at_utc&#39;: None,
+  &#39;banned_by&#39;: None,
+  &#39;brand_safe&#39;: True,
+  &#39;can_gild&#39;: False,
+  &#39;can_mod_post&#39;: False,
+  &#39;clicked&#39;: False,
+  &#39;contest_mode&#39;: False,
+  &#39;created&#39;: 1519331929.0,
+  &#39;created_utc&#39;: 1519303129.0,
+  &#39;distinguished&#39;: None,
+  &#39;domain&#39;: &#39;i.redd.it&#39;,
+  &#39;downs&#39;: 0,
+  &#39;edited&#39;: False,
+  &#39;gilded&#39;: 0,
+  &#39;hidden&#39;: False,
+  &#39;hide_score&#39;: False,
+  &#39;id&#39;: &#39;7zel4y&#39;,
+  &#39;is_crosspostable&#39;: False,
+  &#39;is_reddit_media_domain&#39;: True,
+  &#39;is_self&#39;: False,
+  &#39;is_video&#39;: False,
+  &#39;likes&#39;: None,
+  &#39;link_flair_css_class&#39;: None,
+  &#39;link_flair_text&#39;: None,
+  &#39;locked&#39;: False,
+  &#39;media&#39;: None,
+  &#39;media_embed&#39;: {},
+  &#39;mod_note&#39;: None,
+  &#39;mod_reason_by&#39;: None,
+  &#39;mod_reason_title&#39;: None,
+  &#39;mod_reports&#39;: [],
+  &#39;name&#39;: &#39;t3_7zel4y&#39;,
+  &#39;num_comments&#39;: 7,
+  &#39;num_crossposts&#39;: 0,
+  &#39;num_reports&#39;: None,
+  &#39;over_18&#39;: False,
+  &#39;parent_whitelist_status&#39;: &#39;all_ads&#39;,
+  &#39;permalink&#39;: &#39;/r/funny/comments/7zel4y/no_one/&#39;,
+  &#39;pinned&#39;: False,
+  &#39;post_hint&#39;: &#39;image&#39;,
+  &#39;preview&#39;: {&#39;enabled&#39;: True,
+   &#39;images&#39;: [{&#39;id&#39;: &#39;bwpWeUiwdTar4duXPbe_pWy4oreN6mQl9HebST2eIE0&#39;,
+     &#39;resolutions&#39;: [{&#39;height&#39;: 80,
+       &#39;url&#39;: &#39;https://i.redditmedia.com/7AwbyjEh-PV8YJH3yIwnbckAqUjwZlNdsiP5mHzIs_s.jpg?fit=crop&amp;amp;crop=faces%2Centropy&amp;amp;arh=2&amp;amp;w=108&amp;amp;fm=jpg&amp;amp;s=7a821d531b55d6501961a3ed38b87ba4&#39;,
+       &#39;width&#39;: 108},
+      {&#39;height&#39;: 161,
+       &#39;url&#39;: &#39;https://i.redditmedia.com/7AwbyjEh-PV8YJH3yIwnbckAqUjwZlNdsiP5mHzIs_s.jpg?fit=crop&amp;amp;crop=faces%2Centropy&amp;amp;arh=2&amp;amp;w=216&amp;amp;fm=jpg&amp;amp;s=aa2c4067812dccd22576dea2eebc8707&#39;,
+       &#39;width&#39;: 216},
+      {&#39;height&#39;: 239,
+       &#39;url&#39;: &#39;https://i.redditmedia.com/7AwbyjEh-PV8YJH3yIwnbckAqUjwZlNdsiP5mHzIs_s.jpg?fit=crop&amp;amp;crop=faces%2Centropy&amp;amp;arh=2&amp;amp;w=320&amp;amp;fm=jpg&amp;amp;s=14a61c48ed135113557a4347ccd8850f&#39;,
+       &#39;width&#39;: 320},
+      {&#39;height&#39;: 478,
+       &#39;url&#39;: &#39;https://i.redditmedia.com/7AwbyjEh-PV8YJH3yIwnbckAqUjwZlNdsiP5mHzIs_s.jpg?fit=crop&amp;amp;crop=faces%2Centropy&amp;amp;arh=2&amp;amp;w=640&amp;amp;fm=jpg&amp;amp;s=0bb66920cca7aa32f85e390fd37b118f&#39;,
+       &#39;width&#39;: 640},
+      {&#39;height&#39;: 717,
+       &#39;url&#39;: &#39;https://i.redditmedia.com/7AwbyjEh-PV8YJH3yIwnbckAqUjwZlNdsiP5mHzIs_s.jpg?fit=crop&amp;amp;crop=faces%2Centropy&amp;amp;arh=2&amp;amp;w=960&amp;amp;fm=jpg&amp;amp;s=ca8c31d4362460edc91861965c7f3636&#39;,
+       &#39;width&#39;: 960},
+      {&#39;height&#39;: 806,
+       &#39;url&#39;: &#39;https://i.redditmedia.com/7AwbyjEh-PV8YJH3yIwnbckAqUjwZlNdsiP5mHzIs_s.jpg?fit=crop&amp;amp;crop=faces%2Centropy&amp;amp;arh=2&amp;amp;w=1080&amp;amp;fm=jpg&amp;amp;s=f9faa4f57e8cc691bdac54a8a8d975da&#39;,
+       &#39;width&#39;: 1080}],
+     &#39;source&#39;: {&#39;height&#39;: 928,
+      &#39;url&#39;: &#39;https://i.redditmedia.com/7AwbyjEh-PV8YJH3yIwnbckAqUjwZlNdsiP5mHzIs_s.jpg?fm=jpg&amp;amp;s=6e5fc136bcb70b793e5d4effd5bf3a43&#39;,
+      &#39;width&#39;: 1242},
+     &#39;variants&#39;: {}}]},
+  &#39;quarantine&#39;: False,
+  &#39;removal_reason&#39;: None,
+  &#39;report_reasons&#39;: None,
+  &#39;saved&#39;: False,
+  &#39;score&#39;: 270,
+  &#39;secure_media&#39;: None,
+  &#39;secure_media_embed&#39;: {},
+  &#39;selftext&#39;: &#39;&#39;,
+  &#39;selftext_html&#39;: None,
+  &#39;spoiler&#39;: False,
+  &#39;stickied&#39;: False,
+  &#39;subreddit&#39;: &#39;funny&#39;,
+  &#39;subreddit_id&#39;: &#39;t5_2qh33&#39;,
+  &#39;subreddit_name_prefixed&#39;: &#39;r/funny&#39;,
+  &#39;subreddit_type&#39;: &#39;public&#39;,
+  &#39;suggested_sort&#39;: None,
+  &#39;thumbnail&#39;: &#39;https://b.thumbs.redditmedia.com/VqrQYo4vDJRbAMPNriSEpKq6FQI8I78BdV_cgb5xpow.jpg&#39;,
+  &#39;thumbnail_height&#39;: 104,
+  &#39;thumbnail_width&#39;: 140,
+  &#39;title&#39;: &#39;No one.&#39;,
+  &#39;ups&#39;: 270,
+  &#39;url&#39;: &#39;https://i.redd.it/9caglpxperh01.jpg&#39;,
+  &#39;user_reports&#39;: [],
+  &#39;view_count&#39;: None,
+  &#39;visited&#39;: False,
+  &#39;whitelist_status&#39;: &#39;all_ads&#39;},
+ &#39;kind&#39;: &#39;t3&#39;}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="worldbank">worldbank<a class="anchor-link" href="#worldbank">&#182;</a></h2>
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span><span class="p">;</span>
-<span class="n">width</span> <span class="o">=</span> <span class="mi">800</span>
-<span class="n">height</span> <span class="o">=</span> <span class="mi">600</span>
-
-<span class="n">image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s1">&#39;RGBA&#39;</span><span class="p">,</span> <span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">))</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
-    <span class="n">size</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="n">size</span><span class="p">,</span> <span class="n">width</span><span class="p">)</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="n">size</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>    
-    <span class="n">image</span><span class="o">.</span><span class="n">paste</span><span class="p">(</span><span class="n">src</span><span class="o">.</span><span class="n">resize</span><span class="p">((</span><span class="n">size</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">size</span><span class="o">/</span><span class="n">src</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">src</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="mi">1</span><span class="p">])),</span> <span class="n">Image</span><span class="o">.</span><span class="n">ANTIALIAS</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">))</span>
-<span class="n">image</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+    <span class="s1">&#39;http://api.worldbank.org/v2/countries/DNK/indicators/SP.POP.TOTL&#39;</span><span class="p">,</span> 
+    <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;per_page&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+        <span class="s2">&quot;format&quot;</span><span class="p">:</span> <span class="s2">&quot;json&quot;</span>
+    <span class="p">})</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 </pre></div>
 
 </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[{&#39;page&#39;: 1, &#39;pages&#39;: 1, &#39;per_page&#39;: 100, &#39;lastupdated&#39;: &#39;2018-02-22&#39;, &#39;total&#39;: 58}, [{&#39;indicator&#39;: {&#39;id&#39;: &#39;SP.POP.TOTL&#39;, &#39;value&#39;: &#39;Population, total&#39;}, &#39;country&#39;: {&#39;id&#39;: &#39;DK&#39;, &#39;value&#39;: &#39;Denmark&#39;}, &#39;countryiso3code&#39;: &#39;DNK&#39;, &#39;date&#39;: &#39;2017&#39;, &#39;value&#39;: None, &#39;unit&#39;: &#39;&#39;, &#39;obs_status&#39;: &#39;&#39;, &#39;decimal&#39;: 0}, {&#39;indicator&#39;: {&#39;id&#39;: &#39;SP.POP.TOTL&#39;, &#39;value&#39;: &#39;Population, total&#39;}, &#39;country&#39;: {&#39;id&#39;: &#39;DK&#39;, &#39;value&#39;: &#39;Denmark&#39;}, &#39;countryiso3code&#39;: &#39;DNK&#39;, &#39;date&#39;: &#39;2016&#39;, &#39;value&#39;: 5731118, &#39;unit&#39;: &#39;&#39;, &#39;obs_status&#39;: &#39;&#39;, &#39;decimal&#39;: 0}, {&#39;indicator&#39;: {&#39;id&#39;: &#39;SP.POP.TOTL&#39;, &#39;value&#39;: &#39;Population, total&#39;}, &#39;country&#39;: {&#39;id&#39;: &#39;DK&#39;, &#39;value&#39;: &#39;Denmark&#39;}, &#39;countryiso3code&#39;: &#39;DNK&#39;, &#39;date&#39;: &#39;2015&#39;, &#39;value&#39;: 5683483, &#39;unit&#39;: &#39;&#39;, &#39;obs_status&#39;: &#39;&#39;, &#39;decimal&#39;: 0}, {&#39;indicator&#39;: {&#39;id&#39;: &#39;SP.POP.TOTL&#39;, &#39;value&#39;: &#39;Population, total&#39;}, &#39;country&#39;: {&#39;id&#39;: &#39;DK&#39;, &#39;value&#39;: &#39;Denmark&#39;}, &#39;countryiso3code&#39;: &#39;DNK&#39;, &#39;date&#39;: &#39;2014&#39;, &#39;value&#39;: 5643475, &#39;unit&#39;: &#39;&#39;, &#39;obs_status&#39;: &#39;&#39;, &#39;decimal&#39;: 0}, {&#39;indicator&#39;: {&#39;id&#39;: &#39;SP.POP.TOTL&#39;, &#39;value&#39;: &#39;Population, total&#39;}, &#39;country&#39;: {&#39;id&#39;: &#39;DK&#39;, &#39;value&#39;: &#39;Denmark&#39;}, &#39;countryiso3code&#39;: &#39;DNK&#39;, &#39;date&#39;: &#39;2013&#39;, &#39;value&#39;: 5614932, &#39;unit&#39;: &#39;&#39;, &#39;obs_status&#39;: &#39;&#39;, &#39;decimal&#39;: 0}, {&#39;indicator&#39;: {&#39;id&#39;: &#39;SP.POP.TOTL&#39;, &#39;value&#39;: &#39;Population, total&#39;}, &#39;country&#39;: {&#39;id&#39;: &#39;DK&#39;, &#39;value&#39;: &#39;Denmark&#39;}, &#39;countryiso3code&#39;: &#39;DNK&#39;, &#39;date&#39;: &#39;2012&#39;, &#39;value&#39;: 5591572, &#39;unit&#39;: &#39;&#39;, &#39;obs_status&#39;: &#39;&#39;, &#39;decimal&#39;: 0}, {&#39;indicator&#39;: {&#39;id&#39;: &#39;SP.POP.TOTL&#39;, &#39;value&#39;: &#39;Population, total&#39;}, &#39;country&#39;: {&#39;id&#39;: &#39;DK&#39;, &#39;value&#39;: &#39;Denmark&#39;}, &#39;countryiso3code&#39;: &#39;DNK&#39;, &#39;date&#39;: &#39;2011&#39;, &#39;value&#39;: 5570572, &#39;unit&#39;: &#39;&#39;, &#39;obs_status&#39;: &#39;&#39;, &#39;decimal&#39;: 0}, {&#39;indicator&#39;: {&#39;id&#39;: &#39;SP.POP.TOTL&#39;, &#39;value&#39;: &#39;Population, total&#39;}, &#39;country&#39;: {&#39;id&#39;: &#39;DK&#39;, &#39;value&#39;: &#39;Denmark&#39;}, &#39;countryiso3code&#39;: &#39;DNK&#39;, &#39;date&#39;: &#39;2010&#39;, &#39;value&#39;: 5547683, &#39;unit&#39;: &#39;&#39;, &#39;obs_status&#39;: &#39;&#39;, &#39;decimal&#39;: 0}, {&#39;indicator&#39;: {&#39;id&#39;: &#39;SP.POP.TOTL&#39;, &#39;value&#39;: &#39;Population, total&#39;}, &#39;country&#39;: {&#39;id&#39;: &#39;DK&#39;, &#39;value&#39;: &#39;Denmark&#39;}, &#39;countryiso3code&#39;: &#39;DNK&#39;, &#39;date&#39;: &#39;2009&#39;, &#39;value&#39;: 5523095, &#39;unit&#39;: &#39;&#39;, &#39;obs_status&#39;: &#39;&#39;, &#39;decimal&#39;: 0}, {&#39;indicator&#39;: {&#39;id&#39;: &#39;SP.POP.TOTL&#39;, &#39;value&#39;: &#39;Population, total&#39;}, &#39;country&#39;: {&#39;id&#39;: &#39;DK&#39;, &#39;value&#39;: &#39;Denmark&#39;}, &#39;countryiso3code&#39;: &#39;DNK&#39;, &#39;date&#39;: &#39;2008&#39;, &#39;value&#39;: 5493621, &#39;unit&#39;: &#39;&#39;, &#39;obs_status&#39;: &#39;&#39;, &#39;decimal&#39;: 0}, {&#39;indicator&#39;: {&#39;id&#39;: &#39;SP.POP.TOTL&#39;, &#39;value&#39;: &#39;Population, total&#39;}, &#39;country&#39;: {&#39;id&#39;: &#39;DK&#39;, &#39;value&#39;: &#39;Denmark&#39;}, &#39;countryiso3code&#39;: &#39;DNK&#39;, &#39;date&#39;: &#39;2007&#39;, &#39;value&#39;: 5461438, &#39;unit&#39;: &#39;&#39;, &#39;obs_status&#39;: &#39;&#39;, &#39;decimal&#39;: 0}, {&#39;indicator&#39;: {&#39;id&#39;: &#39;SP.POP.TOTL&#39;, &#39;value&#39;: &#39;Population, total&#39;}, &#39;country&#39;: {&#39;id&#39;: &#39;DK&#39;, &#39;value&#39;: &#39;Denmark&#39;}, &#39;countryiso3code&#39;: &#39;DNK&#39;, &#39;date&#39;: &#39;2006&#39;, &#39;value&#39;: 5437272, &#39;unit&#39;: &#39;&#39;, &#39;obs_status&#39;: &#39;&#39;, &#39;decimal&#39;: 0}, {&#39;indicator&#39;: {&#39;id&#39;: &#39;SP.POP.TOTL&#39;, &#39;value&#39;: &#39;Population, total&#39;}, &#39;country&#39;: {&#39;id&#39;: &#39;DK&#39;, &#39;value&#39;: &#39;Denmark&#39;}, &#39;countryiso3code&#39;: &#39;DNK&#39;, &#39;date&#39;: &#39;2005&#39;, &#39;value&#39;: 5419432, &#39;unit&#39;: &#39;&#39;, &#39;obs_status&#39;: &#39;&#39;, &#39;decimal&#39;: 0}, {&#39;indicator&#39;: {&#39;id&#39;: &#39;SP.POP.TOTL&#39;, &#39;value&#39;: &#39;Population, total&#39;}, &#39;country&#39;: {&#39;id&#39;: &#39;DK&#39;, &#39;value&#39;: &#39;Denmark&#39;}, &#39;countryiso3code&#39;: &#39;DNK&#39;, &#39;date&#39;: &#39;2004&#39;, &#39;value&#39;: 5404523, &#39;unit&#39;: &#39;&#39;, &#39;obs_status&#39;: &#39;&#39;, &#39;decimal&#39;: 0}, {&#39;indicator&#39;: {&#39;id&#39;: &#39;SP.POP.TOTL&#39;, &#39;value&#39;: &#39;Population, total&#39;}, &#39;country&#39;: {&#39;id&#39;: &#39;DK&#39;, &#39;value&#39;: &#39;Denmark&#39;}, &#39;countryiso3code&#39;: &#39;DNK&#39;, &#39;date&#39;: &#39;2003&#39;, &#39;value&#39;: 5390574, &#39;unit&#39;: &#39;&#39;, &#39;obs_status&#39;: &#39;&#39;, &#39;decimal&#39;: 0}, {&#39;indicator&#39;: {&#39;id&#39;: &#39;SP.POP.TOTL&#39;, &#39;value&#39;: &#39;Population, total&#39;}, &#39;country&#39;: {&#39;id&#39;: &#39;DK&#39;, &#39;value&#39;: &#39;Denmark&#39;}, &#39;countryiso3code&#39;: &#39;DNK&#39;, &#39;date&#39;: &#39;2002&#39;, &#39;value&#39;: 5375931, &#39;unit&#39;: &#39;&#39;, &#39;obs_status&#39;: &#39;&#39;, &#39;decimal&#39;: 0}, {&#39;indicator&#39;: {&#39;id&#39;: &#39;SP.POP.TOTL&#39;, &#39;value&#39;: &#39;Population, total&#39;}, &#39;country&#39;: {&#39;id&#39;: &#39;DK&#39;, &#39;value&#39;: &#39;Denmark&#39;}, &#39;countryiso3code&#39;: &#39;DNK&#39;, &#39;date&#39;: &#39;2001&#39;, &#39;value&#39;: 5358783, &#39;unit&#39;: &#39;&#39;, &#39;obs_status&#39;: &#39;&#39;, &#39;decimal&#39;: 0}, {&#39;indicator&#39;: {&#39;id&#39;: &#39;SP.POP.TOTL&#39;, &#39;value&#39;: &#39;Population, total&#39;}, &#39;country&#39;: {&#39;id&#39;: &#39;DK&#39;, &#39;value&#39;: &#39;Denmark&#39;}, &#39;countryiso3code&#39;: &#39;DNK&#39;, &#39;date&#39;: &#39;2000&#39;, &#39;value&#39;: 5339616, &#39;unit&#39;: &#39;&#39;, &#39;obs_status&#39;: &#39;&#39;, &#39;decimal&#39;: 0}, {&#39;indicator&#39;: {&#39;id&#39;: &#39;SP.POP.TOTL&#39;, &#39;value&#39;: &#39;Population, total&#39;}, &#39;country&#39;: {&#39;id&#39;: &#39;DK&#39;, &#39;value&#39;: &#39;Denmark&#39;}, &#39;countryiso3code&#39;: &#39;DNK&#39;, &#39;date&#39;: &#39;1999&#39;, &#39;value&#39;: 5321799, &#39;unit&#39;: &#39;&#39;, &#39;obs_status&#39;: &#39;&#39;, &#39;decimal&#39;: 0}, {&#39;indicator&#39;: {&#39;id&#39;: &#39;SP.POP.TOTL&#39;, &#39;value&#39;: &#39;Population, total&#39;}, &#39;country&#39;: {&#39;id&#39;: &#39;DK&#39;, &#39;value&#39;: &#39;Denmark&#39;}, &#39;countryiso3code&#39;: &#39;DNK&#39;, &#39;date&#39;: &#39;1998&#39;, &#39;value&#39;: 5304219, &#39;unit&#39;: &#39;&#39;, &#39;obs_status&#39;: &#39;&#39;, &#39;decimal&#39;: 0}, {&#39;indicator&#39;: {&#39;id&#39;: &#39;SP.POP.TOTL&#39;, &#39;value&#39;: &#39;Population, total&#39;}, &#39;country&#39;: {&#39;id&#39;: &#39;DK&#39;, &#39;value&#39;: &#39;Denmark&#39;}, &#39;countryiso3code&#39;: &#39;DNK&#39;, &#39;date&#39;: &#39;1997&#39;, &#39;value&#39;: 5284991, &#39;unit&#39;: &#39;&#39;, &#39;obs_status&#39;: &#39;&#39;, &#39;decimal&#39;: 0}, {&#39;indicator&#39;: {&#39;id&#39;: &#39;SP.POP.TOTL&#39;, &#39;value&#39;: &#39;Population, total&#39;}, &#39;country&#39;: {&#39;id&#39;: &#39;DK&#39;, &#39;value&#39;: &#39;Denmark&#39;}, &#39;countryiso3code&#39;: &#39;DNK&#39;, &#39;date&#39;: &#39;1996&#39;, &#39;value&#39;: 5263074, &#39;unit&#39;: &#39;&#39;, &#39;obs_status&#39;: &#39;&#39;, &#39;decimal&#39;: 0}, {&#39;indicator&#39;: {&#39;id&#39;: &#39;SP.POP.TOTL&#39;, &#39;value&#39;: &#39;Population, total&#39;}, &#39;country&#39;: {&#39;id&#39;: &#39;DK&#39;, &#39;value&#39;: &#39;Denmark&#39;}, &#39;countryiso3code&#39;: &#39;DNK&#39;, &#39;date&#39;: &#39;1995&#39;, &#39;value&#39;: 5233373, &#39;unit&#39;: &#39;&#39;, &#39;obs_status&#39;: &#39;&#39;, &#39;decimal&#39;: 0}, {&#39;indicator&#39;: {&#39;id&#39;: &#39;SP.POP.TOTL&#39;, &#39;value&#39;: &#39;Population, total&#39;}, &#39;country&#39;: {&#39;id&#39;: &#39;DK&#39;, &#39;value&#39;: &#39;Denmark&#39;}, &#39;countryiso3code&#39;: &#39;DNK&#39;, &#39;date&#39;: &#39;1994&#39;, &#39;value&#39;: 5206180, &#39;unit&#39;: &#39;&#39;, &#39;obs_status&#39;: &#39;&#39;, &#39;decimal&#39;: 0}, {&#39;indicator&#39;: {&#39;id&#39;: &#39;SP.POP.TOTL&#39;, &#39;value&#39;: &#39;Population, total&#39;}, &#39;country&#39;: {&#39;id&#39;: &#39;DK&#39;, &#39;value&#39;: &#39;Denmark&#39;}, &#39;countryiso3code&#39;: &#39;DNK&#39;, &#39;date&#39;: &#39;1993&#39;, &#39;value&#39;: 5188628, &#39;unit&#39;: &#39;&#39;, &#39;obs_status&#39;: &#39;&#39;, &#39;decimal&#39;: 0}, {&#39;indicator&#39;: {&#39;id&#39;: &#39;SP.POP.TOTL&#39;, &#39;value&#39;: &#39;Population, total&#39;}, &#39;country&#39;: {&#39;id&#39;: &#39;DK&#39;, &#39;value&#39;: &#39;Denmark&#39;}, &#39;countryiso3code&#39;: &#39;DNK&#39;, &#39;date&#39;: &#39;1992&#39;, &#39;value&#39;: 5171370, &#39;unit&#39;: &#39;&#39;, &#39;obs_status&#39;: &#39;&#39;, &#39;decimal&#39;: 0}, {&#39;indicator&#39;: {&#39;id&#39;: &#39;SP.POP.TOTL&#39;, &#39;value&#39;: &#39;Population, total&#39;}, &#39;country&#39;: {&#39;id&#39;: &#39;DK&#39;, &#39;value&#39;: &#39;Denmark&#39;}, &#39;countryiso3code&#39;: &#39;DNK&#39;, &#39;date&#39;: &#39;1991&#39;, &#39;value&#39;: 5154298, &#39;unit&#39;: &#39;&#39;, &#39;obs_status&#39;: &#39;&#39;, &#39;decimal&#39;: 0}, {&#39;indicator&#39;: {&#39;id&#39;: &#39;SP.POP.TOTL&#39;, &#39;value&#39;: &#39;Population, total&#39;}, &#39;country&#39;: {&#39;id&#39;: &#39;DK&#39;, &#39;value&#39;: &#39;Denmark&#39;}, &#39;countryiso3code&#39;: &#39;DNK&#39;, &#39;date&#39;: &#39;1990&#39;, &#39;value&#39;: 5140939, &#39;unit&#39;: &#39;&#39;, &#39;obs_status&#39;: &#39;&#39;, &#39;decimal&#39;: 0}, {&#39;indicator&#39;: {&#39;id&#39;: &#39;SP.POP.TOTL&#39;, &#39;value&#39;: &#39;Population, total&#39;}, &#39;country&#39;: {&#39;id&#39;: &#39;DK&#39;, &#39;value&#39;: &#39;Denmark&#39;}, &#39;countryiso3code&#39;: &#39;DNK&#39;, &#39;date&#39;: &#39;1989&#39;, &#39;value&#39;: 5132594, &#39;unit&#39;: &#39;&#39;, &#39;obs_status&#39;: &#39;&#39;, &#39;decimal&#39;: 0}, {&#39;indicator&#39;: {&#39;id&#39;: &#39;SP.POP.TOTL&#39;, &#39;value&#39;: &#39;Population, total&#39;}, &#39;country&#39;: {&#39;id&#39;: &#39;DK&#39;, &#39;value&#39;: &#39;Denmark&#39;}, &#39;countryiso3code&#39;: &#39;DNK&#39;, &#39;date&#39;: &#39;1988&#39;, &#39;value&#39;: 5129516, &#39;unit&#39;: &#39;&#39;, &#39;obs_status&#39;: &#39;&#39;, &#39;decimal&#39;: 0}, {&#39;indicator&#39;: {&#39;id&#39;: &#39;SP.POP.TOTL&#39;, &#39;value&#39;: &#39;Population, total&#39;}, &#39;country&#39;: {&#39;id&#39;: &#39;DK&#39;, &#39;value&#39;: &#39;Denmark&#39;}, &#39;countryiso3code&#39;: &#39;DNK&#39;, &#39;date&#39;: &#39;1987&#39;, &#39;value&#39;: 5127024, &#39;unit&#39;: &#39;&#39;, &#39;obs_status&#39;: &#39;&#39;, &#39;decimal&#39;: 0}, {&#39;indicator&#39;: {&#39;id&#39;: &#39;SP.POP.TOTL&#39;, &#39;value&#39;: &#39;Population, total&#39;}, &#39;country&#39;: {&#39;id&#39;: &#39;DK&#39;, &#39;value&#39;: &#39;Denmark&#39;}, &#39;countryiso3code&#39;: &#39;DNK&#39;, &#39;date&#39;: &#39;1986&#39;, &#39;value&#39;: 5120534, &#39;unit&#39;: &#39;&#39;, &#39;obs_status&#39;: &#39;&#39;, &#39;decimal&#39;: 0}, {&#39;indicator&#39;: {&#39;id&#39;: &#39;SP.POP.TOTL&#39;, &#39;value&#39;: &#39;Population, total&#39;}, &#39;country&#39;: {&#39;id&#39;: &#39;DK&#39;, &#39;value&#39;: &#39;Denmark&#39;}, &#39;countryiso3code&#39;: &#39;DNK&#39;, &#39;date&#39;: &#39;1985&#39;, &#39;value&#39;: 5113691, &#39;unit&#39;: &#39;&#39;, &#39;obs_status&#39;: &#39;&#39;, &#39;decimal&#39;: 0}, {&#39;indicator&#39;: {&#39;id&#39;: &#39;SP.POP.TOTL&#39;, &#39;value&#39;: &#39;Population, total&#39;}, &#39;country&#39;: {&#39;id&#39;: &#39;DK&#39;, &#39;value&#39;: &#39;Denmark&#39;}, &#39;countryiso3code&#39;: &#39;DNK&#39;, &#39;date&#39;: &#39;1984&#39;, &#39;value&#39;: 5111619, &#39;unit&#39;: &#39;&#39;, &#39;obs_status&#39;: &#39;&#39;, &#39;decimal&#39;: 0}, {&#39;indicator&#39;: {&#39;id&#39;: &#39;SP.POP.TOTL&#39;, &#39;value&#39;: &#39;Population, total&#39;}, &#39;country&#39;: {&#39;id&#39;: &#39;DK&#39;, &#39;value&#39;: &#39;Denmark&#39;}, &#39;countryiso3code&#39;: &#39;DNK&#39;, &#39;date&#39;: &#39;1983&#39;, &#39;value&#39;: 5114297, &#39;unit&#39;: &#39;&#39;, &#39;obs_status&#39;: &#39;&#39;, &#39;decimal&#39;: 0}, {&#39;indicator&#39;: {&#39;id&#39;: &#39;SP.POP.TOTL&#39;, &#39;value&#39;: &#39;Population, total&#39;}, &#39;country&#39;: {&#39;id&#39;: &#39;DK&#39;, &#39;value&#39;: &#39;Denmark&#39;}, &#39;countryiso3code&#39;: &#39;DNK&#39;, &#39;date&#39;: &#39;1982&#39;, &#39;value&#39;: 5117810, &#39;unit&#39;: &#39;&#39;, &#39;obs_status&#39;: &#39;&#39;, &#39;decimal&#39;: 0}, {&#39;indicator&#39;: {&#39;id&#39;: &#39;SP.POP.TOTL&#39;, &#39;value&#39;: &#39;Population, total&#39;}, &#39;country&#39;: {&#39;id&#39;: &#39;DK&#39;, &#39;value&#39;: &#39;Denmark&#39;}, &#39;countryiso3code&#39;: &#39;DNK&#39;, &#39;date&#39;: &#39;1981&#39;, &#39;value&#39;: 5121572, &#39;unit&#39;: &#39;&#39;, &#39;obs_status&#39;: &#39;&#39;, &#39;decimal&#39;: 0}, {&#39;indicator&#39;: {&#39;id&#39;: &#39;SP.POP.TOTL&#39;, &#39;value&#39;: &#39;Population, total&#39;}, &#39;country&#39;: {&#39;id&#39;: &#39;DK&#39;, &#39;value&#39;: &#39;Denmark&#39;}, &#39;countryiso3code&#39;: &#39;DNK&#39;, &#39;date&#39;: &#39;1980&#39;, &#39;value&#39;: 5123027, &#39;unit&#39;: &#39;&#39;, &#39;obs_status&#39;: &#39;&#39;, &#39;decimal&#39;: 0}, {&#39;indicator&#39;: {&#39;id&#39;: &#39;SP.POP.TOTL&#39;, &#39;value&#39;: &#39;Population, total&#39;}, &#39;country&#39;: {&#39;id&#39;: &#39;DK&#39;, &#39;value&#39;: &#39;Denmark&#39;}, &#39;countryiso3code&#39;: &#39;DNK&#39;, &#39;date&#39;: &#39;1979&#39;, &#39;value&#39;: 5116801, &#39;unit&#39;: &#39;&#39;, &#39;obs_status&#39;: &#39;&#39;, &#39;decimal&#39;: 0}, {&#39;indicator&#39;: {&#39;id&#39;: &#39;SP.POP.TOTL&#39;, &#39;value&#39;: &#39;Population, total&#39;}, &#39;country&#39;: {&#39;id&#39;: &#39;DK&#39;, &#39;value&#39;: &#39;Denmark&#39;}, &#39;countryiso3code&#39;: &#39;DNK&#39;, &#39;date&#39;: &#39;1978&#39;, &#39;value&#39;: 5104248, &#39;unit&#39;: &#39;&#39;, &#39;obs_status&#39;: &#39;&#39;, &#39;decimal&#39;: 0}, {&#39;indicator&#39;: {&#39;id&#39;: &#39;SP.POP.TOTL&#39;, &#39;value&#39;: &#39;Population, total&#39;}, &#39;country&#39;: {&#39;id&#39;: &#39;DK&#39;, &#39;value&#39;: &#39;Denmark&#39;}, &#39;countryiso3code&#39;: &#39;DNK&#39;, &#39;date&#39;: &#39;1977&#39;, &#39;value&#39;: 5088419, &#39;unit&#39;: &#39;&#39;, &#39;obs_status&#39;: &#39;&#39;, &#39;decimal&#39;: 0}, {&#39;indicator&#39;: {&#39;id&#39;: &#39;SP.POP.TOTL&#39;, &#39;value&#39;: &#39;Population, total&#39;}, &#39;country&#39;: {&#39;id&#39;: &#39;DK&#39;, &#39;value&#39;: &#39;Denmark&#39;}, &#39;countryiso3code&#39;: &#39;DNK&#39;, &#39;date&#39;: &#39;1976&#39;, &#39;value&#39;: 5072596, &#39;unit&#39;: &#39;&#39;, &#39;obs_status&#39;: &#39;&#39;, &#39;decimal&#39;: 0}, {&#39;indicator&#39;: {&#39;id&#39;: &#39;SP.POP.TOTL&#39;, &#39;value&#39;: &#39;Population, total&#39;}, &#39;country&#39;: {&#39;id&#39;: &#39;DK&#39;, &#39;value&#39;: &#39;Denmark&#39;}, &#39;countryiso3code&#39;: &#39;DNK&#39;, &#39;date&#39;: &#39;1975&#39;, &#39;value&#39;: 5059862, &#39;unit&#39;: &#39;&#39;, &#39;obs_status&#39;: &#39;&#39;, &#39;decimal&#39;: 0}, {&#39;indicator&#39;: {&#39;id&#39;: &#39;SP.POP.TOTL&#39;, &#39;value&#39;: &#39;Population, total&#39;}, &#39;country&#39;: {&#39;id&#39;: &#39;DK&#39;, &#39;value&#39;: &#39;Denmark&#39;}, &#39;countryiso3code&#39;: &#39;DNK&#39;, &#39;date&#39;: &#39;1974&#39;, &#39;value&#39;: 5045297, &#39;unit&#39;: &#39;&#39;, &#39;obs_status&#39;: &#39;&#39;, &#39;decimal&#39;: 0}, {&#39;indicator&#39;: {&#39;id&#39;: &#39;SP.POP.TOTL&#39;, &#39;value&#39;: &#39;Population, total&#39;}, &#39;country&#39;: {&#39;id&#39;: &#39;DK&#39;, &#39;value&#39;: &#39;Denmark&#39;}, &#39;countryiso3code&#39;: &#39;DNK&#39;, &#39;date&#39;: &#39;1973&#39;, &#39;value&#39;: 5021861, &#39;unit&#39;: &#39;&#39;, &#39;obs_status&#39;: &#39;&#39;, &#39;decimal&#39;: 0}, {&#39;indicator&#39;: {&#39;id&#39;: &#39;SP.POP.TOTL&#39;, &#39;value&#39;: &#39;Population, total&#39;}, &#39;country&#39;: {&#39;id&#39;: &#39;DK&#39;, &#39;value&#39;: &#39;Denmark&#39;}, &#39;countryiso3code&#39;: &#39;DNK&#39;, &#39;date&#39;: &#39;1972&#39;, &#39;value&#39;: 4991596, &#39;unit&#39;: &#39;&#39;, &#39;obs_status&#39;: &#39;&#39;, &#39;decimal&#39;: 0}, {&#39;indicator&#39;: {&#39;id&#39;: &#39;SP.POP.TOTL&#39;, &#39;value&#39;: &#39;Population, total&#39;}, &#39;country&#39;: {&#39;id&#39;: &#39;DK&#39;, &#39;value&#39;: &#39;Denmark&#39;}, &#39;countryiso3code&#39;: &#39;DNK&#39;, &#39;date&#39;: &#39;1971&#39;, &#39;value&#39;: 4963126, &#39;unit&#39;: &#39;&#39;, &#39;obs_status&#39;: &#39;&#39;, &#39;decimal&#39;: 0}, {&#39;indicator&#39;: {&#39;id&#39;: &#39;SP.POP.TOTL&#39;, &#39;value&#39;: &#39;Population, total&#39;}, &#39;country&#39;: {&#39;id&#39;: &#39;DK&#39;, &#39;value&#39;: &#39;Denmark&#39;}, &#39;countryiso3code&#39;: &#39;DNK&#39;, &#39;date&#39;: &#39;1970&#39;, &#39;value&#39;: 4928757, &#39;unit&#39;: &#39;&#39;, &#39;obs_status&#39;: &#39;&#39;, &#39;decimal&#39;: 0}, {&#39;indicator&#39;: {&#39;id&#39;: &#39;SP.POP.TOTL&#39;, &#39;value&#39;: &#39;Population, total&#39;}, &#39;country&#39;: {&#39;id&#39;: &#39;DK&#39;, &#39;value&#39;: &#39;Denmark&#39;}, &#39;countryiso3code&#39;: &#39;DNK&#39;, &#39;date&#39;: &#39;1969&#39;, &#39;value&#39;: 4891860, &#39;unit&#39;: &#39;&#39;, &#39;obs_status&#39;: &#39;&#39;, &#39;decimal&#39;: 0}, {&#39;indicator&#39;: {&#39;id&#39;: &#39;SP.POP.TOTL&#39;, &#39;value&#39;: &#39;Population, total&#39;}, &#39;country&#39;: {&#39;id&#39;: &#39;DK&#39;, &#39;value&#39;: &#39;Denmark&#39;}, &#39;countryiso3code&#39;: &#39;DNK&#39;, &#39;date&#39;: &#39;1968&#39;, &#39;value&#39;: 4864883, &#39;unit&#39;: &#39;&#39;, &#39;obs_status&#39;: &#39;&#39;, &#39;decimal&#39;: 0}, {&#39;indicator&#39;: {&#39;id&#39;: &#39;SP.POP.TOTL&#39;, &#39;value&#39;: &#39;Population, total&#39;}, &#39;country&#39;: {&#39;id&#39;: &#39;DK&#39;, &#39;value&#39;: &#39;Denmark&#39;}, &#39;countryiso3code&#39;: &#39;DNK&#39;, &#39;date&#39;: &#39;1967&#39;, &#39;value&#39;: 4835354, &#39;unit&#39;: &#39;&#39;, &#39;obs_status&#39;: &#39;&#39;, &#39;decimal&#39;: 0}, {&#39;indicator&#39;: {&#39;id&#39;: &#39;SP.POP.TOTL&#39;, &#39;value&#39;: &#39;Population, total&#39;}, &#39;country&#39;: {&#39;id&#39;: &#39;DK&#39;, &#39;value&#39;: &#39;Denmark&#39;}, &#39;countryiso3code&#39;: &#39;DNK&#39;, &#39;date&#39;: &#39;1966&#39;, &#39;value&#39;: 4797381, &#39;unit&#39;: &#39;&#39;, &#39;obs_status&#39;: &#39;&#39;, &#39;decimal&#39;: 0}, {&#39;indicator&#39;: {&#39;id&#39;: &#39;SP.POP.TOTL&#39;, &#39;value&#39;: &#39;Population, total&#39;}, &#39;country&#39;: {&#39;id&#39;: &#39;DK&#39;, &#39;value&#39;: &#39;Denmark&#39;}, &#39;countryiso3code&#39;: &#39;DNK&#39;, &#39;date&#39;: &#39;1965&#39;, &#39;value&#39;: 4759012, &#39;unit&#39;: &#39;&#39;, &#39;obs_status&#39;: &#39;&#39;, &#39;decimal&#39;: 0}, {&#39;indicator&#39;: {&#39;id&#39;: &#39;SP.POP.TOTL&#39;, &#39;value&#39;: &#39;Population, total&#39;}, &#39;country&#39;: {&#39;id&#39;: &#39;DK&#39;, &#39;value&#39;: &#39;Denmark&#39;}, &#39;countryiso3code&#39;: &#39;DNK&#39;, &#39;date&#39;: &#39;1964&#39;, &#39;value&#39;: 4722072, &#39;unit&#39;: &#39;&#39;, &#39;obs_status&#39;: &#39;&#39;, &#39;decimal&#39;: 0}, {&#39;indicator&#39;: {&#39;id&#39;: &#39;SP.POP.TOTL&#39;, &#39;value&#39;: &#39;Population, total&#39;}, &#39;country&#39;: {&#39;id&#39;: &#39;DK&#39;, &#39;value&#39;: &#39;Denmark&#39;}, &#39;countryiso3code&#39;: &#39;DNK&#39;, &#39;date&#39;: &#39;1963&#39;, &#39;value&#39;: 4684483, &#39;unit&#39;: &#39;&#39;, &#39;obs_status&#39;: &#39;&#39;, &#39;decimal&#39;: 0}, {&#39;indicator&#39;: {&#39;id&#39;: &#39;SP.POP.TOTL&#39;, &#39;value&#39;: &#39;Population, total&#39;}, &#39;country&#39;: {&#39;id&#39;: &#39;DK&#39;, &#39;value&#39;: &#39;Denmark&#39;}, &#39;countryiso3code&#39;: &#39;DNK&#39;, &#39;date&#39;: &#39;1962&#39;, &#39;value&#39;: 4647727, &#39;unit&#39;: &#39;&#39;, &#39;obs_status&#39;: &#39;&#39;, &#39;decimal&#39;: 0}, {&#39;indicator&#39;: {&#39;id&#39;: &#39;SP.POP.TOTL&#39;, &#39;value&#39;: &#39;Population, total&#39;}, &#39;country&#39;: {&#39;id&#39;: &#39;DK&#39;, &#39;value&#39;: &#39;Denmark&#39;}, &#39;countryiso3code&#39;: &#39;DNK&#39;, &#39;date&#39;: &#39;1961&#39;, &#39;value&#39;: 4611687, &#39;unit&#39;: &#39;&#39;, &#39;obs_status&#39;: &#39;&#39;, &#39;decimal&#39;: 0}, {&#39;indicator&#39;: {&#39;id&#39;: &#39;SP.POP.TOTL&#39;, &#39;value&#39;: &#39;Population, total&#39;}, &#39;country&#39;: {&#39;id&#39;: &#39;DK&#39;, &#39;value&#39;: &#39;Denmark&#39;}, &#39;countryiso3code&#39;: &#39;DNK&#39;, &#39;date&#39;: &#39;1960&#39;, &#39;value&#39;: 4579603, &#39;unit&#39;: &#39;&#39;, &#39;obs_status&#39;: &#39;&#39;, &#39;decimal&#39;: 0}]]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Wikipedia">Wikipedia<a class="anchor-link" href="#Wikipedia">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="links">links<a class="anchor-link" href="#links">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Philosophy&quot;</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+    <span class="s1">&#39;https://en.wikipedia.org/w/api.php&#39;</span><span class="p">,</span> 
+    <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;action&quot;</span><span class="p">:</span> <span class="s2">&quot;query&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;titles&quot;</span><span class="p">:</span> <span class="n">title</span><span class="p">,</span>
+        <span class="s2">&quot;prop&quot;</span><span class="p">:</span> <span class="s2">&quot;links&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;format&quot;</span><span class="p">:</span> <span class="s2">&quot;json&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;plnamespace&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+        <span class="s2">&quot;pllimit&quot;</span><span class="p">:</span> <span class="mi">5</span>
+    <span class="p">})</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+<span class="p">[</span><span class="n">link</span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s2">&quot;query&quot;</span><span class="p">][</span><span class="s2">&quot;pages&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">())[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;links&quot;</span><span class="p">]]</span>
+<span class="n">result</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[4]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{&#39;continue&#39;: {&#39;continue&#39;: &#39;||&#39;, &#39;plcontinue&#39;: &#39;13692155|0|Absolute_idealism&#39;},
+ &#39;query&#39;: {&#39;pages&#39;: {&#39;13692155&#39;: {&#39;links&#39;: [{&#39;ns&#39;: 0,
+      &#39;title&#39;: &#39;19th-century philosophy&#39;},
+     {&#39;ns&#39;: 0, &#39;title&#39;: &#39;A.C. Grayling&#39;},
+     {&#39;ns&#39;: 0, &#39;title&#39;: &#39;A priori knowledge&#39;},
+     {&#39;ns&#39;: 0, &#39;title&#39;: &#39;Abhidharma&#39;},
+     {&#39;ns&#39;: 0, &#39;title&#39;: &#39;Absolute (philosophy)&#39;}],
+    &#39;ns&#39;: 0,
+    &#39;pageid&#39;: 13692155,
+    &#39;title&#39;: &#39;Philosophy&#39;}}}}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">result</span><span class="p">[</span><span class="s2">&quot;query&quot;</span><span class="p">][</span><span class="s2">&quot;pages&quot;</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[5]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{&#39;13692155&#39;: {&#39;links&#39;: [{&#39;ns&#39;: 0, &#39;title&#39;: &#39;19th-century philosophy&#39;},
+   {&#39;ns&#39;: 0, &#39;title&#39;: &#39;A.C. Grayling&#39;},
+   {&#39;ns&#39;: 0, &#39;title&#39;: &#39;A priori knowledge&#39;},
+   {&#39;ns&#39;: 0, &#39;title&#39;: &#39;Abhidharma&#39;},
+   {&#39;ns&#39;: 0, &#39;title&#39;: &#39;Absolute (philosophy)&#39;}],
+  &#39;ns&#39;: 0,
+  &#39;pageid&#39;: 13692155,
+  &#39;title&#39;: &#39;Philosophy&#39;}}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s2">&quot;query&quot;</span><span class="p">][</span><span class="s2">&quot;pages&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">())[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[6]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{&#39;links&#39;: [{&#39;ns&#39;: 0, &#39;title&#39;: &#39;19th-century philosophy&#39;},
+  {&#39;ns&#39;: 0, &#39;title&#39;: &#39;A.C. Grayling&#39;},
+  {&#39;ns&#39;: 0, &#39;title&#39;: &#39;A priori knowledge&#39;},
+  {&#39;ns&#39;: 0, &#39;title&#39;: &#39;Abhidharma&#39;},
+  {&#39;ns&#39;: 0, &#39;title&#39;: &#39;Absolute (philosophy)&#39;}],
+ &#39;ns&#39;: 0,
+ &#39;pageid&#39;: 13692155,
+ &#39;title&#39;: &#39;Philosophy&#39;}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">links</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s2">&quot;query&quot;</span><span class="p">][</span><span class="s2">&quot;pages&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">())[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;links&quot;</span><span class="p">]</span>
+<span class="n">links</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[7]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[{&#39;ns&#39;: 0, &#39;title&#39;: &#39;19th-century philosophy&#39;},
+ {&#39;ns&#39;: 0, &#39;title&#39;: &#39;A.C. Grayling&#39;},
+ {&#39;ns&#39;: 0, &#39;title&#39;: &#39;A priori knowledge&#39;},
+ {&#39;ns&#39;: 0, &#39;title&#39;: &#39;Abhidharma&#39;},
+ {&#39;ns&#39;: 0, &#39;title&#39;: &#39;Absolute (philosophy)&#39;}]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="p">[</span><span class="n">link</span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">links</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[8]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[&#39;19th-century philosophy&#39;,
+ &#39;A.C. Grayling&#39;,
+ &#39;A priori knowledge&#39;,
+ &#39;Abhidharma&#39;,
+ &#39;Absolute (philosophy)&#39;]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="links-here">links here<a class="anchor-link" href="#links-here">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Blues dance&quot;</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+    <span class="s1">&#39;https://en.wikipedia.org/w/api.php&#39;</span><span class="p">,</span> 
+    <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;action&quot;</span><span class="p">:</span> <span class="s2">&quot;query&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;titles&quot;</span><span class="p">:</span> <span class="n">title</span><span class="p">,</span>
+        <span class="s2">&quot;prop&quot;</span><span class="p">:</span> <span class="s2">&quot;linkshere&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;format&quot;</span><span class="p">:</span> <span class="s2">&quot;json&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lhlimit&quot;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+        <span class="s2">&quot;lhnamespace&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;lhshow&quot;</span><span class="p">:</span> <span class="s2">&quot;!redirect&quot;</span>
+    <span class="p">})</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+<span class="n">links</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s2">&quot;query&quot;</span><span class="p">][</span><span class="s2">&quot;pages&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">())[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;linkshere&quot;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">([</span><span class="n">link</span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">links</span><span class="p">])</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[&#39;Blues&#39;, &#39;List of dance style categories&#39;, &#39;Dance improvisation&#39;, &#39;List of lindy hop moves&#39;, &#39;Lindy exchange&#39;, &#39;Blues (disambiguation)&#39;, &#39;Close embrace&#39;, &#39;List of North American folk music traditions&#39;, &#39;Lindy hop today&#39;, &#39;Talang 2007&#39;, &#39;The Spirit Moves&#39;, &#39;List of street and vernacular dances&#39;, &#39;Butler May&#39;, &#39;Disappearance of Tiffany Daniels&#39;]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="content">content<a class="anchor-link" href="#content">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Contact improvisation&quot;</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+    <span class="s1">&#39;https://en.wikipedia.org/w/api.php&#39;</span><span class="p">,</span> 
+    <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;action&quot;</span><span class="p">:</span> <span class="s2">&quot;query&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;titles&quot;</span><span class="p">:</span> <span class="n">title</span><span class="p">,</span>
+        <span class="s2">&quot;prop&quot;</span><span class="p">:</span> <span class="s2">&quot;extracts&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;format&quot;</span><span class="p">:</span> <span class="s2">&quot;json&quot;</span><span class="p">,</span>
+    <span class="p">})</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+<span class="nb">list</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s2">&quot;query&quot;</span><span class="p">][</span><span class="s2">&quot;pages&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">())[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;extract&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="mi">600</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[10]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#34;&lt;p&gt;&lt;b&gt;Contact improvisation&lt;/b&gt; is a form of improvised dancing that has been developing internationally since 1972. Contact improvisation involves the exploration from one&#39;s body to the next by using the fundamentals of sharing weight, touch, being kinetically aware and finding a point of contact between you and your partner(s). American dancer and choreographer Steve Paxton had first conceived and presented this form of movement and has impacted how dancers and people view movement by a large factor. Paxton utilized his past training such as Aikido, a martial art form, to explore and push bo&#34;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Open-Graph-Protocol-(youtube,-dr.dk,-...)">Open Graph Protocol (youtube, dr.dk, ...)<a class="anchor-link" href="#Open-Graph-Protocol-(youtube,-dr.dk,-...)">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>pip install python-opengraph
+<span class="kn">from</span> <span class="nn">opengraph</span> <span class="k">import</span> <span class="n">OpenGraph</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Requirement already satisfied: python-opengraph in /home/rasmuserik/anaconda3/lib/python3.6/site-packages
+Requirement already satisfied: requests&gt;=2.7 in /home/rasmuserik/anaconda3/lib/python3.6/site-packages (from python-opengraph)
+Requirement already satisfied: beautifulsoup4&gt;=4.3 in /home/rasmuserik/anaconda3/lib/python3.6/site-packages (from python-opengraph)
+Requirement already satisfied: chardet&lt;3.1.0,&gt;=3.0.2 in /home/rasmuserik/anaconda3/lib/python3.6/site-packages (from requests&gt;=2.7-&gt;python-opengraph)
+Requirement already satisfied: idna&lt;2.7,&gt;=2.5 in /home/rasmuserik/anaconda3/lib/python3.6/site-packages (from requests&gt;=2.7-&gt;python-opengraph)
+Requirement already satisfied: urllib3&lt;1.23,&gt;=1.21.1 in /home/rasmuserik/anaconda3/lib/python3.6/site-packages (from requests&gt;=2.7-&gt;python-opengraph)
+Requirement already satisfied: certifi&gt;=2017.4.17 in /home/rasmuserik/anaconda3/lib/python3.6/site-packages (from requests&gt;=2.7-&gt;python-opengraph)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dr</span> <span class="o">=</span> <span class="n">OpenGraph</span><span class="p">(</span><span class="s2">&quot;https://www.dr.dk/nyheder/viden/teknologi/aktivist-kaemper-dine-digitale-rettigheder-mod-tech-giganter&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dr</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{&#39;type&#39;: &#39;article&#39;, &#39;title&#39;: &#39;Aktivist kæmper for dine digitale rettigheder mod tech-giganter&#39;, &#39;site_name&#39;: &#39;DR&#39;, &#39;description&#39;: &#39;En østrigsk aktivist har startet en ny organisation, der vil sagsøge tech-virksomheder, som krænker dine digitale rettigheder.&#39;, &#39;url&#39;: &#39;https://www.dr.dk/nyheder/viden/teknologi/aktivist-kaemper-dine-digitale-rettigheder-mod-tech-giganter&#39;, &#39;image&#39;: &#39;http://asset.dr.dk/ImageScaler/?file=%2Fimages%2Fother%2F2018%2F02%2F08%2Fscanpix-20171003-150322-l.jpg&amp;server=www.dr.dk&#39;}
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>/home/rasmuserik/anaconda3/lib/python3.6/site-packages/bs4/__init__.py:181: UserWarning: No parser was explicitly specified, so I&#39;m using the best available HTML parser for this system (&#34;lxml&#34;). This usually isn&#39;t a problem, but if you run this code on another system, or in a different virtual environment, it may use a different parser and behave differently.
+
+The code that caused this warning is on line 193 of the file /home/rasmuserik/anaconda3/lib/python3.6/runpy.py. To get rid of this warning, change code that looks like this:
+
+ BeautifulSoup(YOUR_MARKUP})
+
+to this:
+
+ BeautifulSoup(YOUR_MARKUP, &#34;lxml&#34;)
+
+  markup_type=markup_type))
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">youtube</span> <span class="o">=</span> <span class="n">OpenGraph</span><span class="p">(</span><span class="s2">&quot;https://www.youtube.com/watch?v=hVimVzgtD6w&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">youtube</span><span class="o">.</span><span class="n">title</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">youtube</span><span class="o">.</span><span class="n">description</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">youtube</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>The best stats you&#39;ve ever seen | Hans Rosling
+http://www.ted.com With the drama and urgency of a sportscaster, statistics guru Hans Rosling uses an amazing new presentation tool, Gapminder, to present da...
+{&#39;type&#39;: &#39;video.other&#39;, &#39;title&#39;: &#34;The best stats you&#39;ve ever seen | Hans Rosling&#34;, &#39;site_name&#39;: &#39;YouTube&#39;, &#39;description&#39;: &#39;http://www.ted.com With the drama and urgency of a sportscaster, statistics guru Hans Rosling uses an amazing new presentation tool, Gapminder, to present da...&#39;, &#39;url&#39;: &#39;https://www.youtube.com/watch?v=hVimVzgtD6w&#39;, &#39;image&#39;: &#39;https://i.ytimg.com/vi/hVimVzgtD6w/hqdefault.jpg&#39;, &#39;video:url&#39;: &#39;http://www.youtube.com/v/hVimVzgtD6w?version=3&amp;autohide=1&#39;, &#39;video:secure_url&#39;: &#39;https://www.youtube.com/v/hVimVzgtD6w?version=3&amp;autohide=1&#39;, &#39;video:type&#39;: &#39;application/x-shockwave-flash&#39;, &#39;video:width&#39;: &#39;480&#39;, &#39;video:height&#39;: &#39;360&#39;, &#39;video:tag&#39;: &#39;child health&#39;}
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>/home/rasmuserik/anaconda3/lib/python3.6/site-packages/bs4/__init__.py:181: UserWarning: No parser was explicitly specified, so I&#39;m using the best available HTML parser for this system (&#34;lxml&#34;). This usually isn&#39;t a problem, but if you run this code on another system, or in a different virtual environment, it may use a different parser and behave differently.
+
+The code that caused this warning is on line 193 of the file /home/rasmuserik/anaconda3/lib/python3.6/runpy.py. To get rid of this warning, change code that looks like this:
+
+ BeautifulSoup(YOUR_MARKUP})
+
+to this:
+
+ BeautifulSoup(YOUR_MARKUP, &#34;lxml&#34;)
+
+  markup_type=markup_type))
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="RSS">RSS<a class="anchor-link" href="#RSS">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>pip install feedparser
+<span class="kn">import</span> <span class="nn">feedparser</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Requirement already satisfied: feedparser in /home/rasmuserik/anaconda3/lib/python3.6/site-packages
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://www.dr.dk/nyheder/service/feeds/allenyheder&#39;</span><span class="p">)</span>
+<span class="n">feedparser</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)[</span><span class="s1">&#39;entries&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[15]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{&#39;dr_channeldisplayname&#39;: &#39;Udland&#39;,
+ &#39;dr_channelname&#39;: &#39;Udland&#39;,
+ &#39;dr_imageuri620x349&#39;: &#39;https://www.dr.dk/images/other/2018/02/22/scanpix-20180221-195053-7_0.jpg&#39;,
+ &#39;dr_postingguid&#39;: &#39;24b32be6-eb99-4d89-8ea8-98f287ca46b4&#39;,
+ &#39;dr_xmlimagearticle&#39;: &#39;&#39;,
+ &#39;guidislink&#39;: False,
+ &#39;id&#39;: &#39;24b32be6-eb99-4d89-8ea8-98f287ca46b4&#39;,
+ &#39;link&#39;: &#39;http://www.dr.dk/nyheder/udland/melissa-gemte-19-elever-i-skab-under-skyderi-bevaebnede-laerere-er-latterligt&#39;,
+ &#39;links&#39;: [{&#39;href&#39;: &#39;http://www.dr.dk/nyheder/udland/melissa-gemte-19-elever-i-skab-under-skyderi-bevaebnede-laerere-er-latterligt&#39;,
+   &#39;rel&#39;: &#39;alternate&#39;,
+   &#39;type&#39;: &#39;text/html&#39;}],
+ &#39;published&#39;: &#39;Thu, 22 Feb 2018 17:57:00 +0100&#39;,
+ &#39;published_parsed&#39;: time.struct_time(tm_year=2018, tm_mon=2, tm_mday=22, tm_hour=16, tm_min=57, tm_sec=0, tm_wday=3, tm_yday=53, tm_isdst=0),
+ &#39;summary&#39;: &#34;USA&#39;s præsident har foreslået at træne og bevæbne 20 procent af de amerikanske lærere.&#34;,
+ &#39;summary_detail&#39;: {&#39;base&#39;: &#39;&#39;,
+  &#39;language&#39;: None,
+  &#39;type&#39;: &#39;text/html&#39;,
+  &#39;value&#39;: &#34;USA&#39;s præsident har foreslået at træne og bevæbne 20 procent af de amerikanske lærere.&#34;},
+ &#39;title&#39;: &#39;Melissa gemte 19 elever i skab under skyderi: &#34;Bevæbnede lærere er latterligt&#34;&#39;,
+ &#39;title_detail&#39;: {&#39;base&#39;: &#39;&#39;,
+  &#39;language&#39;: None,
+  &#39;type&#39;: &#39;text/plain&#39;,
+  &#39;value&#39;: &#39;Melissa gemte 19 elever i skab under skyderi: &#34;Bevæbnede lærere er latterligt&#34;&#39;}}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="creative-commons-search-(incl.-flickr)">creative commons search (incl. flickr)<a class="anchor-link" href="#creative-commons-search-(incl.-flickr)">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">query</span> <span class="o">=</span> <span class="s1">&#39;cat&#39;</span>
+<span class="n">html</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+    <span class="s2">&quot;https://ccsearch.creativecommons.org/&quot;</span><span class="p">,</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;search&quot;</span><span class="p">:</span> <span class="n">query</span><span class="p">,</span>
+        <span class="s2">&quot;page&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;search_fields&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">,</span> <span class="s2">&quot;creator&quot;</span><span class="p">,</span> <span class="s2">&quot;tags&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;per_page&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+        <span class="s2">&quot;licenses&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;ALL-$&#39;</span><span class="p">,</span> <span class="s1">&#39;ALL-MOD&#39;</span><span class="p">],</span>
+        <span class="s2">&quot;work_types&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;photos&quot;</span><span class="p">,</span> <span class="s2">&quot;cultural&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;providers&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;500px&quot;</span><span class="p">,</span> <span class="s2">&quot;flickr&quot;</span><span class="p">,</span> <span class="s2">&quot;europeana&quot;</span><span class="p">,</span> <span class="s2">&quot;met&quot;</span><span class="p">,</span> <span class="s2">&quot;nypl&quot;</span><span class="p">,</span> <span class="s2">&quot;rijksmuseum&quot;</span><span class="p">]</span>        
+    <span class="p">},</span>
+    <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;User-Agent&#39;</span><span class="p">:</span> <span class="s1">&#39;Mozilla/5.0 Data Science Workshop at inf.ku.dk&#39;</span>
+    <span class="p">})</span><span class="o">.</span><span class="n">text</span>
+<span class="n">html</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">200</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[16]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;\n&lt;!doctype html&gt;\n&lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1&#34;&gt;\n&lt;meta charset=&#34;UTF-8&#34;&gt;&lt;script type=&#34;text/javascript&#34;&gt;window.NREUM||(NREUM={}),__nr_require=function(e,t,n){functio&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">bs4</span> <span class="k">import</span> <span class="n">BeautifulSoup</span>
+<span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html</span><span class="p">,</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
+<span class="n">images</span> <span class="o">=</span> <span class="p">[</span><span class="n">img</span><span class="o">.</span><span class="n">attrs</span> <span class="k">for</span> <span class="n">img</span> <span class="ow">in</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;img&#39;</span><span class="p">)</span> <span class="k">if</span> <span class="n">img</span><span class="o">.</span><span class="n">attrs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;data-title&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)]</span>
+<span class="n">images</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[17]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{&#39;data-created_on&#39;: &#39;2016-11-16T16:05:57.498240+00:00&#39;,
+ &#39;data-creator&#39;: &#39;Cat Wendt&#39;,
+ &#39;data-creator_url&#39;: &#39;https://www.flickr.com/people/catwendt/&#39;,
+ &#39;data-foreign_landing_url&#39;: &#39;https://www.flickr.com/photos/catwendt/15589191923&#39;,
+ &#39;data-identifier&#39;: &#39;DkKgzQ0SUf8DA6waC0vn2w==&#39;,
+ &#39;data-license&#39;: &#39;by&#39;,
+ &#39;data-license_version&#39;: &#39;2.0&#39;,
+ &#39;data-provider&#39;: &#39;flickr&#39;,
+ &#39;data-provider_name&#39;: &#39;Flickr&#39;,
+ &#39;data-provider_url&#39;: &#39;https://flickr.com&#39;,
+ &#39;data-source&#39;: &#39;openimages&#39;,
+ &#39;data-tags&#39;: &#34;[&#39;vertebrate&#39;, &#39;carnivoran&#39;, &#39;cat&#39;, &#39;british semi longhair&#39;, &#39;norwegian forest cat&#39;, &#39;mammal&#39;, &#39;domestic long haired cat&#39;, &#39;cat like mammal&#39;, &#39;animal&#39;, &#39;nose&#39;, &#39;european shorthair&#39;, &#39;close up&#39;, &#39;domestic short haired cat&#39;, &#39;small to medium sized cats&#39;, &#39;whiskers&#39;, &#39;pet&#39;, &#39;nebelung&#39;, &#39;maine coon&#39;, &#39;siberian&#39;, &#39;carnivoran&#39;]&#34;,
+ &#39;data-title&#39;: &#39;Cat Selfie (Buffy)&#39;,
+ &#39;data-url&#39;: &#39;https://farm8.staticflickr.com/7464/15589191923_e8ba97bf6c_o.jpg&#39;,
+ &#39;src&#39;: &#39;https://c8.staticflickr.com/8/7464/15589191923_99889a9f83_z.jpg&#39;}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="openplatform.dbc.dk-bibliographical-data">openplatform.dbc.dk bibliographical data<a class="anchor-link" href="#openplatform.dbc.dk-bibliographical-data">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">search_results</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+    <span class="s1">&#39;https://openplatform.dbc.dk/v2/search&#39;</span><span class="p">,</span> 
+    <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;access_token&quot;</span><span class="p">:</span> <span class="s2">&quot;fa2dfc00a4697058b43b8f8c52a03af60e889339&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;q&quot;</span><span class="p">:</span> <span class="s1">&#39;fo=&quot;Haruki Murakami&quot;&#39;</span><span class="p">,</span>
+        <span class="s2">&quot;fields&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">,</span> <span class="s2">&quot;creator&quot;</span><span class="p">,</span> <span class="s2">&quot;pid&quot;</span><span class="p">,</span> <span class="s2">&quot;coverUrlFull&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;limit&quot;</span><span class="p">:</span> <span class="mi">10</span>
+    <span class="p">})</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+<span class="n">search_results</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[18]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{&#39;data&#39;: [{&#39;coverUrlFull&#39;: [&#39;https://moreinfo.addi.dk/2.10/more_info_get.php?lokalid=24504174&amp;attachment_type=forside_stor&amp;bibliotek=870970&amp;source_id=870970&amp;key=11f628e324c65a92297e&#39;],
+   &#39;creator&#39;: [&#39;Haruki Murakami&#39;],
+   &#39;pid&#39;: [&#39;870970-basis:24504174&#39;],
+   &#39;title&#39;: [&#39;Sønden for grænsen og vesten for solen&#39;]},
+  {&#39;coverUrlFull&#39;: [&#39;https://moreinfo.addi.dk/2.10/more_info_get.php?lokalid=25254996&amp;attachment_type=forside_stor&amp;bibliotek=870970&amp;source_id=870970&amp;key=4ce81715a0ab600c0af5&#39;],
+   &#39;creator&#39;: [&#39;Haruki Murakami&#39;],
+   &#39;pid&#39;: [&#39;870970-basis:25254996&#39;],
+   &#39;title&#39;: [&#39;Sputnik min elskede&#39;]},
+  {&#39;coverUrlFull&#39;: [&#39;https://moreinfo.addi.dk/2.10/more_info_get.php?lokalid=29662177&amp;attachment_type=forside_stor&amp;bibliotek=870970&amp;source_id=870970&amp;key=2fbde785c4df21df6073&#39;],
+   &#39;creator&#39;: [&#39;Haruki Murakami&#39;],
+   &#39;pid&#39;: [&#39;870970-basis:29662177&#39;],
+   &#39;title&#39;: [&#39;En vild fårejagt&#39;]},
+  {&#39;coverUrlFull&#39;: [&#39;https://moreinfo.addi.dk/2.10/more_info_get.php?lokalid=26742943&amp;attachment_type=forside_stor&amp;bibliotek=870970&amp;source_id=870970&amp;key=f5f1643dbff43dba9a24&#39;],
+   &#39;creator&#39;: [&#39;Haruki Murakami&#39;],
+   &#39;pid&#39;: [&#39;870970-basis:26742943&#39;],
+   &#39;title&#39;: [&#39;Kafka på stranden&#39;]},
+  {&#39;creator&#39;: [&#39;Haruki Murakami&#39;],
+   &#39;pid&#39;: [&#39;870970-basis:22497464&#39;],
+   &#39;title&#39;: [&#39;Dans, dans, dans&#39;]},
+  {&#39;coverUrlFull&#39;: [&#39;https://moreinfo.addi.dk/2.10/more_info_get.php?lokalid=26001897&amp;attachment_type=forside_stor&amp;bibliotek=870970&amp;source_id=870970&amp;key=876523536b115eb9583d&#39;],
+   &#39;creator&#39;: [&#39;Haruki Murakami&#39;],
+   &#39;pid&#39;: [&#39;870970-basis:26001897&#39;],
+   &#39;title&#39;: [&#39;Norwegian wood&#39;]},
+  {&#39;coverUrlFull&#39;: [&#39;https://moreinfo.addi.dk/2.10/more_info_get.php?lokalid=27434665&amp;attachment_type=forside_stor&amp;bibliotek=870970&amp;source_id=870970&amp;key=8294ba999768764cba01&#39;],
+   &#39;creator&#39;: [&#39;Haruki Murakami&#39;],
+   &#39;pid&#39;: [&#39;870970-basis:27434665&#39;],
+   &#39;title&#39;: [&#39;Efter midnat&#39;]},
+  {&#39;creator&#39;: [&#39;Haruki Murakami&#39;],
+   &#39;pid&#39;: [&#39;874310-katalog:DBB0416292&#39;],
+   &#39;title&#39;: [&#39;Fødselsdagshistorier&#39;]},
+  {&#39;coverUrlFull&#39;: [&#39;https://moreinfo.addi.dk/2.10/more_info_get.php?lokalid=23645564&amp;attachment_type=forside_stor&amp;bibliotek=870970&amp;source_id=870970&amp;key=a52f1f7c9a9e3017f36e&#39;],
+   &#39;creator&#39;: [&#39;Haruki Murakami&#39;],
+   &#39;pid&#39;: [&#39;870970-basis:23645564&#39;],
+   &#39;title&#39;: [&#39;Trækopfuglens krønike&#39;]},
+  {&#39;creator&#39;: [&#39;Murakami Haruki&#39;],
+   &#39;pid&#39;: [&#39;875880-katalog:001320829&#39;],
+   &#39;title&#39;: [&#39;Norwegian wood&#39;]}],
+ &#39;statusCode&#39;: 200}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+    <span class="s1">&#39;https://openplatform.dbc.dk/v2/work&#39;</span><span class="p">,</span> 
+    <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;access_token&quot;</span><span class="p">:</span> <span class="s2">&quot;fa2dfc00a4697058b43b8f8c52a03af60e889339&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;pids&quot;</span><span class="p">:</span> <span class="s1">&#39;[&quot;870970-basis:28934297&quot;]&#39;</span>
+    <span class="p">})</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[19]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{&#39;data&#39;: [{&#39;abstract&#39;: [&#39;Aomame er en 30-årig smart pige, uddannet kampsportsinstruktør, men arbejder p.t. som lejemorder. Tengo er matematiklærer med forfatterdrømme. Han skal omskrive en sær 17-årig piges sære historie. Begge hovedfigurer oplever, at deres virkelighed forvrides let, hvad påvirker deres virkelighed?&#39;],
+   &#39;acIdentifier&#39;: [&#39;28934297|870970&#39;],
+   &#39;acSource&#39;: [&#39;Bibliotekskatalog&#39;],
+   &#39;accessType&#39;: [&#39;physical&#39;],
+   &#39;alternative&#39;: [&#39;1984&#39;],
+   &#39;audience&#39;: [&#39;voksenmaterialer&#39;],
+   &#39;contributorTrl&#39;: [&#39;Mette Holm&#39;],
+   &#39;creator&#39;: [&#39;Haruki Murakami&#39;],
+   &#39;creatorAut&#39;: [&#39;Haruki Murakami&#39;],
+   &#39;creatorSort&#39;: [&#39;Murakami, Haruki&#39;],
+   &#39;date&#39;: [&#39;2011&#39;],
+   &#39;dcLanguage&#39;: [&#39;Dansk&#39;],
+   &#39;dcTitle&#39;: [&#39;1Q84&#39;],
+   &#39;dcTitleFull&#39;: [&#39;1Q84. Bog 1&#39;],
+   &#39;extent&#39;: [&#39;403 sider&#39;, &#39;3 bind&#39;],
+   &#39;fedoraPid&#39;: [&#39;870970-basis:28934297&#39;],
+   &#39;hasCreatorDescription&#39;: [&#39;870971-forfweb:89734541&#39;],
+   &#39;hasReview&#39;: [&#39;870971-anmeld:34803048&#39;,
+    &#39;870971-anmeld:34803501&#39;,
+    &#39;870971-anmeld:34803013&#39;,
+    &#39;870971-anmeld:35135340&#39;,
+    &#39;870971-anmeld:34801029&#39;,
+    &#39;870976-anmeld:30958357&#39;,
+    &#39;870971-anmeld:34803498&#39;,
+    &#39;870971-anmeld:35585338&#39;,
+    &#39;870971-anmeld:34804206&#39;],
+   &#39;identifierISBN&#39;: [&#39;9788779559202&#39;],
+   &#39;language&#39;: [&#39;Dansk&#39;],
+   &#39;languageISO6392&#39;: [&#39;dan&#39;],
+   &#39;pid&#39;: [&#39;870970-basis:28934297&#39;],
+   &#39;publisher&#39;: [&#39;Klim&#39;],
+   &#39;source&#39;: [&#39;1Q84&#39;],
+   &#39;spatialDBCS&#39;: [&#39;Japan&#39;],
+   &#39;subjectDBCS&#39;: [&#39;kultur&#39;,
+    &#39;kærlighed&#39;,
+    &#39;magisk realisme&#39;,
+    &#39;magt&#39;,
+    &#39;parallelle verdener&#39;,
+    &#39;skrivekunst&#39;],
+   &#39;subjectDK5&#39;: [&#39;sk&#39;],
+   &#39;subjectDK5Text&#39;: [&#39;Skønlitteratur&#39;],
+   &#39;temporalDBCP&#39;: [&#39;1980-1989&#39;],
+   &#39;title&#39;: [&#39;1Q84&#39;],
+   &#39;titleFull&#39;: [&#39;1Q84&#39;],
+   &#39;type&#39;: [&#39;Bog (bind 1)&#39;],
+   &#39;typeBibDKType&#39;: [&#39;Bog&#39;],
+   &#39;undefined&#39;: [&#39;_BASEURL_url_ctx_fmt=info:ofi/fmt:kev:mtx:ctx&amp;ctx_ver=Z39.88-2004&amp;rft_val_fmt=info:ofi/fmt:kev:mtx:book&amp;rft.btitle=1Q84&amp;rft.aulast=Murakami&amp;rft.aufirst=Haruki&amp;rft.auinit=H&amp;rft.date=2011&amp;rft.isbn=9788779559202&amp;rft.pub=Klim&amp;rft.edition=1.+udgave,+1.+oplag+%282011%29&amp;rft.genre=book&#39;,
+    &#39;_BASEURL_url_ctx_fmt=info:ofi/fmt:kev:mtx:ctx&amp;ctx_ver=Z39.88-2004&amp;rft_val_fmt=info:ofi/fmt:kev:mtx:book&amp;rft.btitle=1Q84&amp;rft.aulast=Murakami&amp;rft.aufirst=Haruki&amp;rft.auinit=H&amp;rft.date=2011&amp;rft.isbn=9788779559202&amp;rft.pub=Klim&amp;rft.edition=1.+udgave,+1.+oplag&amp;rft.genre=book&#39;,
+    &#39;_BASEURL_url_ctx_fmt=info:ofi/fmt:kev:mtx:ctx&amp;ctx_ver=Z39.88-2004&amp;rft_val_fmt=info:ofi/fmt:kev:mtx:book&amp;rft.btitle=1Q84&amp;rft.aulast=Murakami&amp;rft.aufirst=Haruki&amp;rft.auinit=H&amp;rft.date=2013&amp;rft.isbn=9788779559202&amp;rft.pub=Klim&amp;rft.edition=1.+udgave&amp;rft.genre=book&amp;rfr_id=info:sid/dbc.dk:820010-katalog&#39;],
+   &#39;version&#39;: [&#39;1. udgave, 1. oplag (2011)&#39;],
+   &#39;workType&#39;: [&#39;book&#39;]}],
+ &#39;statusCode&#39;: 200}</pre>
+</div>
+
+</div>
+
 </div>
 </div>
 

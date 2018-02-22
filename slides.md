@@ -251,7 +251,6 @@ Notation / hvordan det skrives:
 - Øvelse - kreative billeder
 - Pixels, farvegraf
 - Øvelse: automatisk nyheds-kollage
-- Eksempel: farve-rum for billede
 
 # Eksempel: Biblioteksdata
 ## Genre-rum
