@@ -1,5 +1,19 @@
 # Data Workshop
 
+- [slides](slides.html)
+- [I gang med jupyter](jupyter-getting-started.html)
+- Fraser / kogebog
+    - [python](cookbook-python.html) ([notebook](cookbook-python.ipynb))
+    - [data kilder](cookbook-datasources.html) ([notebook](cookbook-datasources.ipynb))
+    - [visual](cookbook-visual.html) ([notebook](cookbook-visual.ipynb))
+- Eksempel biblioteksdata
+    - [Genrerum](genrerum-1.html)
+    - [Anbefalinger](genrerum-2-anbefalinger.html)
+    - [Genreklynger](genrerum-3-genreklynger.html)
+    - [Emneord](genrerum-4-emneord.html)
+
+## Announcement
+
 **Workshop for INF-studerende på 6.semester – bliv klædt på til at ’lege professionelt med data’**
 
 D. 23/2 og 16/3 (begge dage fra 9-16) afholdes en dataworkshop henvendt til alle studerende på 6.semester. Den gennemgående underviser begge dage er Rasmus Erik Voel Jensen (solsort.com), og der vil undervejs være gæsteundervisere (se mere om program nedenfor).
@@ -33,5 +47,4 @@ Workshop del 2 (16/3)
 Program og materiale til workshoppen bliver løbende blive opdateret på [data-science-workshop.solsort.com](http://data-science-workshop.solsort.com)
 
 Vel mødt!
-
 
