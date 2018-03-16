@@ -80,14 +80,6 @@ Kan også køres i skyen:
 - Indbygget hjælp (?), beregningskerne, 100.000 x hej
 - Eksempel på fejl
 
-## Øvelser
-
-- gennemgå grænseflade turen
-- udregn `1+2+3`
-- udregn `10 * "spam"`
-- print en hilsen samt jeres navne ud på skærme
-- lav simpelt program, der danner sammensatte ord eller sætninger
-
 ## Computersprog
 
 - Pege og fagter _versus_ ord og tale
@@ -102,6 +94,14 @@ Kan også køres i skyen:
 <img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/H96566k.jpg"></img>
 
 
+
+## Øvelser
+
+- gennemgå grænseflade turen
+- udregn `1+2+3`
+- udregn `10 * "spam"`
+- print en hilsen samt jeres navne ud på skærme
+- lav simpelt program, der danner sammensatte ord eller sætninger
 
 # Datahøstning 1 <br><small> HTTP-requests, tekst og JSON</small>
 
@@ -238,9 +238,16 @@ Notation / hvordan det skrives:
 
 ## Bladring i data
 
-
 - openplatform offset, limit
 - reddit next page
+
+## Data adgang
+
+- Åbne data
+- Creative Commons
+- Proprietære data
+- Åbne APIer vs Lukkede APIer
+- GDPR General Data Protection Regulation
 
 # Visualisering 3: <br> <small>Mere om billeder</small>
 
