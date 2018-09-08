@@ -28,9 +28,15 @@ Praksis:
 - mønstre i biblioteksdata
 - brainstorm: emner til næste gang
 
+Sections:
+- Jupyter
+- Computersprog vs. peg og klik
+- Data, - typer og strukturer
+- Hente data - import af funktionalitet - tekst, opsplit tekst i lister
+- Import af funktionalitet, - wordcloud, frekvensanalyse
+- Hente data - http, query, user-agent, ... wikipedia
 
 Structure:
-
 - Jupyter: velkommen - intro
     - hvem er vi
     - plan/læringsmål
@@ -51,5 +57,9 @@ Structure:
     - tekst, json
 - Jupyter: wordcloud
 - Dataleg: Frekvensanalyse
+- Internet:
+    - query parameters
+    - http methods
 - Dataleg: Wordcloud 
 - Data: alt er tal, billeder
+- rettigheder til data
