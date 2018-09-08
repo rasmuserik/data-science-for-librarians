@@ -1,7 +1,7 @@
 - veksle mellem 
     - teori
     - praksis
-    - pause / selvstændigt arbejde
+    - fri leg -pause / selvstændigt arbejde
 - NB: ur til pauser
 
 Teori:
@@ -27,3 +27,29 @@ Praksis:
 - python linær regression, og k-means
 - mønstre i biblioteksdata
 - brainstorm: emner til næste gang
+
+
+Structure:
+
+- Jupyter: velkommen - intro
+    - hvem er vi
+    - plan/læringsmål
+    - struktur: teori/praksis/fri-leg, bloom
+    - værktøj: etherpad, data-science-workshop.com, github.com - kodeeksempler
+    - I gang med jupyter
+    - fri-leg: explore jupyter
+- Jupyter: peg-og-klik vs fortælle computeren hvad den skal
+    - analogi: et fremmed land
+    - regnemaskine, - alt er data
+    - navngivning
+    - gentagelse
+- Data: typer og strukturer af data
+    - tekst, tal, liste
+    - ordbøger
+- Internet: hente data
+    - import af funktionalitet
+    - tekst, json
+- Jupyter: wordcloud
+- Dataleg: Frekvensanalyse
+- Dataleg: Wordcloud 
+- Data: alt er tal, billeder
