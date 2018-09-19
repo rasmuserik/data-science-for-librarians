@@ -1,19 +1,48 @@
+# Notes
+
+
+Teori:
+- intro, formål
+- sprog vs. peg og klik, algoritme, hvad er programmering, hvad er en computer
+- data vs information vs viden, typer af data: tekst, json, billeder, ...
+- strukturerede data, json
+- data fra internettet / http
+- machine learning - supervised vs. unsupervised
+- pointers til videre studier
+- billeder
+- perspektivering: forskellige programmeringssprog
+
+Praksis:
+- start jupyter - første program
+- hente data
+- udtræk data fra json
+- frekvensanalyse
+- visualisering: histogram
+- visualisering: wordcloud
+- papirøvelse: find mønstre i visuelle data 
+- python linær regression, og k-means
+- mønstre i biblioteksdata
+
+
 # Structure
-
-- follow-up on exercises
-- theory
-- examples
-- exercises + break
-
 ## Intro / jupyter
 
 purpose/plan
 intro - who are we
+start with jupyter
 
 Interrupt, stop me, ask if it going too fast.
 
+- veksle mellem 
+    - follow-up on previous topic
+    - teori
+    - praksis
+    - fri leg -pause / selvstændigt arbejde + break
+- NB: ur til pauser
+
 Examples:
 
+- jupyter tour
 - "na" * 16 + "batman"
 - "foo bar baz".split(" ");
 - for in "jbjb jbjb jbj bjb ".split(" "): ...
@@ -22,8 +51,14 @@ Exercises:
 
 - go through tutorial
 - calculating with numbers and texts
-- robotic poet - subject verb object
 
+- Jupyter: velkommen - intro
+    - hvem er vi
+    - plan/læringsmål
+    - struktur: teori/praksis/fri-leg, bloom
+    - værktøj: etherpad, data-science-workshop.com, github.com - kodeeksempler
+    - I gang med jupyter
+    - fri-leg: explore jupyter
 ## Language vs pointing
 
 Examples: 
@@ -46,6 +81,13 @@ Exercises:
 - word frequences for hamlet
 - print random fortune
 
+- Dataleg: Frekvensanalyse
+- Jupyter: peg-og-klik vs fortælle computeren hvad den skal
+    - analogi: et fremmed land
+    - regnemaskine, - alt er data
+    - navngivning
+- Hente data - import af funktionalitet - tekst, opsplit tekst i lister
+- Import af funktionalitet, - request, frekvensanalyse
 ## Data types and visualising words
 
 Recap: numbers, text strings, lists
@@ -72,9 +114,33 @@ Examples:
 - Stopwords - filter
 
 Exercise: 
+
+- make your own wordcloud
+
+- Dataleg: Wordcloud 
+- Jupyter: wordcloud
+- Internet: hente data
+    - import af funktionalitet
+    - tekst, json
+- Data: typer og strukturer af data
+    - tekst, tal, liste
+    - ordbøger
+- Hvad er data. "Data - typer og strukturer
+## Learning / writing computer language
+
+- tilgange til læring (Bloom?), italesæt formål/interesse
+- tactical vs. strategical, - pair programming
+
+- recipies
+- definitions
+- stop words - filter
+- for loops
+
+Robotic poet
 Wordcloud of terms related to certain term
 Wordcloud of popular words of hamlet, 
 
+    - gentagelse
 ## Fetching data
 
 What is internet / http.
@@ -90,70 +156,31 @@ Examples links of links.
 
 Wordcloud of popular links of links.
 
-# Notes
-
-- veksle mellem 
-    - teori
-    - praksis
-    - fri leg -pause / selvstændigt arbejde
-- NB: ur til pauser
-
-Teori:
-- intro, formål
-- tilgange til læring (Bloom?), italesæt formål/interesse
-- sprog vs. peg og klik, algoritme, hvad er programmering, hvad er en computer
-- data vs information vs viden, typer af data: tekst, json, billeder, ...
-- strukturerede data, json
-- data fra internettet / http
-- machine learning - supervised vs. unsupervised
-- pointers til videre studier
-- billeder
-- perspektivering: forskellige programmeringssprog
-
-Praksis:
-- start jupyter - første program
-- hente data
-- udtræk data fra json
-- frekvensanalyse
-- visualisering: histogram
-- visualisering: wordcloud
-- papirøvelse: find mønstre i visuelle data 
-- python linær regression, og k-means
-- mønstre i biblioteksdata
-- brainstorm: emner til næste gang
-
-Sections:
-- Intro, Jupyter, (udregninger, print, løkker)
-- Computersprog vs. peg og klik, læring, blooms-taksonomi. Navngivning, import, hent data
-- Hvad er data. "Data - typer og strukturer
-- Hente data - import af funktionalitet - tekst, opsplit tekst i lister
-- Import af funktionalitet, - wordcloud, frekvensanalyse
-- Hente data - http, query, user-agent, ... wikipedia
-
-Structure:
-- Jupyter: velkommen - intro
-    - hvem er vi
-    - plan/læringsmål
-    - struktur: teori/praksis/fri-leg, bloom
-    - værktøj: etherpad, data-science-workshop.com, github.com - kodeeksempler
-    - I gang med jupyter
-    - fri-leg: explore jupyter
-- Jupyter: peg-og-klik vs fortælle computeren hvad den skal
-    - analogi: et fremmed land
-    - regnemaskine, - alt er data
-    - navngivning
-    - gentagelse
-- Data: typer og strukturer af data
-    - tekst, tal, liste
-    - ordbøger
-- Internet: hente data
-    - import af funktionalitet
-    - tekst, json
-- Jupyter: wordcloud
-- Dataleg: Frekvensanalyse
 - Internet:
     - query parameters
     - http methods
-- Dataleg: Wordcloud 
+- Hente data - http, query, user-agent, ... wikipedia
+## Data science - bibdata
+
+- bag of words
+- alt er tal
+- machine learning - supervised vs. unsupervised
+- bibdata
+
+Exercise: bibdata-description/paper
+
 - Data: alt er tal, billeder
-- rettigheder til data
+## Combining images - collage
+
+## What is images
+
+## Afslutning
+
+- Snak med sidemand om hvilke nye ting I har lært.
+- Brainstorm over emner I er interesserede I?
+- links til videre studier
+
+Øvelser:
+- kig på forskellige læringsresourcer til programmering.
+
+- brainstorm: emner til næste gang
