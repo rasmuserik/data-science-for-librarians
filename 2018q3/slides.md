@@ -3,7 +3,6 @@
 % September 2018
 
 # Welcome and intro to Jupyter
-
 ## Introduction
 
 <small>English or Danish?</small>
@@ -23,8 +22,9 @@
 
 - Welcome and introduction to Jupyter
 - Fetching and working with data
-- Structured data (JSON) and WordCloud visualisation
-- Computer language - Python
+- Wordcloud visualisation (and learning)
+- Computer language - (and tactics vs strategy)
+- Structured data (JSON)
 - WWW / Internet - HTTP
 - Data Science - literature case study*
 - Digital images*
@@ -59,9 +59,9 @@ Do interrupt and ask questions! <br/>
 - User interface tour
 - Exercises from Introduction to Jupyter (in Danish, from data-science-workshop.com)
 
+## Follow up on exercises
 
 # Fetching and calculating with data
-
 ## Computer language
 
 Analogy - a different country:<br/>
@@ -71,47 +71,189 @@ GUI vs CLI
 
 Examples of computer languages
 
-## Progresssin
+## Examples
 
-- calculation with data
+<small>Information overload...</small>
+
+- calculating with data
+- debugging
+- importing and using functionality: request, frequency, random
+- random word
+- random jargon entry
+- word frequencies
 - naming
-- definitions
 
+## Exercises
+
+- fetch urls, and print content
+- generate random sentences, - like random words, but with subject-verb-object words
+- random fortune-quote
+- word frequencies from online book of choice
+
+## Follow up on exercises
+
+# Learning, and Visualisation: Wordclouds
 ## Blooms taxonomy
 
 ![Blooms taxonomy](bloom.png)
 
 ## Examples
 
-<small>Information overload...</small>
-
-- calulating with data. (split text)
-- importing and using functionality: request, frequency, random
-- random word
-- random fortune
-- word frequencies
-- naming
-- define function-ality
+- wordcloud
+    - with own words
+    - with popular words from book
+    - with stop-words
 
 ## Exercises
 
+- Wordcloud 
+    - with own words
+    - with popular words from data source of choice
 
+## Follow up on exercises
 
+# Computer language
+## What is data
 
-
-# Types of data, and visualising words
+- Computer = calculator
+- All is numbers
+- Recipies
 
 ## Tactics and Strategy
 
-- pair programming
+- Overview vs detail
+- Pair programming
+- Tip for working together
 
-# Computer language
+## Examples
+
+- definitions
+- for loops
+    - all word combinations
+- list comprehension
+- refactoring code
+
+## Exercises
+
+- repeated random sentences / words
+- refactor code from previous exercises
+
+## Follow up on exercises
+
+# Types of data
+## JSON
+
+- strings
+- numbers
+- true / false (*Boolean* values)
+- lists
+- dictionaries
+
+## Data structures
+
+Nested lists and dictionaries
+
+- bibliography example
+- person / social media example
+
+## Examples
+
+- Fetching and accessing JSON-data: 
+    - wikipedia
+    - reddit
+
+## Exercises
+
+- Wordcloud of linked articles from wikipedia
+- Wordcloud from popular words on reddit
+
+## Follow up on exercises
 
 # About the Web / Internet
+## Web and HTTP
+
+- How the internet works (whiteboard)
+- Look at brows http-requests
+- Web data
+
+## Examples
+
+- YouTube OGP
+- RSS-DR
+- Creative Commons photots
+
+## Exercises
+
+- List headlines
+- Show pictures from search
+
+## Follow up on exercises
 
 # Data Science
+## The Scientific method
+
+- Question
+- Hypothesis
+- Prediction
+- Testing
+- Analysis
+
+## Data Science
+
+- Whiteboard examples
+    - Clustering
+    - Models - linear regression
+- Supervised vs unsupervised
+
+## Examples
+
+- Topic-space
+- Recommender
+- Clustering
+- Meta-data analysis
+
+## Exercises
+
+- implement the examples yourself
+- explain / discuss the examples to your neighbour
+
+## Follow up on exercises
 
 # Images
+## What are images
 
+- Images as numbers
+- What is color
+
+## Examples
+
+- Fetching image
+- Scale image
+- Composition
+
+## Exercises
+
+- Random collage
+- Find images via API and compose
+
+## Follow up on exercises
+
+- Image color analysis
+
+# Your topic
+
+## Live coding example and exercise
 # Conclusion
+## Discussion
 
+- Neighbours: what is the primary thing you remember / have learned?
+- Brainstorm of cases for next time?
+
+## Futher studies
+
+- [Thinking in Python](http://greenteapress.com/wp/think-python-2e/)
+- [Code Combat](https://codecombat.com/play)
+- [Data Camp](https://www.datacamp.com/courses/intro-to-python-for-data-science)
+- [Code Academy](https://www.codecademy.com/learn/learn-python)
+
+NB: Python 3 vs 2.
