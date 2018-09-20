@@ -1,4 +1,4 @@
-(sleep 1; touch README.md) &
+(sleep 1; touch slides.md) &
 while inotifywait -e modify,close_write,move_self -q *.md *.ipynb
 do 
   ./build.sh

@@ -1,382 +1,117 @@
 % Data Workshop
 % Rasmus Erik @solsort.com
 % September 2018
-<!--
-- veksle mellem 
-    - teori
-    - praksis
-    - fri leg -pause / selvstændigt arbejde
-- NB: ur til pauser
-
-Teori:
-- intro, formål
-- tilgange til læring (Bloom?), italesæt formål/interesse
-- sprog vs. peg og klik, algoritme, hvad er programmering, hvad er en computer
-- data vs information vs viden, typer af data: tekst, json, billeder, ...
-- strukturerede data, json
-- data fra internettet / http
-- machine learning - supervised vs. unsupervised
-- pointers til videre studier
-- billeder
-- perspektivering: forskellige programmeringssprog
-
-Praksis:
-- start jupyter - første program
-- hente data
-- udtræk data fra json
-- frekvensanalyse
-- visualisering: histogram
-- visualisering: wordcloud
-- papirøvelse: find mønstre i visuelle data 
-- python linær regression, og k-means
-- mønstre i biblioteksdata
-- brainstorm: emner til næste gang
-
-Sections:
-- Jupyter
-- Computersprog vs. peg og klik
-- Data, - typer og strukturer
-- Hente data - import af funktionalitet - tekst, opsplit tekst i lister
-- Import af funktionalitet, - wordcloud, frekvensanalyse
-- Hente data - http, query, user-agent, ... wikipedia
-
-Structure:
-- Jupyter: velkommen - intro
-    - hvem er vi
-    - plan/læringsmål
-    - struktur: teori/praksis/fri-leg, bloom
-    - værktøj: etherpad, data-science-workshop.com, github.com - kodeeksempler
-    - I gang med jupyter
-    - fri-leg: explore jupyter
-- Jupyter: peg-og-klik vs fortælle computeren hvad den skal
-    - analogi: et fremmed land
-    - regnemaskine, - alt er data
-    - navngivning
-    - gentagelse
-- Data: typer og strukturer af data
-    - tekst, tal, liste
-    - ordbøger
-- Internet: hente data
-    - import af funktionalitet
-    - tekst, json
-- Jupyter: wordcloud
-- Dataleg: Frekvensanalyse
-- Internet:
-    - query parameters
-    - http methods
-- Dataleg: Wordcloud 
-- Data: alt er tal, billeder
-- rettigheder til data
--->
-
-# Velkommen / Plan
-
----
-
-- Emner for workshoppen
-- Min baggrund
-- Navnerunde
-- Plan for workshoppen
-
-## Emner for workshoppen
-
-- Værktøj: Jupyter - Python
-- "Datahøstning" - hvordan virker www 
-- JSON - hvordan er data - typer og strukturer <br><small>(meget brugbar viden, som I nok får gavn af senere)</small>
-- Visualisering - billeder, wordclouds, grafer
-- Tableau-workshop (anden underviser)
-
-## Min baggrund
-
-- Datalog fra KU, herunder studier på INF.
-- Underviste dengang, gik derefter ud i erhvervslivet. Driver nu egen virksomhed.
-- Er her fordi jeg gerne vil give mine erfaringer videre. 
-- Det handler om jeres læring, - afbryd gerne, <br>stil spørgsmål!
-
-## Navnerunde
-
-- Navn
-- Nævn hvis I tidligere har <br> programmering eller lignende?
-- Et par hurtige stikord om, <br> hvem I er, og hvad I synes <br> er spændende. <br><small>(måske kan senere eksempler relateres til dette)</small>
-
-
----
-
-**Forberedt indhold:** <br> *Vi ser hvad vi når, og dykker ned i.*
 
+# Welcome and intro to Jupyter
 
-- I gang med Jupyter Notebooks: computer sprog
-- Datahøstning 1: webbrower-requests, tekst, JSON
-- Visualisering 1: visning af billeder
-- Datahøstning 2: request-parametre, "user agent"
-- Visualisering 2: Wordcloud, søjlediagrammer
-- Datahøstning 3: udtræk af data, RSS, Open Graph 
-- Visualisering 3: mere om digitale billeder
-- Data Science Eksempel: fra brugshistorik til viden
+## Introduction
 
----
+<small>English or Danish?</small>
 
-- Fælles frokost 
-- Opsummering og videre inspiration
-- Tableau workshop
+- Purpose and background
+- Plan / topics
+- Structure
+- Introduction to Jupyter Notebooks
 
-# I gang med Jupyter
+## About
 
-## Jupyter Notebook
+- Purpose: your learning  <br/><small>Applicable tools and useful knowledge in studies, research, and professionally</small>
+- <small>My background: Own company, consultant, and software development. Computer Scientist from KU, including library and information science and teaching.  I am here, because I want to pass on my experience</small>
+- Your Background:  Semester? IT-experience? Interests/passions? Projects?
 
-Det værktøj, som vi vil bruge til at arbejde med data.
+## Topics / plan
 
-1. Installation / kørsel
-2. Computersprog
-3. Eksempler
+- Welcome and introduction to Jupyter
+- Fetching and working with data
+- Structured data (JSON) and WordCloud visualisation
+- Computer language - Python
+- WWW / Internet - HTTP
+- Data Science - literature case study*
+- Digital images*
+- Your topic!*
+- Conclusion
 
-## Installation
+## Structure
 
-- Hentes fra [www.anaconda.com/download](https://www.anaconda.com/download) (vælg Python 3.6)
-- Guide på [data-science-workshop.solsort.com](http://data-science-workshop.solsort.com)
-- Medbragte USB-sticks
+Exploring a series of topics.
 
-Kan også køres i skyen:
+- Theory / lecture / perspective
+- Examples - follow along
+- Exercises, free experimentation, including break
+- Follow-up 
 
-- [notebooks.azure.com](https:/notebooks.azure.com) (samt delvist [colab.research.google.com/notebook](https://colab.research.google.com/notebook))
+Do interrupt and ask questions! <br/>
 
-## Tour Jupyter / <small><strike>Monty</strike></small> Python
+## What is Jupyter Notebook
 
-- "Par-programmering", samarbejde parvis
-    - strategisk vs teknisk
-- Gennemgang af grænsefladen: celler, tekst 
-- Indbygget hjælp (?), beregningskerne, 100.000 x hej
-- Eksempel på fejl
+- Tool for working with data
+- Primary tool within science
+- Web application, cloud + local
 
-## Computersprog
+## Examples
 
-- Pege og fagter _versus_ ord og tale
-- Ord: Computer (1613, Ada Byron, DASK, i dag). 
-- Hvordan virker computere. Trinvise opskrifter
-- Sprog-eksempler: shell, JavaScript, Python
-- Blot et par fraser, vi skal ikke lære sprog nu
-- Ord: Debug (striks/dum maskine, instant feedback).
+- Opening Jupyter Notebooks
+- Jupyter tour: modes, cells, text and code, builtin help, errors, kernel
+- Calculation with data
 
----
+## Exercises
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/H96566k.jpg"></img>
+- User interface tour
+- Exercises from Introduction to Jupyter (in Danish, from data-science-workshop.com)
 
 
+# Fetching and calculating with data
 
-## Øvelser
+## Computer language
 
-- gennemgå grænseflade turen
-- udregn `1+2+3`
-- udregn `10 * "spam"`
-- print en hilsen samt jeres navne ud på skærme
-- lav simpelt program, der danner sammensatte ord eller sætninger
+Analogy - a different country:<br/>
+Pointing and gestures vs language
 
-# Datahøstning 1 <br><small> HTTP-requests, tekst og JSON</small>
+GUI vs CLI
 
-## Hvordan henter vi data
+Examples of computer languages
 
-- Python import af funktionalitet: `import requests`
-- `requests('http://google.com/humans.txt').text`
-- variable, print
-- eksempel robots.txt
+## Progresssin
 
-## Simpel behandling af tekst-data
+- calculation with data
+- naming
+- definitions
 
-- eksempel: hent fortune-file
-    - <https://github.com/JKirchartz/fortune/>
-    - <http://fortunes.cat-v.org/>
-- eksempel: opsplit fortune file i fortunes
-- eksempel: udskriv tilfældigt element fra liste
-- øvelse: udvælg fortune file, og udskriv tilfældige fortunes.
+## Blooms taxonomy
 
-## Hvordan virker WWW
+![Blooms taxonomy](bloom.png)
 
-- URL: protokol, server, sti
-- HTTP: Forspørgsel med URL, Headers
-    - Header-eksempel: `user-agent`
-    - Svar, header-eksempler
-- Content-types: text/html, image/..., application/json
-- Eksempel/øvelse: hent JSON-data fra api.reddit.com/r/...
-    - Indlæsning af JSON
+## Examples
 
-## Databehandling
+<small>Information overload...</small>
 
-- eksempel: opslag i liste
-- eksempel: opslag i ordbog
-- eksempel: `list(x.keys())`
-- øvelse: udtræk titel på den første artikel fra reddit
-- eksempel: udtræk alle url'er fra reddit
-- øvelse: udtræk alle titler fra reddit
+- calulating with data. (split text)
+- importing and using functionality: request, frequency, random
+- random word
+- random fortune
+- word frequencies
+- naming
+- define function-ality
 
-## Strukturerede data
+## Exercises
 
-- Data-type: tal, tekst, lister, ...
-- Lister
-- Ordbøger
-- Hierakier, mindmaps - strukturer
 
-## JSON-data
 
-Notation / hvordan det skrives:
 
-- tekst-strenge: `"tekst"`
-- tal: `123.456`
-- ordbøger `{"ord": "beskrivelse", "ord2": 123}`
-- lister `[1, 2, "hej", {}]`
-- sandhedsværdier `True` / `False`
 
-# Visualisering 1 <br><small> hentning og visning af billeder</small>
+# Types of data, and visualising words
 
-## Visning af billeder
+## Tactics and Strategy
 
-- hentning af data - visning af billeder
-- øvelse: hent billede fra wikipedia, reddit, eller lignende, og vis det
-- skalering og størrelse
-- øvelse: skalér billede
+- pair programming
 
-## Billeder i computer
+# Computer language
 
-- Billedformater: jpg, png, gif, ...
-- Billedkoordineter: x/y, bredde, højed
-- Hvad er billeder i computeren
-- Eksempel: nedskaler/opskaler billede
-- Eksempel: print url'er for `jpg`-billeder fra api(reddit)
-- Øvelse: vis billeder, og print titler for billeder fra api
+# About the Web / Internet
 
-# Datahøstning 2 <br><small>Query-parametre, api'er</small>
+# Data Science
 
-## Query-parametre og request-metoder
+# Images
 
-- URL eksempel: <https://duckduckgo.com/?q=data+science&df=w&iax=images&ia=images>
-- Query parametre, i url, og som JSON
-- Mere om headers, user-agent
-- Request-metoder: get, put, post
+# Conclusion
 
-## Flere eksempler på datakilder
-
-- openplatform: danske biblioteksdata
-    - søgning, anbefalinger, biblioteker, facetter, ...
-- Wikipedia
-    - extract, links, linkshere
-    - eksempel/øvelse: co-citationsanalyse.
-- WorldBank, DST, ...
-    - befolkningsstatistik etc.
-
-# Visualisering 2 <br><small> Wordcloud, søjlediagram</small>
-
-## Eksempel: WordCloud - frekvenser
-
-- eksempel: wordcloud på statistik
-- øvelse: hent tekstfil
-- eksempel: ordfrekvenser i tekst
-- øvelese ordfrekvens fra tekstfil
-- eksempel: fjernelse af ord i ordbog
-- øvelse: wordcloud med frekvenser fra tekst
-- øvelse: wordcloud med facetter for søgning
-
-## Eksempel: Population søjlediagram
-
-- øvelse: hent statistikdata fra worldbank
-- eksempel: hent statistik-data ud som lister
-- eksempel: populationsgraf danmark
-- øvelse: populationsgraf, andre lande
-
-## Eksempel: WordCloud <br>co-citations analyse
-
-- øvelse: hent links fra wikipedia
-- øvelse hent 2 niveauer af links i wikipedia
-- øvelse: wordcloud ud fra link-popularitet
-
-# Datahøstning 3 <br><small>RSS, HTML, Open Graph</small>
-## Forskellige typer af data
-
-- Tekst, JSON, HTML, RSS, ...
-- Eksempel: kig på kode i browser
-- "API": Web-APIer, Python APIer
-- API'er i Python
-
-## Data eksempler
-
-- RSS-feeds - dr.dk, wordpress, ...
-    - Øvelse: udtræk og vis nyheder fra dr
-- Open Graph Protocol - youtube, dr.dk, ...
-    - Øvelse: udtræk og vis nyheder fra reddit-world-news m. ogp-data
-- Data i HTML - ccsearch
-    - eksempel: vis billeder fra søgning
-
-## Bladring i data
-
-- openplatform offset, limit
-- reddit next page
-
-## Data adgang
-
-- Åbne data
-- Creative Commons
-- Proprietære data
-- Åbne APIer vs Lukkede APIer
-- GDPR General Data Protection Regulation
-
-# Visualisering 3: <br> <small>Mere om billeder</small>
-
----
-
-- Sammensætning af billeder - `image.paste`
-- Billedfiltre, `effect_spread`, ...
-- Øvelse - kreative billeder
-- Pixels, farvegraf
-- Øvelse: automatisk nyheds-kollage
-
-# Eksempel: Biblioteksdata
-## Genre-rum
-
-- Grundlag: hack4dk data, brugs/låner-mønstre
-- Idé: genre-rum
-- Data Science; Hypotese, eksperiment, verifikation
-
-## Recommender <br> anbefalinger
-
-## Genre klynger
-
-- Superviseret vs. usuperviseret læring
-- k-means
-
-## Emneord
-
-- Statistik: spredning
-
-# Fælles Frokost <br><small>Fri leg indtil 12:57</small>
-
-# Opsummering og videre inspiration
-## Hvad har vi lært
-
-Hvad er det vigtigste I har lært og<br/> 
-taget med fra denne del af workshop'en? <br>
-(Diskutér to og to. Og i plenum)
-
-Ønsker til næste gang...? <br>  
-<small>...sportsresultater, madopskrifter, aktiekurser, heste,...</small>
-
-----
-
-Opsummering:
-
-- I gang med Jupyter Notebooks: computer sprog
-- Datahøstning 1: webbrower-requests, tekst, JSON
-- Visualisering 1: visning af billeder
-- Datahøstning 2: request-parametre, "user agent"
-- Visualisering 2: Wordcloud, søjlediagrammer
-- Datahøstning 3: udtræk af data, RSS, Open Graph 
-- Visualisering 3: mere om digitale billeder
-- Data Science Eksempel: fra brugshistorik til viden
-
-## Mere Python
-
-Hvis I har lyst til selv at gå på opdagelse<br> og lære mere i mellemtiden.
-
-- [Thinking in Python](http://greenteapress.com/wp/think-python-2e/)
-- [Code Combat](https://codecombat.com/play)
-- [Data Camp](https://www.datacamp.com/courses/intro-to-python-for-data-science)
-- [Code Academy](https://www.codecademy.com/learn/learn-python)
-
-Bemærk: Vi bruger Python 3, nogle af ovenstående bruger Python 2, og der er små forskelle.
