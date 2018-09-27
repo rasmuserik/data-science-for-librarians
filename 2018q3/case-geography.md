@@ -1,8 +1,20 @@
 # Data sources
 
+Intro:
+
+- learning goal
+    - json data / accessing structured data
+    - simple coding
+- Note: things could be a lot easier by using more advanced functionality. 
+
 - data.worldbank.org
-- data.go.id (pariwisata = tourism)
 - dbpedia
+- visualisation: 3d-graph
+
+- https://datahelpdesk.worldbank.org/knowledgebase/articles/898581-api-basic-call-structure
+ 
+- approach to coding / moving data around
+
 
 # Follow-up mail
 
