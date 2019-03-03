@@ -27,14 +27,16 @@ pause / reflection / direction
 # Tasks
 
 - √rework rough agenda
-- detailed agenda
+- copy old slide content into python notebook
+- update website with link to azure cloud
+- ~detailed agenda~
 - Jupyter slideshow
     - main
     - visualisation
     - computer languages
     - the internet
     - hands-on own
-- jupyter notebooks in repos
+- √jupyter notebooks in repos
 
 
 # Visualisering
